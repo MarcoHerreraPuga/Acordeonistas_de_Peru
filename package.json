@@ -1,0 +1,22 @@
+{
+  "name": "acordeonistas",
+  "version": "1.0.0",
+  "description": "Aplicación de acordeones interactivos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/styles.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./css/styles.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "tailwindcss": "^3.4.19"
+  },
+  "keywords": [
+    "acordeon",
+    "faq",
+    "tailwind",
+    "javascript"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT"
+}

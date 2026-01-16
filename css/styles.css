@@ -1,0 +1,728 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados */
+.logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .logo-img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+/* Tipografías */
+.menu-font {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+h1, h2, h3, h4, .section-title {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+/* Imagen de "Quiénes Somos" */
+.quienes-somos-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1rem;
+    transition: transform 0.5s ease;
+}
+
+/* Mejoras para imágenes responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Scroll suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para mejor UX en móviles */
+@media (max-width: 768px) {
+    .hero-bg {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-font {
+        font-size: 1rem;
+    }
+}
+
+/* Estilo para los enlaces en móvil */
+@media (max-width: 640px) {
+    .hidden.sm\:block {
+        display: none !important;
+    }
+    
+    #menu-movil {
+        display: block !important;
+    }
+}
+
+@media (min-width: 641px) {
+    #menu-movil {
+        display: none !important;
+    }
+    
+    .hidden.sm\:block {
+        display: block !important;
+    }
+}
+
+/* Efecto de scroll para header */
+header.sticky {
+    transition: all 0.3s ease;
+}
+
+/* Para botones en móvil */
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mejorar legibilidad en móvil */
+@media (max-width: 768px) {
+    p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   ESTILOS PARA EL BOTÓN "APOYAR" CON CORAZÓN
+   ============================================ */
+
+/* Botón con corazón que late */
+.heartbeat-btn {
+    position: relative;
+    animation: pulse-shadow 2s infinite;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.heartbeat-icon {
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+/* Animación de latido del corazón */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1.1);
+    }
+    10% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación de pulso en la sombra */
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    }
+}
+
+/* Efecto de brillo que se mueve */
+.heartbeat-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.7s;
+}
+
+.heartbeat-btn:hover::before {
+    left: 100%;
+}
+
+/* Efecto de latido más rápido al hacer hover */
+.heartbeat-btn:hover .heartbeat-icon {
+    animation: heartbeat 0.8s infinite;
+}
+
+/* Efecto de clic */
+.heartbeat-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* Versión para móvil */
+@media (max-width: 640px) {
+    .heartbeat-btn {
+        animation: pulse-shadow-mobile 2s infinite;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    @keyframes pulse-shadow-mobile {
+        0% {
+            box-shadow: 0 3px 10px rgba(239, 68, 68, 0.4);
+        }
+        50% {
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
+        }
+        100% {
+            box-shadow: 0 3px 10px rgba(239, 68, 68, 0.4);
+        }
+    }
+    
+    .heartbeat-icon {
+        font-size: 0.9em;
+    }
+}
+
+/* Para el menú móvil emergente */
+#mobile-simple-menu a:hover .heartbeat-icon {
+    animation: heartbeat 0.8s infinite;
+}
+
+
+/* ============================================
+   BOTÓN FLOTANTE "APOYAR" PARA MÓVIL
+   ============================================ */
+
+/* Botón flotante */
+#floating-donation-btn {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.floating-heartbeat-btn {
+    position: relative;
+    animation: float-pulse 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animación de latido para el icono del corazón */
+.floating-heart-icon {
+    animation: floating-heartbeat 1.5s infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes floating-heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1.1);
+    }
+    10% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación de pulso alrededor del botón */
+@keyframes float-pulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(239, 68, 68, 0.6);
+    }
+}
+
+/* Animación de ping más lenta para el borde */
+.animate-ping-slow {
+    animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping-slow {
+    75%, 100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Animación de rebote más suave */
+.animate-bounce-subtle {
+    animation: bounce-subtle 3s infinite;
+}
+
+@keyframes bounce-subtle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de brillo que se mueve */
+.floating-heartbeat-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.7s;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.floating-heartbeat-btn:hover::before {
+    left: 100%;
+}
+
+/* Estilos para la etiqueta flotante */
+.floating-label {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.floating-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #1f2937;
+}
+
+/* Efecto de clic */
+.floating-heartbeat-btn:active {
+    animation: click-effect 0.3s;
+    transform: scale(0.9) !important;
+}
+
+@keyframes click-effect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.85);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+/* Ocultar el botón "Apoyar" original en el header para móvil */
+@media (max-width: 768px) {
+    /* Ocultamos el botón original en el header para móvil */
+    .heartbeat-btn {
+        display: none !important;
+    }
+    
+    /* Ajustamos el botón hamburguesa para que quede solo */
+    #menu-movil {
+        margin-left: auto;
+    }
+}
+
+/* Mostrar solo en móvil, ocultar en desktop */
+@media (min-width: 769px) {
+    #floating-donation-btn {
+        display: none !important;
+    }
+}
+
+/* Asegurar que el botón flotante no interfiera con otros elementos */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 80px; /* Espacio para el botón flotante */
+    }
+    
+    /* Ajustar para que no cubra contenido importante */
+    #floating-donation-btn {
+        bottom: 70px; /* Más arriba para no interferir con navegadores móviles */
+    }
+    
+    /* En dispositivos muy pequeños */
+    @media (max-height: 600px) {
+        #floating-donation-btn {
+            bottom: 60px;
+        }
+        
+        .floating-heartbeat-btn {
+            width: 14px;
+            height: 14px;
+        }
+        
+        .floating-heart-icon {
+            font-size: 1rem;
+        }
+    }
+}
+
+/* Para tablets pequeñas */
+@media (min-width: 641px) and (max-width: 768px) {
+    #floating-donation-btn {
+        left: 2rem;
+        bottom: 2rem;
+    }
+    
+    .floating-heartbeat-btn {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .floating-heart-icon {
+        font-size: 1.25rem;
+    }
+}
+
+/* Asegurar que el botón esté sobre todos los elementos */
+#floating-donation-btn {
+    z-index: 9999;
+}
+
+/* Mejorar visibilidad en diferentes fondos */
+.floating-heartbeat-btn {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, 
+        rgba(236, 72, 153, 0.95) 0%, 
+        rgba(239, 68, 68, 0.95) 100%
+    );
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   TIPOGRAFÍA ELEGANTE PARA EL TÍTULO HERO
+   ============================================ */
+
+/* Opción A: Cormorant Garamond (muy similar a la imagen) */
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   SUBTÍTULO HERO - ESTILO ELEGANTE
+   ============================================ */
+
+.hero-subtitle {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.6),
+        1px 1px 2px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(255, 255, 255, 0.08);
+    position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    transition: all 0.4s ease;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.hero-subtitle:hover {
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.6),
+        1px 1px 2px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+    letter-spacing: 0.035em;
+}
+
+/* Efecto de subrayado elegante */
+.hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transition: transform 0.5s ease;
+}
+
+.hero-subtitle:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Animación sutil de aparición */
+@keyframes subtitle-appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-subtitle {
+    animation: subtitle-appear 1s ease 0.3s both;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 0 1rem;
+    }
+    
+    .hero-subtitle::after {
+        width: 60px;
+        bottom: -6px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-subtitle {
+        font-size: 1.1rem;
+        text-shadow: 
+            0.5px 0.5px 1px rgba(0, 0, 0, 0.6),
+            0 0 10px rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* Opcional: Efecto de letras iluminadas individualmente */
+.hero-subtitle span {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.hero-subtitle:hover span:nth-child(odd) {
+    transform: translateY(-1px);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.hero-subtitle:hover span:nth-child(even) {
+    transform: translateY(1px);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Efecto de relieve sutil - VERSIÓN CORREGIDA */
+/* ============================================
+   TÍTULO HERO - VERSIÓN CORREGIDA
+   ============================================ */
+
+.hero-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.hero-title:hover {
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.2rem;
+        text-shadow: 
+            0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
+            1px 1px 2px rgba(0, 0, 0, 0.6),
+            0 0 15px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Efecto de brillo al pasar el mouse */
+.hero-title:hover {
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Alternativa con más contraste */
+.hero-title-alt {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Opción C: Cinzel para un look más formal/musical */
+.hero-title-cinzel {
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Estilos responsivos para el título */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Efecto de brillo al pasar el mouse */
+.hero-title {
+    transition: all 0.3s ease;
+}
+
+.hero-title:hover {
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Estilo para el subtítulo */
+.hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+/* Botones del hero */
+.hero-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   OPCIONES ADICIONALES DE FUENTES
+   ============================================ */
+
+
+
+/* 1. EB Garamond (Google Fonts - agregar en HTML) */
+.font-eb-garamond {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+/* 2. Libre Baskerville */
+.font-libre-baskerville {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+/* 3. Spectral */
+.font-spectral {
+    font-family: 'Spectral', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
