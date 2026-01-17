@@ -404,8 +404,8 @@ button, a {
         }
         
         .floating-heartbeat-btn {
-            width: 14px;
-            height: 14px;
+            width: 60px; /* Aumentar tamaño */
+            height: 60px;
         }
         
         .floating-heart-icon {
@@ -726,3 +726,108 @@ button, a {
     letter-spacing: 0.01em;
 }
 
+
+/* ============================================
+   ESTILOS PARA "QUIÉNES SOMOS" - OPCIÓN RECOMENDADA
+   ============================================ */
+/* ============================================
+   ESTILOS PARA "QUIÉNES SOMOS" - OPCIÓN RECOMENDADA
+   ============================================ */
+
+/* Opción Cormorant Garamond + Inter para combinación perfecta */
+.quienes-somos-content {
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 400;
+    line-height: 1.85;
+    color: #374151;
+    text-align: justify;
+}
+
+/* Mejorar los párrafos */
+.quienes-somos-content p {
+    margin-bottom: 1.75rem;
+    text-align: justify;
+    letter-spacing: 0.01em;
+}
+
+/* Resaltar texto importante */
+.quienes-somos-content strong {
+    font-weight: 600;
+    color: #1e40af;
+    position: relative;
+    padding: 0 2px;
+}
+
+/* Efecto sutil en hover para enlaces implícitos */
+.quienes-somos-content strong:hover {
+    background: linear-gradient(120deg, #dbeafe 0%, #e0e7ff 100%);
+    border-radius: 3px;
+    cursor: default;
+}
+
+/* Citas y bloques especiales */
+.quienes-somos-content blockquote {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* Listas dentro de la sección */
+.quienes-somos-content ul li,
+.quienes-somos-content ol li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.quienes-somos-content ul li:before {
+    content: "•";
+    color: #3b82f6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Animación de aparición para el contenido */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quienes-somos-content > * {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.quienes-somos-content p:nth-child(1) { animation-delay: 0.1s; }
+.quienes-somos-content p:nth-child(2) { animation-delay: 0.2s; }
+.quienes-somos-content .bg-gradient-to-r { animation-delay: 0.3s; }
+.quienes-somos-content blockquote { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quienes-somos-content {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.8;
+    }
+    
+    .quienes-somos-content p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .quienes-somos-content {
+        font-size: 1.05rem; /* 16.8px */
+        line-height: 1.75;
+    }
+}

@@ -563,6 +563,33 @@ function setupHeroSubtitleEffect() {
 }
 
 
+// Opcional: Galería de imágenes interactiva
+function setupGallery() {
+    const galleryImages = document.querySelectorAll('#gallery img');
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            // Crear modal para ver imagen ampliada
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center';
+            modal.innerHTML = `
+                <div class="relative max-w-4xl max-h-full">
+                    <img src="${this.src}" alt="${this.alt}" class="max-w-full max-h-screen">
+                    <button class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal || e.target.tagName === 'BUTTON') {
+                    document.body.removeChild(modal);
+                }
+            });
+        });
+    });
+}
+
+
 
 // Y en tu DOMContentLoaded, agrega esta llamada:
 // Busca esta línea en tu archivo JS (al final de DOMContentLoaded):
