@@ -823,3 +823,169 @@ h1, h2, h3, h4, .section-title {
     background: none;
     animation: none;
 }
+
+/* ============================================
+   EFECTOS MEJORADOS PARA BOTÓN APOYAR
+   ============================================ */
+
+/* Efecto de hover más exagerado */
+.heartbeat-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+}
+
+.heartbeat-btn:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4);
+}
+
+/* Efecto de pulsación más fuerte */
+@keyframes strong-heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.25); }
+    30% { transform: scale(1.1); }
+    45% { transform: scale(1.35); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat-icon {
+    animation: strong-heartbeat 2s infinite;
+    display: inline-block;
+}
+
+/* Efecto de brillo al hover */
+.heartbeat-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    border-radius: 9999px;
+    z-index: 1;
+}
+
+.heartbeat-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+}
+
+/* Efecto de texto flotante */
+.heartbeat-btn span:not(.heartbeat-icon) {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s;
+}
+
+.heartbeat-btn:hover span:not(.heartbeat-icon) {
+    transform: translateX(3px);
+}
+
+/* Efecto de lluvia de corazones */
+.hearts-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.heart-particle {
+    position: absolute;
+    color: #ef4444;
+    font-size: 24px;
+    opacity: 0;
+    animation: fall linear forwards;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de confeti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Modal de agradecimiento */
+.donation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.donation-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.donation-modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-heart {
+    font-size: 4rem;
+    color: #ef4444;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}

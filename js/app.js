@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 7. INICIALIZAR TODAS LAS FUNCIONALIDADES
     setupFloatingDonationButton();
-    setupHeartbeatButton();
+    setupEnhancedDonationButton();
     setupHeroTitleEffect();
     setupSociosGallery();
     setupGallery();
@@ -744,3 +744,216 @@ function setupGallery() {
     
     console.log('Galería de momentos configurada exitosamente');
 }
+
+// ============================================
+// EFECTOS MEJORADOS PARA BOTÓN APOYAR
+// ============================================
+
+function setupEnhancedDonationButton() {
+    const donationButton = document.querySelector('.heartbeat-btn');
+    const floatingDonationButton = document.querySelector('.floating-heartbeat-btn');
+    
+    if (donationButton) {
+        // Efecto hover mejorado
+        donationButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.2) translateY(-5px)';
+            this.style.boxShadow = '0 25px 50px rgba(239, 68, 68, 0.5)';
+        });
+        
+        donationButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) translateY(0)';
+            this.style.boxShadow = '';
+        });
+        
+        // Efecto click - lluvia de corazones
+        donationButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            createHeartsRain();
+            showDonationModal();
+            
+            // Navegar a la sección de donaciones después de un breve delay
+            setTimeout(() => {
+                const targetElement = document.querySelector('#donaciones');
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 1500);
+        });
+    }
+    
+    if (floatingDonationButton) {
+        // Efectos para el botón flotante
+        floatingDonationButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.3)';
+            this.style.boxShadow = '0 20px 40px rgba(239, 68, 68, 0.6)';
+        });
+        
+        floatingDonationButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '';
+        });
+        
+        floatingDonationButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            createHeartsRain();
+            showDonationModal();
+            
+            setTimeout(() => {
+                const targetElement = document.querySelector('#donaciones');
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 1500);
+        });
+    }
+}
+
+// ============================================
+// LLUVIA DE CORAZONES
+// ============================================
+
+function createHeartsRain() {
+    // Crear contenedor para corazones
+    const heartsContainer = document.createElement('div');
+    heartsContainer.className = 'hearts-rain';
+    document.body.appendChild(heartsContainer);
+    
+    // Crear corazones
+    const heartCount = 50;
+    const colors = ['#ef4444', '#f87171', '#fca5a5', '#fecaca'];
+    
+    for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart-particle';
+        heart.innerHTML = '❤️';
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        heart.style.animationDelay = `${Math.random() * 1}s`;
+        heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        heartsContainer.appendChild(heart);
+        
+        // Remover corazón después de la animación
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+    
+    // Remover contenedor después de 5 segundos
+    setTimeout(() => {
+        heartsContainer.remove();
+    }, 5000);
+}
+
+// ============================================
+// MODAL DE AGRADECIMIENTO
+// ============================================
+
+function showDonationModal() {
+    // Crear modal si no existe
+    let modal = document.querySelector('.donation-modal');
+    
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'donation-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-heart">❤️</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">¡Gracias por tu Apoyo!</h3>
+                <p class="text-gray-600 mb-6">
+                    Tu contribución ayuda a preservar la cultura del acordeón en Perú.
+                    Serás redirigido a las opciones de donación.
+                </p>
+                <button class="close-modal bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-2 rounded-full font-semibold hover:from-pink-600 hover:to-red-600 transition duration-300">
+                    Continuar
+                </button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Botón para cerrar modal
+        const closeButton = modal.querySelector('.close-modal');
+        closeButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.remove();
+            }, 300);
+        });
+        
+        // Cerrar al hacer click fuera
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.remove();
+                }, 300);
+            }
+        });
+    }
+    
+    // Mostrar modal
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    
+    // Auto-cerrar después de 4 segundos
+    setTimeout(() => {
+        if (modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.remove();
+            }, 300);
+        }
+    }, 4000);
+}
+
+// ============================================
+// CONFETTI (efecto adicional)
+// ============================================
+
+function createConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'hearts-rain';
+    document.body.appendChild(confettiContainer);
+    
+    const confettiCount = 100;
+    const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'];
+    
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+        confetti.style.width = `${Math.random() * 10 + 5}px`;
+        confetti.style.height = `${Math.random() * 10 + 5}px`;
+        
+        confettiContainer.appendChild(confetti);
+        
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+    
+    setTimeout(() => {
+        confettiContainer.remove();
+    }, 5000);
+}
+
+// ============================================
+// INICIALIZAR TODO
+// ============================================
+
+// En tu función DOMContentLoaded, llama a esta nueva función:
+// Agrega esta línea donde inicializas todas las funciones (al final de DOMContentLoaded)
+
+// Reemplaza la línea que dice: setupHeartbeatButton();
+// por:
