@@ -344,7 +344,7 @@ function setupCatalogoButton() {
         e.preventDefault();
         
         // Ruta al archivo PDF
-        const pdfPath = 'assets/Catalogo.pdf';
+        const pdfPath = '/assets/Catalogo.pdf';
         
         // Abrir PDF en nueva pestaña
         window.open(pdfPath, '_blank');
