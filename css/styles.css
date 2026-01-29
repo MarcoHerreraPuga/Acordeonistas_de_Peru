@@ -6,18 +6,15 @@
    ESTILOS BASE Y GENERALES
    ============================================ */
 
-/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Imágenes responsive */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Tap highlight para móviles */
 button, a {
     -webkit-tap-highlight-color: transparent;
 }
@@ -27,19 +24,18 @@ button, a {
    ============================================ */
 
 .logo-img {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
 }
 
 @media (min-width: 768px) {
     .logo-img {
-        width: 85px;
-        height: 85px;
+        width: 96px;
+        height: 96px;
     }
 }
 
-/* Tipografías */
 .menu-font {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
@@ -49,6 +45,124 @@ button, a {
 h1, h2, h3, h4, .section-title {
     font-family: 'Playfair Display', 'Cormorant Garamond', serif;
     font-weight: 600;
+}
+
+/* ============================================
+   MENÚ PRINCIPAL - ESTILOS CORREGIDOS
+   ============================================ */
+
+nav .flex.items-center > * {
+    position: relative;
+}
+
+nav a.menu-font {
+    position: relative;
+    padding: 8px 4px;
+    margin: 0 2px;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+nav a.menu-font:hover {
+    color: #3b82f6;
+}
+
+nav a.menu-font::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+nav a.menu-font:hover::after {
+    width: 100%;
+}
+
+nav .relative.group > a.menu-font {
+    padding-right: 20px;
+}
+
+nav .relative.group > a.menu-font .fa-chevron-down {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+nav .relative.group:hover > a.menu-font .fa-chevron-down {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* ============================================
+   SUBMENÚS DESPLEGABLES - CORREGIDOS
+   ============================================ */
+
+/* Contenedor del submenú */
+.relative.group .absolute {
+    min-width: 220px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 50;
+    margin-top: 8px;
+}
+
+.relative.group:hover .absolute {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Flecha decorativa del submenú */
+.relative.group .absolute::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    transform: rotate(45deg);
+    border-top: 1px solid #e5e7eb;
+    border-left: 1px solid #e5e7eb;
+    z-index: -1;
+}
+
+/* Enlaces dentro del submenú */
+.relative.group .absolute a {
+    display: block;
+    padding: 12px 16px;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+}
+
+.relative.group .absolute a:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border-left-color: #3b82f6;
+}
+
+.relative.group .absolute a i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
 }
 
 /* ============================================
@@ -118,7 +232,7 @@ h1, h2, h3, h4, .section-title {
 }
 
 /* ============================================
-   BOTÓN APOYAR CON CORAZÓN
+   BOTÓN DONA CON CORAZÓN
    ============================================ */
 
 .heartbeat-btn {
@@ -192,20 +306,6 @@ h1, h2, h3, h4, .section-title {
     50% {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 15px 30px rgba(239, 68, 68, 0.6);
-    }
-}
-
-/* Ocultar botón flotante en desktop */
-@media (min-width: 769px) {
-    #floating-donation-btn {
-        display: none !important;
-    }
-}
-
-/* Ocultar botón de header en móvil */
-@media (max-width: 768px) {
-    .heartbeat-btn {
-        display: none !important;
     }
 }
 
@@ -331,263 +431,9 @@ h1, h2, h3, h4, .section-title {
 }
 
 /* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 768px) {
-    .hero-bg {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    .menu-font {
-        font-size: 1rem;
-    }
-    
-    .quienes-somos-content {
-        font-size: 1.125rem;
-        line-height: 1.8;
-    }
-    
-    .quienes-somos-content p {
-        text-align: left;
-    }
-    
-    /* Modal en móvil */
-    #modal-close {
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-    }
-    
-    #modal-prev, #modal-next {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    #modal-prev {
-        left: 10px;
-    }
-    
-    #modal-next {
-        right: 10px;
-    }
-    
-    /* Botón flotante en móvil */
-    #floating-donation-btn {
-        bottom: 80px;
-        left: 20px;
-    }
-}
-
-@media (max-width: 640px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .quienes-somos-content {
-        font-size: 1.05rem;
-        line-height: 1.75;
-    }
-    
-    .socio-card .h-64 {
-        height: 200px;
-    }
-}
-
-/* Para tablets */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .socio-card .h-64.md\:h-80 {
-        height: 250px;
-    }
-}
-
-/* ============================================
-   EFECTOS HERO TITLE Y SUBTITLE
-   ============================================ */
-
-/* Efecto hover para el título principal */
-.hero-title {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
-    cursor: default;
-}
-
-.hero-title:hover {
-    transform: scale(1.05);
-    text-shadow: 
-        0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
-        1px 1px 2px rgba(0, 0, 0, 0.6),
-        2px 2px 4px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(255, 255, 255, 0.3),
-        0 0 80px rgba(255, 255, 255, 0.15);
-}
-
-/* Efecto para letras individuales del subtítulo */
-.hero-subtitle .hero-letter {
-    transition: all 0.2s ease;
-    cursor: default;
-}
-
-.hero-subtitle .hero-letter:hover {
-    transform: translateY(-4px) scale(1.1);
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
-}
-
-/* Efecto hover en todo el subtítulo */
-.hero-subtitle:hover {
-    transform: translateY(-1px);
-    letter-spacing: 0.035em;
-    text-shadow: 
-        0.5px 0.5px 1px rgba(0, 0, 0, 0.6),
-        1px 1px 2px rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(255, 255, 255, 0.15),
-        0 0 40px rgba(255, 255, 255, 0.08);
-}
-
-/* Subrayado elegante para el subtítulo */
-.hero-subtitle {
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.hero-subtitle::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.8),
-        transparent
-    );
-    transition: transform 0.5s ease;
-    border-radius: 1px;
-}
-
-.hero-subtitle:hover::after {
-    transform: translateX(-50%) scaleX(1);
-}
-
-/* Efecto de brillo que se mueve en el título */
-.hero-title {
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-title::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    transition: left 0.7s;
-}
-
-.hero-title:hover::after {
-    left: 100%;
-}
-
-/* Animación de aparición para las letras */
-@keyframes letterPop {
-    0% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.hero-subtitle .hero-letter {
-    animation: letterPop 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-/* Delay escalonado para las letras */
-.hero-subtitle .hero-letter:nth-child(1) { animation-delay: 0.1s; }
-.hero-subtitle .hero-letter:nth-child(2) { animation-delay: 0.15s; }
-.hero-subtitle .hero-letter:nth-child(3) { animation-delay: 0.2s; }
-.hero-subtitle .hero-letter:nth-child(4) { animation-delay: 0.25s; }
-.hero-subtitle .hero-letter:nth-child(5) { animation-delay: 0.3s; }
-.hero-subtitle .hero-letter:nth-child(6) { animation-delay: 0.35s; }
-.hero-subtitle .hero-letter:nth-child(7) { animation-delay: 0.4s; }
-.hero-subtitle .hero-letter:nth-child(8) { animation-delay: 0.45s; }
-.hero-subtitle .hero-letter:nth-child(9) { animation-delay: 0.5s; }
-
-/* Para dispositivos táctiles (sin hover) */
-@media (hover: none) {
-    .hero-title:hover {
-        transform: none;
-    }
-    
-    .hero-subtitle:hover {
-        transform: none;
-        letter-spacing: inherit;
-    }
-    
-    .hero-subtitle::after {
-        display: none;
-    }
-    
-    .hero-title::after {
-        display: none;
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-title:hover {
-        transform: scale(1.03);
-    }
-    
-    .hero-subtitle .hero-letter:hover {
-        transform: translateY(-2px) scale(1.05);
-    }
-    
-    .hero-subtitle::after {
-        width: 60px;
-        bottom: -5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title:hover {
-        transform: scale(1.02);
-    }
-}
-
-/* ============================================
    ESTILOS PARA GALERÍA DE MOMENTOS
    ============================================ */
 
-/* Efectos para las tarjetas de galería */
 .gallery-item {
     perspective: 1000px;
     cursor: pointer;
@@ -603,7 +449,6 @@ h1, h2, h3, h4, .section-title {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Imágenes de la galería */
 .gallery-item img {
     filter: brightness(0.95);
     transition: filter 0.5s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -617,7 +462,6 @@ h1, h2, h3, h4, .section-title {
     filter: brightness(1);
 }
 
-/* Animación de aparición escalonada */
 .gallery-item:nth-child(1) {
     animation: fadeInUp 0.6s ease 0.1s both;
 }
@@ -679,14 +523,6 @@ h1, h2, h3, h4, .section-title {
     }
 }
 
-/* Efecto de zoom al hacer clic en la imagen */
-#gallery-modal-image:active {
-    cursor: zoom-out;
-    transform: scale(1.8);
-    transition: transform 0.3s ease;
-}
-
-/* Botones del modal de galería */
 #gallery-modal-close,
 #gallery-modal-prev,
 #gallery-modal-next,
@@ -708,7 +544,6 @@ h1, h2, h3, h4, .section-title {
     background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Indicador de que la imagen es clickeable */
 .gallery-item::after {
     content: 'Ver en grande';
     position: absolute;
@@ -730,7 +565,6 @@ h1, h2, h3, h4, .section-title {
     opacity: 1;
 }
 
-/* Efecto de borde en hover */
 .gallery-item > div::before {
     content: '';
     position: absolute;
@@ -752,83 +586,10 @@ h1, h2, h3, h4, .section-title {
     opacity: 1;
 }
 
-/* Responsive para la galería */
-@media (max-width: 768px) {
-    .gallery-item img {
-        height: 200px;
-    }
-    
-    #gallery-modal-image {
-        max-height: 60vh;
-    }
-    
-    #gallery-modal-close {
-        top: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-    }
-    
-    #gallery-modal-prev,
-    #gallery-modal-next {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
-    
-    #gallery-modal-prev {
-        left: 0.5rem;
-    }
-    
-    #gallery-modal-next {
-        right: 0.5rem;
-    }
-    
-    /* Ocultar texto en hover en móvil */
-    .gallery-item::after {
-        display: none;
-    }
-}
-
-@media (max-width: 640px) {
-    .gallery-item img {
-        height: 180px;
-    }
-    
-    #gallery-modal-image {
-        max-height: 50vh;
-    }
-}
-
-/* Para tablets */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .gallery-item img {
-        height: 250px;
-    }
-}
-
-/* Efecto de carga para imágenes */
-.gallery-item img {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-.gallery-item img.loaded {
-    background: none;
-    animation: none;
-}
-
 /* ============================================
    EFECTOS MEJORADOS PARA BOTÓN APOYAR
    ============================================ */
 
-/* Efecto de hover más exagerado */
 .heartbeat-btn {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: center;
@@ -839,7 +600,11 @@ h1, h2, h3, h4, .section-title {
     box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4);
 }
 
-/* Efecto de pulsación más fuerte */
+.heartbeat-icon {
+    animation: strong-heartbeat 2s infinite;
+    display: inline-block;
+}
+
 @keyframes strong-heartbeat {
     0% { transform: scale(1); }
     15% { transform: scale(1.25); }
@@ -849,12 +614,6 @@ h1, h2, h3, h4, .section-title {
     100% { transform: scale(1); }
 }
 
-.heartbeat-icon {
-    animation: strong-heartbeat 2s infinite;
-    display: inline-block;
-}
-
-/* Efecto de brillo al hover */
 .heartbeat-btn::before {
     content: '';
     position: absolute;
@@ -875,7 +634,6 @@ h1, h2, h3, h4, .section-title {
     opacity: 1;
 }
 
-/* Efecto de texto flotante */
 .heartbeat-btn span:not(.heartbeat-icon) {
     position: relative;
     z-index: 2;
@@ -918,7 +676,6 @@ h1, h2, h3, h4, .section-title {
     }
 }
 
-/* Efecto de confeti */
 .confetti {
     position: absolute;
     width: 10px;
@@ -991,56 +748,494 @@ h1, h2, h3, h4, .section-title {
 }
 
 /* ============================================
-   JUSTIFICACIÓN DE TEXTO PARA MÓVIL
+   ESTILOS PARA SECCIÓN "QUIÉNES SOMOS"
    ============================================ */
 
-/* Para móvil: texto justificado */
+#contenido-nosotros {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    position: relative;
+    overflow: hidden;
+}
+
+#contenido-nosotros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#contenido-nosotros.active::before {
+    opacity: 1;
+}
+
+.nosotros-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    min-height: 100px;
+    cursor: pointer;
+}
+
+.nosotros-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.nosotros-btn:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+.nosotros-btn.active {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+#contenido-dinamico {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+#contenido-dinamico h3 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+#contenido-dinamico h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, currentColor, transparent);
+}
+
+#contenido-dinamico p {
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4b5563;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+#contenido-dinamico ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#contenido-dinamico li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+#contenido-dinamico li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(100, 100);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   MENÚ MÓVIL
+   ============================================ */
+
+#mobile-simple-menu {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 280px;
+}
+
+#mobile-simple-menu .bg-gray-50 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 1.5rem;
+}
+
+#mobile-simple-menu .bg-gray-50:not(.hidden) {
+    max-height: 400px;
+}
+
+#mobile-simple-menu a {
+    text-decoration: none;
+}
+
+#mobile-simple-menu .hover\:bg-blue-100:hover {
+    background-color: #eff6ff;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 768px) {
-    .quienes-somos-content p {
-        text-align: justify !important;
-        text-justify: inter-word;
-        hyphens: auto;
+    .hero-bg {
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
     
-    /* Asegurar que todos los párrafos en esa sección estén justificados */
-    #nosotros p:not(.no-justify) {
-        text-align: justify !important;
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .menu-font {
+        font-size: 1rem;
+    }
+    
+    .quienes-somos-content {
+        font-size: 1.125rem;
+        line-height: 1.8;
+    }
+    
+    .quienes-somos-content p {
+        text-align: left;
+    }
+    
+    .nosotros-btn {
+        padding: 0.75rem;
+        min-height: 80px;
+    }
+    
+    .nosotros-btn i {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .nosotros-btn span {
+        font-size: 0.75rem;
+    }
+    
+    #contenido-dinamico h3 {
+        font-size: 1.5rem;
+    }
+    
+    #contenido-dinamico p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    #modal-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    #modal-prev, #modal-next {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    #modal-prev {
+        left: 10px;
+    }
+    
+    #modal-next {
+        right: 10px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+    
+    #gallery-modal-image {
+        max-height: 60vh;
+    }
+    
+    #gallery-modal-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #gallery-modal-prev,
+    #gallery-modal-next {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    #gallery-modal-prev {
+        left: 0.5rem;
+    }
+    
+    #gallery-modal-next {
+        right: 0.5rem;
+    }
+    
+    .gallery-item::after {
+        display: none;
+    }
+    
+    #floating-donation-btn {
+        bottom: 80px;
+        left: 20px;
     }
 }
 
-/* Para desktop: mantener alineación izquierda (o la que prefieras) */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .quienes-somos-content {
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+    
+    .socio-card .h-64 {
+        height: 200px;
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    #gallery-modal-image {
+        max-height: 50vh;
+    }
+    
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .nosotros-btn {
+        min-height: 70px;
+        padding: 0.5rem;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .socio-card .h-64.md\:h-80 {
+        height: 250px;
+    }
+    
+    .gallery-item img {
+        height: 250px;
+    }
+}
+
 @media (min-width: 769px) {
     .quienes-somos-content p {
-        text-align: left; /* o puedes usar text-justify si lo prefieres */
+        text-align: left;
     }
 }
 
-/* Mejorar la legibilidad del texto justificado */
+/* ============================================
+   EFECTOS HERO TITLE Y SUBTITLE
+   ============================================ */
+
+.hero-title {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    cursor: default;
+}
+
+.hero-title:hover {
+    transform: scale(1.05);
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(255, 255, 255, 0.3),
+        0 0 80px rgba(255, 255, 255, 0.15);
+}
+
+.hero-subtitle .hero-letter {
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.hero-subtitle .hero-letter:hover {
+    transform: translateY(-4px) scale(1.1);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+.hero-subtitle:hover {
+    transform: translateY(-1px);
+    letter-spacing: 0.035em;
+    text-shadow: 
+        0.5px 0.5px 1px rgba(0, 0, 0, 0.6),
+        1px 1px 2px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+.hero-subtitle {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    transition: transform 0.5s ease;
+    border-radius: 1px;
+}
+
+.hero-subtitle:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.7s;
+}
+
+.hero-title:hover::after {
+    left: 100%;
+}
+
+@keyframes letterPop {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-subtitle .hero-letter {
+    animation: letterPop 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+@media (hover: none) {
+    .hero-title:hover {
+        transform: none;
+    }
+    
+    .hero-subtitle:hover {
+        transform: none;
+        letter-spacing: inherit;
+    }
+    
+    .hero-subtitle::after {
+        display: none;
+    }
+    
+    .hero-title::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title:hover {
+        transform: scale(1.03);
+    }
+    
+    .hero-subtitle .hero-letter:hover {
+        transform: translateY(-2px) scale(1.05);
+    }
+    
+    .hero-subtitle::after {
+        width: 60px;
+        bottom: -5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title:hover {
+        transform: scale(1.02);
+    }
+}
+
 .quienes-somos-content p {
     word-spacing: -0.05em;
     letter-spacing: 0.01em;
     line-height: 1.8;
 }
 
-/* Efectos para los botones del hero */
-.hero-btn {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 180px;
-    text-align: center;
-}
-
-.hero-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.hero-btn:active {
-    transform: translateY(-1px);
-}
-
-/* Efecto de onda al hacer clic */
 .hero-btn::after {
     content: '';
     position: absolute;
@@ -1059,22 +1254,76 @@ h1, h2, h3, h4, .section-title {
     animation: ripple 1s ease-out;
 }
 
-@keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(50, 50);
-        opacity: 0;
+.gallery-item img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.gallery-item img.loaded {
+    background: none;
+    animation: none;
+}
+
+@media (min-width: 769px) {
+    #floating-donation-btn {
+        display: none !important;
     }
 }
 
-/* Para pantallas pequeñas */
-@media (max-width: 640px) {
-    .hero-btn {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+@media (max-width: 768px) {
+    .heartbeat-btn {
+        display: none !important;
     }
+}
+
+@media (max-width: 768px) {
+    .quienes-somos-content p {
+        text-align: justify !important;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+    
+    #nosotros p:not(.no-justify) {
+        text-align: justify !important;
+    }
+}
+
+#politicas, #transparencia, #registros, #etica, #sedes-programas, 
+#impacto, #como-ayudar, #sedes-locales, #privacidad, 
+#terminos-donaciones, #proteccion-menor {
+    scroll-margin-top: 100px;
+}
+
+.hero-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 180px;
+    text-align: center;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn:active {
+    transform: translateY(-1px);
+}
+
+.fas.fa-file-contract:before,
+.fas.fa-file-certificate:before,
+.fas.fa-handshake:before,
+.fas.fa-archive:before,
+.fas.fa-lock:before,
+.fas.fa-child:before {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
 }

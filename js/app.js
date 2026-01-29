@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupGallery();
     setupCatalogoButton();
     checkPdfAvailability();
+    setupQuienesSomos();
     
     // Consola de bienvenida
     console.log('%c🎵 Asociación de Acordeonistas del Perú 🎵', 'color: #3b82f6; font-size: 18px; font-weight: bold;');
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 // MENÚ MÓVIL
+
 function crearMenuMovilSimple() {
     const existingMenu = document.getElementById('mobile-simple-menu');
     if (existingMenu) {
@@ -92,42 +94,163 @@ function crearMenuMovilSimple() {
     
     const menu = document.createElement('div');
     menu.id = 'mobile-simple-menu';
-    menu.className = 'fixed top-20 right-4 z-50 bg-white rounded-lg shadow-2xl border border-gray-200 min-w-48';
+    menu.className = 'fixed top-20 right-4 z-50 bg-white rounded-lg shadow-2xl border border-gray-200 min-w-56';
     
-    const links = [
-        { text: 'Inicio', href: '#inicio', icon: 'fas fa-home' },
-        { text: 'Nosotros', href: '#nosotros', icon: 'fas fa-users' },
-        { text: 'Historia', href: '#historia', icon: 'fas fa-history' },
-        { text: 'Actividades', href: '#actividades', icon: 'fas fa-calendar-alt' },
-        { text: 'Apoyar ❤️', href: '#donaciones', icon: 'fas fa-heart heartbeat-icon' }
+    const menuItems = [
+        { 
+            text: 'Inicio', 
+            href: '#inicio', 
+            icon: 'fas fa-home',
+            submenu: [
+                { text: '¿Quiénes Somos?', href: '#nosotros', icon: 'fas fa-users' },
+                { text: 'Políticas de Protección', href: '#politicas', icon: 'fas fa-shield-alt' },
+                { text: 'Transparencia y Acreditaciones', href: '#transparencia', icon: 'fas fa-file-contract' },
+                { text: 'Registros Institucionales', href: '#registros', icon: 'fas fa-archive' },
+                { text: 'Ética y Cumplimiento', href: '#etica', icon: 'fas fa-handshake' }
+            ]
+        },
+        { 
+            text: 'Nuestro Equipo', 
+            href: '#equipo', 
+            icon: 'fas fa-user-friends',
+            submenu: [
+                { text: 'Nuestro Equipo', href: '#equipo', icon: 'fas fa-user-friends' },
+                { text: 'Socios Adherentes', href: '#socios', icon: 'fas fa-handshake' },
+                { text: 'Comentarios', href: '#comentarios', icon: 'fas fa-comments' },
+                { text: 'Historia del Acordeón', href: '#historia-acordeon', icon: 'fas fa-book' }
+            ]
+        },
+        { 
+            text: 'Sedes y Programas', 
+            href: '#sedes-programas', 
+            icon: 'fas fa-map-marked-alt',
+            submenu: [
+                { text: 'Núcleos de Formación', href: '#sedes-programas', icon: 'fas fa-map-marker-alt' },
+                { text: 'Impacto Social', href: '#impacto', icon: 'fas fa-heart' },
+                { text: '¿Cómo Ayudar?', href: '#como-ayudar', icon: 'fas fa-hands-helping' },
+                { text: 'Nuestra Sede Principal', href: '#sedes-locales', icon: 'fas fa-building' }
+            ]
+        },
+        { 
+            text: 'Actividades', 
+            href: '#actividades', 
+            icon: 'fas fa-calendar-alt',
+            submenu: [
+                { text: 'Actividades y Logros', href: '#actividades', icon: 'fas fa-trophy' },
+                { text: 'Galería de Momentos', href: '#galeria', icon: 'fas fa-images' }
+            ]
+        },
+        { 
+            text: 'Avisos Legales', 
+            href: '#avisos-legales', 
+            icon: 'fas fa-gavel',
+            submenu: [
+                { text: 'Política de Privacidad', href: '#privacidad', icon: 'fas fa-lock' },
+                { text: 'Términos de Donaciones', href: '#terminos-donaciones', icon: 'fas fa-file-contract' },
+                { text: 'Protección al Menor', href: '#proteccion-menor', icon: 'fas fa-child' }
+            ]
+        },
+        { text: 'Dona ❤️', href: '#donaciones', icon: 'fas fa-heart heartbeat-icon' }
     ];
     
-    links.forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.className = 'flex items-center py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 border-b border-gray-100 last:border-b-0';
-        a.innerHTML = `
-            <i class="${link.icon} mr-3 text-gray-400 w-5 text-center"></i>
-            <span class="font-medium">${link.text}</span>
-        `;
-        
-        a.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(link.href);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
+    // Función para crear elementos del menú
+    function createMenuItem(item) {
+        if (item.submenu) {
+            // Crear contenedor para menú desplegable
+            const container = document.createElement('div');
+            container.className = 'border-b border-gray-100';
+            
+            // Botón principal
+            const mainButton = document.createElement('div');
+            mainButton.className = 'flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 transition duration-200 cursor-pointer';
+            mainButton.innerHTML = `
+                <div class="flex items-center">
+                    <i class="${item.icon} mr-3 text-gray-400 w-5 text-center"></i>
+                    <span class="font-medium">${item.text}</span>
+                </div>
+                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+            `;
+            
+            // Submenú (inicialmente oculto)
+            const submenuContainer = document.createElement('div');
+            submenuContainer.className = 'bg-gray-50 pl-8 hidden';
+            submenuContainer.id = `submenu-${item.text.toLowerCase().replace(/\s+/g, '-')}`;
+            
+            item.submenu.forEach(subItem => {
+                const subLink = document.createElement('a');
+                subLink.href = subItem.href;
+                subLink.className = 'flex items-center py-2 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-100 transition duration-200';
+                subLink.innerHTML = `
+                    <i class="${subItem.icon} mr-3 text-gray-400 w-5 text-center"></i>
+                    <span class="text-sm">${subItem.text}</span>
+                `;
+                
+                subLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(subItem.href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    menu.remove();
                 });
-            }
-            menu.remove();
-        });
-        
-        menu.appendChild(a);
-    });
+                
+                submenuContainer.appendChild(subLink);
+            });
+            
+            // Toggle para mostrar/ocultar submenú
+            mainButton.addEventListener('click', function() {
+                const submenu = document.getElementById(`submenu-${item.text.toLowerCase().replace(/\s+/g, '-')}`);
+                const icon = this.querySelector('.fa-chevron-down');
+                
+                if (submenu.classList.contains('hidden')) {
+                    submenu.classList.remove('hidden');
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    submenu.classList.add('hidden');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+            
+            container.appendChild(mainButton);
+            container.appendChild(submenuContainer);
+            menu.appendChild(container);
+        } else {
+            // Enlace normal
+            const a = document.createElement('a');
+            a.href = item.href;
+            a.className = 'flex items-center py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 border-b border-gray-100 last:border-b-0';
+            a.innerHTML = `
+                <i class="${item.icon} mr-3 text-gray-400 w-5 text-center"></i>
+                <span class="font-medium">${item.text}</span>
+            `;
+            
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(item.href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+                menu.remove();
+            });
+            
+            menu.appendChild(a);
+        }
+    }
+    
+    // Crear todos los elementos del menú
+    menuItems.forEach(createMenuItem);
     
     document.body.appendChild(menu);
     
+    // Cerrar al hacer click fuera
     setTimeout(() => {
         const closeMenu = function(e) {
             if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
@@ -138,6 +261,7 @@ function crearMenuMovilSimple() {
         document.addEventListener('click', closeMenu);
     }, 10);
     
+    // Cerrar con ESC
     const closeOnEsc = function(e) {
         if (e.key === 'Escape') {
             menu.remove();
@@ -232,7 +356,7 @@ function setupHeroTitleEffect() {
     
     if (heroTitle) {
         // Restaurar el texto original (por si se había modificado)
-        heroTitle.innerHTML = 'El Sonido que Une Generaciones';
+        heroTitle.innerHTML = '"El Sonido que Une al Perú"';
         
         // Agregar efecto hover al título
         heroTitle.addEventListener('mouseenter', function() {
@@ -247,7 +371,7 @@ function setupHeroTitleEffect() {
     
     if (heroSubtitle) {
         // Restaurar el texto original del subtítulo
-        heroSubtitle.innerHTML = 'Explora la rica historia y el vibrante futuro del acordeón en el Perú con la Asociación de Acordeonistas.';
+        heroSubtitle.innerHTML = 'No Solo enseñamos a tocar el acordeón, construimos proyecto de vida. A través de ka vibración del fuelle, brindamos a miles de niños y jóvenes la oportunidad de soñar con un futuro distinto.';
         
         // Efecto hover para el subtítulo - letras individuales
         const originalText = heroSubtitle.textContent;
@@ -915,45 +1039,198 @@ function showDonationModal() {
 }
 
 // ============================================
-// CONFETTI (efecto adicional)
+// SECCIÓN "QUIÉNES SOMOS" - CONTENIDO DINÁMICO
 // ============================================
 
-function createConfetti() {
-    const confettiContainer = document.createElement('div');
-    confettiContainer.className = 'hearts-rain';
-    document.body.appendChild(confettiContainer);
+function setupQuienesSomos() {
+    console.log('Configurando sección Quiénes Somos...');
     
-    const confettiCount = 100;
-    const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'];
+    const botones = document.querySelectorAll('.nosotros-btn');
+    const contenidoDinamico = document.getElementById('contenido-dinamico');
+    const contenidoInicial = document.getElementById('contenido-inicial');
+    const contenedorNosotros = document.getElementById('contenido-nosotros');
+    const seccionNosotros = document.getElementById('nosotros');
     
-    for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = `${Math.random() * 100}vw`;
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        confetti.style.animationDelay = `${Math.random() * 0.5}s`;
-        confetti.style.width = `${Math.random() * 10 + 5}px`;
-        confetti.style.height = `${Math.random() * 10 + 5}px`;
-        
-        confettiContainer.appendChild(confetti);
-        
-        setTimeout(() => {
-            confetti.remove();
-        }, 5000);
+    if (!botones.length || !contenidoDinamico || !contenidoInicial) {
+        console.log('Elementos de Quiénes Somos no encontrados');
+        return;
     }
     
-    setTimeout(() => {
-        confettiContainer.remove();
-    }, 5000);
+    // Contenido para cada botón
+    const contenidos = {
+        historia: {
+            titulo: 'Nuestra Historia',
+            icono: 'fas fa-landmark',
+            color: 'from-blue-500 to-indigo-600',
+            texto: `
+                <p>Inspirados en la convicción de que el arte es un derecho, nacimos para rescatar la tradición del acordeón y convertirla en un motor de inclusión.</p>
+                <p>Al igual que una sinfonía, nuestra organización armoniza el esfuerzo individual con la potencia del colectivo, creando melodías de transformación social que resuenan en cada comunidad que tocamos.</p>
+                <p>Desde nuestros inicios, hemos sido testigos de cómo el acordeón puede ser más que un instrumento musical: es una herramienta para unir generaciones, preservar nuestra identidad cultural y abrir puertas a un futuro lleno de oportunidades.</p>
+            `
+        },
+        mision: {
+            titulo: 'Misión',
+            icono: 'fas fa-bullseye',
+            color: 'from-green-500 to-emerald-600',
+            texto: `
+                <p><strong>"Nuestra misión es ser el modelo referente de transformación cultural a través del acordeón, brindando a menores en riesgo una formación musical de excelencia que actúe como motor de desarrollo integral, inclusión y esperanza para sus comunidades."</strong></p>
+                <p>Nos comprometemos a:</p>
+                <ul>
+                    <li>Proporcionar educación musical de alta calidad accesible para todos</li>
+                    <li>Fomentar el desarrollo personal y comunitario a través del arte</li>
+                    <li>Crear espacios seguros donde los jóvenes puedan expresarse y crecer</li>
+                    <li>Promover la inclusión social mediante la práctica musical colectiva</li>
+                </ul>
+            `
+        },
+        vision: {
+            titulo: 'Visión',
+            icono: 'fas fa-eye',
+            color: 'from-purple-500 to-violet-600',
+            texto: `
+                <p><strong>"Consolidarnos como la red cultural líder y referente del país, reconocida por eliminar las barreras de exclusión mediante la práctica del acordeón."</strong></p>
+                <p>Visualizamos un futuro donde:</p>
+                <ul>
+                    <li>Cada menor en situación de riesgo alcance sus metas y transforme su realidad</li>
+                    <li>La excelencia musical sea accesible para todos, sin importar su origen</li>
+                    <li>El bienestar integral sea el resultado natural de la práctica artística</li>
+                    <li>Las comunidades desarrollen su máximo potencial a través de la cultura</li>
+                </ul>
+                <p>Soñamos con un Perú donde el acordeón sea símbolo de unidad, progreso y orgullo nacional.</p>
+            `
+        },
+        valores: {
+            titulo: 'Valores',
+            icono: 'fas fa-heart',
+            color: 'from-amber-500 to-orange-600',
+            texto: `
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700 mb-2">🎯 Excelencia y Disciplina</h4>
+                        <p>El dominio del acordeón requiere rigor y constancia. Fomentamos en nuestros estudiantes la cultura del esfuerzo y la superación personal, valores que trascienden la música y se convierten en herramientas para toda la vida.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700 mb-2">🤝 Práctica Colectiva y Solidaridad</h4>
+                        <p>Al igual que los componentes de un acordeón trabajan en armonía, promovemos el aprendizaje grupal para fortalecer el sentido de comunidad, la empatía y el respeto mutuo entre los jóvenes de nuestros barrios.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700 mb-2">💡 Innovación y Tradición</h4>
+                        <p>Respetamos nuestras raíces mientras exploramos nuevas formas de expresión. Combinamos técnicas tradicionales con enfoques contemporáneos para mantener vivo el legado del acordeón.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg text-amber-700 mb-2">🌱 Crecimiento Integral</h4>
+                        <p>Creemos en el desarrollo holístico de nuestros miembros, cultivando no solo habilidades musicales, sino también valores éticos, autoestima y sentido de pertenencia.</p>
+                    </div>
+                </div>
+            `
+        },
+        filosofia: {
+            titulo: 'Nuestra Filosofía',
+            icono: 'fas fa-brain',
+            color: 'from-red-500 to-pink-600',
+            texto: `
+                <p>En la <strong>Asociación de Acordeonistas del Perú</strong> estamos convencidos de que el arte es el motor capaz de rediseñar realidades. Alineamos nuestra labor con:</p>
+                
+                <ul class="my-4">
+                    <li>Los derechos fundamentales del niño</li>
+                    <li>Los Objetivos de Desarrollo Sostenible de la ONU</li>
+                    <li>La reducción de brechas sociales y culturales</li>
+                    <li>La creación de igualdad de oportunidades</li>
+                </ul>
+                
+                <p>Para nosotros, la cultura no es un lujo, sino un derecho democrático. Por ello, transformamos el aprendizaje del acordeón en:</p>
+                
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-red-700 mb-2">🎶 Espacio de Libertad</h5>
+                        <p class="text-sm">Donde niños y jóvenes potencian sus capacidades para ser dueños de su propio destino</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-pink-700 mb-2">📚 Herramienta Educativa</h5>
+                        <p class="text-sm">Que enseña a decidir y a actuar colectivamente para erradicar la violencia</p>
+                    </div>
+                </div>
+                
+                <p class="mt-4">Creemos en una educación que utiliza el poder del fuelle para cohesionar comunidades y proteger nuestro futuro. El acordeón es nuestro instrumento para tejer una sociedad más justa, inclusiva y armoniosa.</p>
+            `
+        }
+    };
+    
+    // Función para mostrar contenido
+    function mostrarContenido(tipo) {
+        const contenido = contenidos[tipo];
+        
+        if (!contenido) return;
+        
+        // Ocultar contenido inicial
+        contenidoInicial.classList.add('hidden');
+        
+        // Mostrar y llenar contenido dinámico
+        contenidoDinamico.classList.remove('hidden');
+        contenidoDinamico.innerHTML = `
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br ${contenido.color} flex items-center justify-center mr-4">
+                    <i class="${contenido.icono} text-white text-xl"></i>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800">${contenido.titulo}</h3>
+            </div>
+            <div class="contenido-texto">
+                ${contenido.texto}
+            </div>
+        `;
+        
+        // Activar contenedor
+        if (contenedorNosotros) {
+            contenedorNosotros.classList.add('active');
+        }
+    }
+    
+    // Configurar eventos para cada botón
+    botones.forEach(boton => {
+        boton.addEventListener('click', function(e) {
+            const tipo = this.getAttribute('data-content');
+            
+            // Remover clase active de todos los botones
+            botones.forEach(b => {
+                b.classList.remove('active');
+                b.style.border = '2px solid transparent';
+            });
+            
+            // Añadir clase active al botón clickeado
+            this.classList.add('active');
+            this.style.border = '2px solid rgba(255, 255, 255, 0.5)';
+            
+            // Mostrar contenido
+            mostrarContenido(tipo);
+            
+            return false;
+        });
+        
+        // Efecto hover
+        boton.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            }
+        });
+        
+        boton.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    });
+    
+    // Configurar botón por defecto (Historia)
+    if (botones.length > 0) {
+        const primerBoton = botones[0];
+        primerBoton.classList.add('active');
+        primerBoton.style.border = '2px solid rgba(255, 255, 255, 0.5)';
+        // Mostrar contenido inicialmente
+        mostrarContenido('historia');
+    }
+    
+    console.log('Sección Quiénes Somos configurada exitosamente');
 }
-
-// ============================================
-// INICIALIZAR TODO
-// ============================================
-
-// En tu función DOMContentLoaded, llama a esta nueva función:
-// Agrega esta línea donde inicializas todas las funciones (al final de DOMContentLoaded)
-
-// Reemplaza la línea que dice: setupHeartbeatButton();
-// por:
