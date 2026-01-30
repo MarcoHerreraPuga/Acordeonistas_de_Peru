@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
     checkPdfAvailability();
     setupQuienesSomos();
     
+    // 8. CORREGIR BOTÓN DONAR - Centrar contenido
+    setupDonationButton();
+    
     // Consola de bienvenida
     console.log('%c🎵 Asociación de Acordeonistas del Perú 🎵', 'color: #3b82f6; font-size: 18px; font-weight: bold;');
     console.log('%c¡Bienvenido al sitio oficial de la Asociación de Acordeonistas!', 'color: #666;');
@@ -82,6 +85,69 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 // FUNCIONES INDEPENDIENTES
 // ============================================
+
+// FUNCIÓN ESPECÍFICA PARA CORREGIR BOTÓN DONAR
+function setupDonationButton() {
+    const donationButton = document.querySelector('.heartbeat-btn');
+    
+    if (!donationButton) return;
+    
+    // Asegurar que el botón tenga las clases correctas
+    donationButton.classList.add('flex', 'flex-col', 'items-center', 'justify-center');
+    
+    // Crear contenedor interno si no existe
+    let container = donationButton.querySelector('.donation-btn-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'donation-btn-container flex flex-col items-center justify-center w-full h-full p-2';
+        
+        // Reorganizar el contenido existente
+        const icon = donationButton.querySelector('.heartbeat-icon');
+        const text = donationButton.querySelector('span');
+        
+        if (icon) {
+            container.appendChild(icon.cloneNode(true));
+            icon.remove();
+        } else {
+            const newIcon = document.createElement('i');
+            newIcon.className = 'fas fa-heart heartbeat-icon text-3xl mb-2';
+            container.appendChild(newIcon);
+        }
+        
+        if (text) {
+            container.appendChild(text.cloneNode(true));
+            text.remove();
+        } else {
+            const newText = document.createElement('span');
+            newText.className = 'relative z-10 text-lg font-bold';
+            newText.textContent = 'DONAR';
+            container.appendChild(newText);
+        }
+        
+        donationButton.innerHTML = '';
+        donationButton.appendChild(container);
+    }
+    
+    // Agregar efecto de click
+    donationButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Efecto visual
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 200);
+        
+        // Navegar a la sección de donaciones
+        const targetElement = document.querySelector('#donaciones');
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
 
 // MENÚ MÓVIL
 
@@ -371,7 +437,7 @@ function setupHeroTitleEffect() {
     
     if (heroSubtitle) {
         // Restaurar el texto original del subtítulo
-        heroSubtitle.innerHTML = 'No Solo enseñamos a tocar el acordeón, construimos proyecto de vida. A través de ka vibración del fuelle, brindamos a miles de niños y jóvenes la oportunidad de soñar con un futuro distinto.';
+        heroSubtitle.innerHTML = 'No Solo enseñamos a tocar el acordeón, construimos proyecto de vida. A través de la vibración del fuelle, brindamos a miles de niños y jóvenes la oportunidad de soñar con un futuro distinto.';
         
         // Efecto hover para el subtítulo - letras individuales
         const originalText = heroSubtitle.textContent;

@@ -232,18 +232,61 @@ nav .relative.group:hover > a.menu-font .fa-chevron-down {
 }
 
 /* ============================================
-   BOTÓN DONA CON CORAZÓN
+   BOTÓN DONAR CORREGIDO - ICONO ARRIBA, TEXTO ABAJO
    ============================================ */
 
 .heartbeat-btn {
     position: relative;
     animation: pulse-shadow 2s infinite;
     cursor: pointer;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 120px !important;
+    height: 120px !important;
+    text-decoration: none !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+.heartbeat-btn .donation-btn-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1rem !important;
+    gap: 0.5rem !important;
+}
+
+.heartbeat-btn i {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 2.5rem !important;
+    line-height: 1 !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+.heartbeat-btn span {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.25rem !important;
+    font-weight: bold !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    text-align: center !important;
 }
 
 .heartbeat-icon {
     animation: heartbeat 1.5s infinite;
-    display: inline-block;
+    display: inline-block !important;
+    margin-bottom: 0.5rem !important;
 }
 
 @keyframes heartbeat {
@@ -1326,4 +1369,82 @@ nav .relative.group:hover > a.menu-font .fa-chevron-down {
     display: inline-block;
     width: 20px;
     text-align: center;
+}
+
+/* ============================================
+   BOTÓN DONAR CORREGIDO - RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .heartbeat-btn {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .heartbeat-btn {
+        width: 120px !important;
+        height: 120px !important;
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+    
+    .heartbeat-btn i {
+        font-size: 2.5rem !important;
+    }
+    
+    .heartbeat-btn span {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Efectos específicos para el botón donar */
+.heartbeat-btn:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.5) !important;
+}
+
+.heartbeat-btn:active {
+    transform: scale(1.05) !important;
+}
+
+/* Asegurar que no haya interferencia con otros estilos */
+.heartbeat-btn,
+.heartbeat-btn * {
+    box-sizing: border-box !important;
+}
+
+/* Quitar cualquier decoración de texto en el botón */
+.heartbeat-btn,
+.heartbeat-btn:hover,
+.heartbeat-btn:focus,
+.heartbeat-btn:active {
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Centrado perfecto del contenido */
+.heartbeat-btn .donation-btn-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Animación del corazón centrada */
+@keyframes centeredHeartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.3); }
+    30% { transform: scale(1.1); }
+    45% { transform: scale(1.4); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat-btn i.heartbeat-icon {
+    animation: centeredHeartbeat 2s infinite;
+    transform-origin: center center;
 }
