@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 4. MENÚ MÓVIL SIMPLE
-    document.getElementById('menu-movil')?.addEventListener('click', function() {
-        crearMenuMovilSimple();
+   /*  document.getElementById('menu-movil')?.addEventListener('click', function() {
+        crearMenuMovilSimple(); */
     });
     
     // 5. EFECTO DE CARGA PARA IMÁGENES
@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 // FUNCIÓN ESPECÍFICA PARA CORREGIR BOTÓN DONAR
+// FUNCIÓN ESPECÍFICA PARA CORREGIR BOTÓN DONAR - MODIFICADA
 function setupDonationButton() {
     const donationButton = document.querySelector('.heartbeat-btn');
     
@@ -128,29 +129,53 @@ function setupDonationButton() {
         donationButton.appendChild(container);
     }
     
+    // Verificar si es un enlace interno o externo
+    const href = donationButton.getAttribute('href');
+    const isInternalLink = href && href.startsWith('#') && href !== '#';
+    
     // Agregar efecto de click
     donationButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Efecto visual
+        // Efecto visual (siempre funciona)
         this.style.transform = 'scale(1.1)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
         }, 200);
         
-        // Navegar a la sección de donaciones
-        const targetElement = document.querySelector('#donaciones');
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        // Solo manejar navegación para enlaces internos
+        if (isInternalLink) {
+            e.preventDefault();
+            
+            // Efectos adicionales para enlaces internos
+            createHeartsRain();
+            showDonationModal();
+            
+            // Navegar después del efecto
+            setTimeout(() => {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 1500);
+        } else {
+            // Para enlaces externos, solo efectos y luego navegación normal
+            createHeartsRain();
+            showDonationModal();
+            
+            // Navegar después del efecto
+            setTimeout(() => {
+                window.location.href = href;
+            }, 1500);
+            
+            e.preventDefault(); // Prevenir navegación inmediata
         }
     });
 }
 
 // MENÚ MÓVIL
-
+/*
 function crearMenuMovilSimple() {
     const existingMenu = document.getElementById('mobile-simple-menu');
     if (existingMenu) {
@@ -197,25 +222,31 @@ function crearMenuMovilSimple() {
                 { text: 'Nuestra Sede Principal', href: '#sedes-locales', icon: 'fas fa-building' }
             ]
         },
-        { 
-            text: 'Actividades', 
-            href: '#actividades', 
-            icon: 'fas fa-calendar-alt',
-            submenu: [
-                { text: 'Actividades y Logros', href: '#actividades', icon: 'fas fa-trophy' },
-                { text: 'Galería de Momentos', href: '#galeria', icon: 'fas fa-images' }
-            ]
-        },
-        { 
-            text: 'Avisos Legales', 
-            href: '#avisos-legales', 
-            icon: 'fas fa-gavel',
-            submenu: [
-                { text: 'Política de Privacidad', href: '#privacidad', icon: 'fas fa-lock' },
-                { text: 'Términos de Donaciones', href: '#terminos-donaciones', icon: 'fas fa-file-contract' },
-                { text: 'Protección al Menor', href: '#proteccion-menor', icon: 'fas fa-child' }
-            ]
-        },
+    // En la función crearMenuMovilSimple() en app.js
+// Actualizar las secciones de actividades y avisos legales
+
+// Dentro de menuItems, cambiar:
+            { 
+                text: 'Actividades', 
+                href: 'actividades.html',  // Cambiado de '#actividades' a 'actividades.html'
+                icon: 'fas fa-calendar-alt',
+                submenu: [
+                    { text: 'Actividades y Logros', href: 'actividades.html#actividades', icon: 'fas fa-trophy' },
+                    { text: 'Galería de Momentos', href: 'actividades.html#galeria', icon: 'fas fa-images' },
+                    { text: 'Catálogo Institucional', href: 'actividades.html#catalogo', icon: 'fas fa-file-pdf' }
+                ]
+            },
+            { 
+                text: 'Avisos Legales', 
+                href: 'avisos-legales.html',  // Cambiado de '#avisos-legales' a 'avisos-legales.html'
+                icon: 'fas fa-gavel',
+                submenu: [
+                    { text: 'Política de Privacidad', href: 'avisos-legales.html#privacidad', icon: 'fas fa-lock' },
+                    { text: 'Términos de Donaciones', href: 'avisos-legales.html#terminos-donaciones', icon: 'fas fa-file-contract' },
+                    { text: 'Protección al Menor', href: 'avisos-legales.html#proteccion-menor', icon: 'fas fa-child' },
+                    { text: 'Documentos para Descargar', href: 'avisos-legales.html#descargas', icon: 'fas fa-download' }
+                ]
+            },    
         { text: 'Dona ❤️', href: '#donaciones', icon: 'fas fa-heart heartbeat-icon' }
     ];
     
@@ -336,7 +367,7 @@ function crearMenuMovilSimple() {
     };
     document.addEventListener('keydown', closeOnEsc);
 }
-
+*/
 // BOTÓN FLOTANTE
 function setupFloatingDonationButton() {
     const floatingBtn = document.getElementById('floating-donation-btn');
@@ -939,12 +970,20 @@ function setupGallery() {
 // EFECTOS MEJORADOS PARA BOTÓN APOYAR
 // ============================================
 
+// ============================================
+// EFECTOS MEJORADOS PARA BOTÓN APOYAR - MODIFICADA
+// ============================================
+
 function setupEnhancedDonationButton() {
     const donationButton = document.querySelector('.heartbeat-btn');
     const floatingDonationButton = document.querySelector('.floating-heartbeat-btn');
     
     if (donationButton) {
-        // Efecto hover mejorado
+        // Verificar si el botón va a donar.html o a #donaciones
+        const href = donationButton.getAttribute('href');
+        const isInternalLink = href && href.startsWith('#') && href !== '#';
+        
+        // Efecto hover mejorado (siempre funciona)
         donationButton.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.2) translateY(-5px)';
             this.style.boxShadow = '0 25px 50px rgba(239, 68, 68, 0.5)';
@@ -955,26 +994,45 @@ function setupEnhancedDonationButton() {
             this.style.boxShadow = '';
         });
         
-        // Efecto click - lluvia de corazones
+        // Efecto click - separar efectos visuales de navegación
         donationButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            createHeartsRain();
-            showDonationModal();
-            
-            // Navegar a la sección de donaciones después de un breve delay
-            setTimeout(() => {
-                const targetElement = document.querySelector('#donaciones');
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 1500);
+            // Solo crear efectos si es un enlace interno (#donaciones)
+            if (isInternalLink) {
+                e.preventDefault();
+                createHeartsRain();
+                showDonationModal();
+                
+                // Navegar a la sección de donaciones después de un breve delay
+                setTimeout(() => {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 1500);
+            } else {
+                // Para enlaces externos (donar.html), solo efectos visuales
+                createHeartsRain();
+                showDonationModal();
+                
+                // La navegación normal ocurrirá después de los efectos
+                setTimeout(() => {
+                    // Permitir que el navegador siga el enlace normalmente
+                    window.location.href = href;
+                }, 1500);
+                
+                e.preventDefault(); // Prevenir navegación inmediata
+            }
         });
     }
     
     if (floatingDonationButton) {
+        // Verificar si el botón va a donar.html o a #donaciones
+        const floatingHref = floatingDonationButton.getAttribute('href');
+        const isFloatingInternal = floatingHref && floatingHref.startsWith('#') && floatingHref !== '#';
+        
         // Efectos para el botón flotante
         floatingDonationButton.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.3)';
@@ -987,19 +1045,33 @@ function setupEnhancedDonationButton() {
         });
         
         floatingDonationButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            createHeartsRain();
-            showDonationModal();
-            
-            setTimeout(() => {
-                const targetElement = document.querySelector('#donaciones');
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 1500);
+            // Solo crear efectos si es un enlace interno (#donaciones)
+            if (isFloatingInternal) {
+                e.preventDefault();
+                createHeartsRain();
+                showDonationModal();
+                
+                setTimeout(() => {
+                    const targetElement = document.querySelector(floatingHref);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 1500);
+            } else {
+                // Para enlaces externos (donar.html), solo efectos visuales
+                createHeartsRain();
+                showDonationModal();
+                
+                // La navegación normal ocurrirá después de los efectos
+                setTimeout(() => {
+                    window.location.href = floatingHref;
+                }, 1500);
+                
+                e.preventDefault(); // Prevenir navegación inmediata
+            }
         });
     }
 }

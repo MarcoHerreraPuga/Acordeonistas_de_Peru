@@ -1,0 +1,179 @@
+<!-- acordeonistas/nav.html -->
+<nav class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+    <!-- Logo con imagen y texto en dos filas -->
+    <a href="index.html" class="flex items-center no-underline hover:no-underline group">
+        <!-- Contenedor del logo con imagen -->
+        <div class="w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center mr-3 md:mr-5 overflow-hidden bg-white shadow-sm border border-gray-100 p-1 group-hover:shadow-md transition duration-300">
+            <img src="assets/logo_1.png" 
+                alt="Logo Asociación de Acordeonistas" 
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.onerror=null; this.src='https://via.placeholder.com/70x70?text=Logo'; this.alt='Logo no disponible';">
+        </div>
+        
+        <!-- Texto en dos filas -->
+        <div class="flex flex-col">
+            <span class="logo-text text-xl md:text-2xl text-gray-500 leading-tight group-hover:text-gray-700 transition duration-300">
+                Asociación de
+            </span>
+            <span class="logo-text text-xl md:text-2xl text-gray-500 leading-tight group-hover:text-gray-700 transition duration-300">
+                Acordeonistas Del Perú
+            </span>
+        </div>
+    </a>
+    
+    <!-- Navegación Desktop COMPLETA -->
+    <div class="flex space-x-4 md:space-x-8 lg:space-x-10 items-center">
+        <!-- Inicio -->
+        <div class="relative group hidden sm:block">
+            <a href="index.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
+                Inicio
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="py-2">
+                    <a href="index.html#nosotros" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-users text-blue-500 mr-3 w-5 text-center"></i>
+                        ¿Quiénes Somos?
+                    </a>
+                    <a href="index.html#politicas" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-shield-alt text-green-500 mr-3 w-5 text-center"></i>
+                        Políticas de Protección
+                    </a>
+                    <a href="index.html#transparencia" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-file-contract text-purple-500 mr-3 w-5 text-center"></i>
+                        Transparencia y Acreditaciones
+                    </a>
+                    <a href="index.html#registros" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-archive text-indigo-500 mr-3 w-5 text-center"></i>
+                        Registros Institucionales
+                    </a>
+                    <a href="index.html#etica" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-handshake text-emerald-500 mr-3 w-5 text-center"></i>
+                        Ética y Cumplimiento
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nuestro Equipo -->
+        <div class="relative group hidden sm:block">
+            <a href="nuestro_equipo.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
+                Nuestro Equipo
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="py-2">
+                    <a href="nuestro_equipo.html#equipo-directivo" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-user-friends text-purple-500 mr-3 w-5 text-center"></i>
+                        Equipo Directivo
+                    </a>
+                    <a href="nuestro_equipo.html#socios-adherentes" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-handshake text-blue-500 mr-3 w-5 text-center"></i>
+                        Socios Adherentes
+                    </a>
+                    <a href="nuestro_equipo.html#comentarios" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-comments text-green-500 mr-3 w-5 text-center"></i>
+                        Comentarios
+                    </a>
+                    <a href="nuestro_equipo.html#historia-acordeon" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-book text-amber-500 mr-3 w-5 text-center"></i>
+                        Historia del Acordeón
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sedes y Programas -->
+        <div class="relative group hidden sm:block">
+            <a href="sedes-programas.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
+                Sedes y Programas
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="py-2">
+                    <a href="sedes-programas.html#nucleos-formacion" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-map-marker-alt text-red-500 mr-3 w-5 text-center"></i>
+                        Núcleos de Formación
+                    </a>
+                    <a href="sedes-programas.html#impacto-social" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-heart text-pink-500 mr-3 w-5 text-center"></i>
+                        Impacto Social
+                    </a>
+                    <a href="sedes-programas.html#como-ayudar" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-hands-helping text-green-500 mr-3 w-5 text-center"></i>
+                        ¿Cómo Ayudar?
+                    </a>
+                    <a href="sedes-programas.html#sede-principal" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-building text-gray-500 mr-3 w-5 text-center"></i>
+                        Sede Principal
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Actividades -->
+        <div class="relative group hidden sm:block">
+            <a href="actividades.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
+                Actividades
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="py-2">
+                    <a href="actividades.html#actividades" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-trophy text-blue-500 mr-3 w-5 text-center"></i>
+                        Actividades y Logros
+                    </a>
+                    <a href="actividades.html#galeria" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-images text-purple-500 mr-3 w-5 text-center"></i>
+                        Galería de Momentos
+                    </a>
+                    <a href="actividades.html#catalogo" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-file-pdf text-red-500 mr-3 w-5 text-center"></i>
+                        Catálogo Institucional
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Avisos Legales -->
+        <div class="relative group hidden sm:block">
+            <a href="avisos-legales.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
+                Avisos Legales
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                <div class="py-2">
+                    <a href="avisos-legales.html#privacidad" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-lock text-indigo-500 mr-3 w-5 text-center"></i>
+                        Política de Privacidad
+                    </a>
+                    <a href="avisos-legales.html#terminos-donaciones" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-file-contract text-green-500 mr-3 w-5 text-center"></i>
+                        Términos de Donaciones
+                    </a>
+                    <a href="avisos-legales.html#proteccion-menor" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-child text-amber-500 mr-3 w-5 text-center"></i>
+                        Protección al Menor
+                    </a>
+                    <a href="avisos-legales.html#descargas" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
+                        <i class="fas fa-download text-blue-500 mr-3 w-5 text-center"></i>
+                        Documentos para Descargar
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón "Donar" -->
+        <a href="donar.html" class="menu-font bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-125 relative overflow-hidden group heartbeat-btn text-base md:text-lg hidden md:flex flex-col items-center justify-center w-32 h-32 no-underline">
+            <div class="flex flex-col items-center justify-center w-full h-full p-4">
+                <i class="fas fa-heart heartbeat-icon text-3xl mb-2"></i>
+                <span class="relative z-10 text-lg font-bold">DONAR</span>
+            </div>
+        </a>
+        
+        <!-- Menú móvil -->
+        <button id="menu-movil" class="sm:hidden text-xl text-gray-700 hover:text-blue-600 transition duration-200">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+    </div>
+</nav>

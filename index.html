@@ -94,180 +94,13 @@
 <body class="bg-gray-50 text-gray-800">
     
     <!-- Header / Navegación COMPLETADA -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-            <!-- Logo con imagen y texto en dos filas -->
-            <a href="#inicio" class="flex items-center no-underline hover:no-underline group">
-                <!-- Contenedor del logo con imagen -->
-                <div class="w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center mr-3 md:mr-5 overflow-hidden bg-white shadow-sm border border-gray-100 p-1 group-hover:shadow-md transition duration-300">
-                    <img src="assets/logo_1.png" 
-                        alt="Logo Asociación de Acordeonistas" 
-                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        onerror="this.onerror=null; this.src='https://via.placeholder.com/70x70?text=Logo'; this.alt='Logo no disponible';">
-                </div>
-                
-                <!-- Texto en dos filas -->
-                <div class="flex flex-col">
-                    <span class="logo-text text-xl md:text-2xl text-gray-500 leading-tight group-hover:text-gray-700 transition duration-300">
-                        Asociación de
-                    </span>
-                    <span class="logo-text text-xl md:text-2xl text-gray-500 leading-tight group-hover:text-gray-700 transition duration-300">
-                        Acordeonistas Del Perú
-                    </span>
-                </div>
-            </a>
-            
-            <!-- Navegación Desktop con submenús COMPLETOS -->
-            <div class="flex space-x-4 md:space-x-8 lg:space-x-10 items-center">
-                <!-- Inicio -->
-                <div class="relative group hidden sm:block">
-                    <a href="#inicio" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                        Inicio
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
-                        <div class="py-2">
-                            <a href="#nosotros" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-users text-blue-500 mr-3 w-5 text-center"></i>
-                                ¿Quiénes Somos?
-                            </a>
-                            <a href="#politicas" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-shield-alt text-green-500 mr-3 w-5 text-center"></i>
-                                Políticas de Protección
-                            </a>
-                            <a href="#transparencia" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-file-contract text-purple-500 mr-3 w-5 text-center"></i>
-                                Transparencia y Acreditaciones
-                            </a>
-                            <a href="#registros" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-archive text-indigo-500 mr-3 w-5 text-center"></i>
-                                Registros Institucionales
-                            </a>
-                            <a href="#etica" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-handshake text-emerald-500 mr-3 w-5 text-center"></i>
-                                Ética y Cumplimiento
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Nuestro Equipo -->
-                <div class="relative group hidden sm:block">
-                    <a href="#equipo" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                        Nuestro Equipo
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
-                        <div class="py-2">
-                            <a href="#equipo" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-user-friends text-purple-500 mr-3 w-5 text-center"></i>
-                                Nuestro Equipo
-                            </a>
-                            <a href="#socios" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-handshake text-blue-500 mr-3 w-5 text-center"></i>
-                                Socios Adherentes
-                            </a>
-                            <a href="#comentarios" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-comments text-green-500 mr-3 w-5 text-center"></i>
-                                Comentarios
-                            </a>
-                            <a href="#historia-acordeon" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-book text-amber-500 mr-3 w-5 text-center"></i>
-                                Historia del Acordeón
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sedes y Programas -->
-                <div class="relative group hidden sm:block">
-                    <a href="#sedes-programas" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                        Sedes y Programas
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
-                        <div class="py-2">
-                            <a href="#sedes-programas" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-map-marker-alt text-red-500 mr-3 w-5 text-center"></i>
-                                Núcleos de Formación
-                            </a>
-                            <a href="#impacto" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-heart text-pink-500 mr-3 w-5 text-center"></i>
-                                Impacto Social
-                            </a>
-                            <a href="#como-ayudar" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-hands-helping text-green-500 mr-3 w-5 text-center"></i>
-                                ¿Cómo Ayudar?
-                            </a>
-                            <a href="#sedes-locales" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-building text-gray-500 mr-3 w-5 text-center"></i>
-                                Nuestra Sede Principal
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Actividades -->
-                <div class="relative group hidden sm:block">
-                    <a href="#actividades" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                        Actividades
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
-                        <div class="py-2">
-                            <a href="#actividades" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-trophy text-blue-500 mr-3 w-5 text-center"></i>
-                                Actividades y Logros
-                            </a>
-                            <a href="#galeria" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-images text-purple-500 mr-3 w-5 text-center"></i>
-                                Galería de Momentos
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Avisos Legales -->
-                <div class="relative group hidden sm:block">
-                    <a href="#avisos-legales" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                        Avisos Legales
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
-                        <div class="py-2">
-                            <a href="#privacidad" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-lock text-indigo-500 mr-3 w-5 text-center"></i>
-                                Política de Privacidad
-                            </a>
-                            <a href="#terminos-donaciones" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-file-contract text-green-500 mr-3 w-5 text-center"></i>
-                                Términos de Donaciones
-                            </a>
-                            <a href="#proteccion-menor" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                                <i class="fas fa-child text-amber-500 mr-3 w-5 text-center"></i>
-                                Protección al Menor
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Botón "Donar" -->
-                <a href="#donaciones" 
-                            class="menu-font bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-125 relative overflow-hidden group heartbeat-btn text-base md:text-lg hidden md:flex flex-col items-center justify-center w-32 h-32 no-underline">
-                                <div class="flex flex-col items-center justify-center w-full h-full p-4">
-                                    <i class="fas fa-heart heartbeat-icon text-3xl mb-2"></i>
-                                    <span class="relative z-10 text-lg font-bold">DONAR</span>
-                                </div>
-                            </a>
-                
-                <!-- Menú móvil -->
-                <button id="menu-movil" class="sm:hidden text-xl text-gray-700 hover:text-blue-600 transition duration-200">
-                    <i class="fas fa-ellipsis-v"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+   <!-- Header / Navegación UNIVERSAL -->
+        <header class="sticky top-0 z-50 bg-white shadow-md">
+            <!-- La navegación se cargará dinámicamente -->
+        </header>
 
+        <!-- Incluir el script del cargador de navegación -->
+        <script src="js/nav-loader.js"></script>
     <!-- Sección Hero / Principal -->
     <section id="inicio" class="hero-bg text-white py-20 md:py-40 relative">
         <div class="absolute inset-0 bg-black/10 z-0"></div>
@@ -842,387 +675,18 @@
 </section>
 
 <!-- Sección: Nuestro Equipo -->
-<section id="equipo" class="py-16 bg-gradient-to-b from-white to-purple-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-3">
-                EQUIPO DIRECTIVO
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Nuestro Equipo
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
-        </div>
-
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
-                        JM
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">José Alfonso Maslucán</h3>
-                    <p class="text-purple-600 font-semibold mb-4">Presidente</p>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Acordeonista profesional con más de 30 años de experiencia. Representante del Perú en la Copa Mundial de Acordeonistas en Italia.
-                    </p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-purple-600">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-purple-600">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
-                        KM
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Katty Misari</h3>
-                    <p class="text-blue-600 font-semibold mb-4">Directora de Educación</p>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Pedagoga musical especializada en acordeón. Coordina todos los programas educativos de la asociación.
-                    </p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-blue-600">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-600">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
-                        CG
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Crisóstomo Gomez</h3>
-                    <p class="text-green-600 font-semibold mb-4">Miembro Fundador</p>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Miembro fundador con más de 40 años de trayectoria. Conservador de la historia y tradición del acordeón en el Perú.
-                    </p>
-                    <div class="flex justify-center space-x-3">
-                        <a href="#" class="text-gray-400 hover:text-green-600">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-green-600">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: Sedes y Programas -->
-<section id="sedes-programas" class="py-16 bg-gradient-to-b from-white to-red-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-3">
-                NUESTRA PRESENCIA
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Sedes y Programas
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto"></div>
-        </div>
 
-        <div class="max-w-6xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8">
-                <div class="bg-gradient-to-r from-red-600 to-orange-600 p-6 text-white">
-                    <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt text-3xl mr-4"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">¿Qué es un Núcleo de Formación?</h3>
-                            <p class="text-red-100">Nuestro centro neurálgico de cambio</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="p-8">
-                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                        Es nuestro espacio de formación integral donde la educación, el arte y el compromiso social convergen. En el Núcleo, el aprendizaje del acordeón es el motor para transformar la vida de nuestros beneficiarios desde los 5 años, impactando positivamente en su desarrollo académico, su crecimiento personal y su entorno familiar.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-3 gap-6 mt-8">
-                        <div class="text-center p-6 bg-red-50 rounded-xl">
-                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-child text-red-600 text-2xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800 mb-2">Desde los 5 años</h4>
-                            <p class="text-gray-600 text-sm">Formación temprana en valores y música</p>
-                        </div>
-                        
-                        <div class="text-center p-6 bg-orange-50 rounded-xl">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-graduation-cap text-orange-600 text-2xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800 mb-2">Desarrollo Integral</h4>
-                            <p class="text-gray-600 text-sm">Académico, personal y familiar</p>
-                        </div>
-                        
-                        <div class="text-center p-6 bg-amber-50 rounded-xl">
-                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-music text-amber-600 text-2xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800 mb-2">Arte Transformador</h4>
-                            <p class="text-gray-600 text-sm">El acordeón como motor de cambio social</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8">
-                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
-                    <div class="flex items-center">
-                        <i class="fas fa-expand-arrows-alt text-3xl mr-4"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">¿Qué es un Módulo Musical?</h3>
-                            <p class="text-blue-100">Expansión estratégica de nuestra misión</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="p-8">
-                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                        Representa la expansión de nuestra misión. Es un brazo de formación estratégica diseñado para llegar a las zonas más alejadas, asegurando que la distancia no sea una barrera para que más niños y jóvenes accedan a los beneficios de nuestro programa.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-6 bg-blue-50 rounded-xl">
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-mountain text-blue-600 mr-3"></i>
-                                Llegando a zonas alejadas
-                            </h4>
-                            <p class="text-gray-700">
-                                Nuestros módulos móviles llevan la música a comunidades donde el acceso a la educación artística es limitado.
-                            </p>
-                        </div>
-                        
-                        <div class="p-6 bg-indigo-50 rounded-xl">
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-users text-indigo-600 mr-3"></i>
-                                Inclusión Total
-                            </h4>
-                            <p class="text-gray-700">
-                                Garantizamos que ningún niño se quede sin la oportunidad de aprender música por razones geográficas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: Impacto Social -->
-<section id="impacto" class="py-16 bg-gradient-to-b from-white to-pink-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-pink-100 text-pink-600 rounded-full text-sm font-semibold mb-3">
-                TRANSFORMACIÓN SOCIAL
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Impacto Social
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto"></div>
-        </div>
 
-        <div class="max-w-5xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-8">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                        <i class="fas fa-wind text-pink-600 text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800">El Poder del Fuelle</h3>
-                        <p class="text-pink-600">Transformando vidas a través de la música</p>
-                    </div>
-                </div>
-                
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    El acordeón requiere coordinación, respiración y fuerza. Estos mismos valores los trasladamos a la vida diaria de nuestros estudiantes, enseñándoles disciplina, perseverancia y trabajo en equipo.
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-4 bg-pink-50 rounded-lg">
-                        <h4 class="font-bold text-pink-700 mb-2">Coordinación</h4>
-                        <p class="text-gray-700 text-sm">Desarrollo de habilidades motoras finas</p>
-                    </div>
-                    <div class="p-4 bg-rose-50 rounded-lg">
-                        <h4 class="font-bold text-rose-700 mb-2">Respiración</h4>
-                        <p class="text-gray-700 text-sm">Control emocional y concentración</p>
-                    </div>
-                    <div class="p-4 bg-fuchsia-50 rounded-lg">
-                        <h4 class="font-bold text-fuchsia-700 mb-2">Fuerza</h4>
-                        <p class="text-gray-700 text-sm">Perseverancia y determinación</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl shadow-lg p-8 text-white">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/4 mb-6 md:mb-0">
-                        <div class="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto">
-                            <i class="fas fa-quote-left text-4xl text-white/50"></i>
-                        </div>
-                    </div>
-                    <div class="md:w-3/4 md:pl-8">
-                        <h3 class="text-2xl font-bold mb-4">Testimonio Destacado</h3>
-                        <blockquote class="text-xl italic mb-6">
-                            "Antes de la organización, el silencio era mi único compañero. Hoy, mi acordeón habla por mí y me ha enseñado que el esfuerzo tiene recompensa."
-                        </blockquote>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-white/30 rounded-full mr-3"></div>
-                            <div>
-                                <p class="font-bold">Estudiante de 14 años</p>
-                                <p class="text-pink-200 text-sm">Beneficiario desde 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: ¿Cómo Ayudar? -->
-<section id="como-ayudar" class="py-16 bg-gradient-to-b from-white to-green-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-3">
-                APOYO Y COLABORACIÓN
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Tu apoyo es el aire que hace sonar nuestra música
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
-        </div>
 
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-6 text-white">
-                        <div class="text-center">
-                            <i class="fas fa-hand-holding-heart text-4xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">Donación Única</h3>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="text-gray-700 mb-6">
-                            Cada sol cuenta para la compra de repuestos, mantenimiento de instrumentos y materiales educativos.
-                        </p>
-                        <div class="text-3xl font-bold text-green-600 mb-4">Desde S/. 50</div>
-                        <a href="#donaciones" 
-                           class="inline-block bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300">
-                            Donar Ahora
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="bg-gradient-to-r from-blue-500 to-indigo-500 p-6 text-white">
-                        <div class="text-center">
-                            <i class="fas fa-user-graduate text-4xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">Apadrina un Acordeonista</h3>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="text-gray-700 mb-6">
-                            Asegura la educación musical completa de un niño por todo un año escolar.
-                        </p>
-                        <div class="text-3xl font-bold text-blue-600 mb-4">S/. 1,200/año</div>
-                        <a href="#donaciones" 
-                           class="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300">
-                            Apadrinar
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="bg-gradient-to-r from-purple-500 to-violet-500 p-6 text-white">
-                        <div class="text-center">
-                            <i class="fas fa-handshake text-4xl mb-4"></i>
-                            <h3 class="text-2xl font-bold">Alianzas Corporativas</h3>
-                        </div>
-                    </div>
-                    <div class="p-6 text-center">
-                        <p class="text-gray-700 mb-6">
-                            Invitamos a las empresas a ser coprotagonistas de esta gran obra social.
-                        </p>
-                        <div class="text-3xl font-bold text-purple-600 mb-4">Programas a medida</div>
-                        <a href="#contacto" 
-                           class="inline-block bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-600 hover:to-violet-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300">
-                            Contactar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: Sede Principal -->
-<section id="sedes-locales" class="py-16 bg-gradient-to-b from-white to-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold mb-3">
-                NUESTRA SEDE
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Sede Principal: La Molina
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-gray-500 to-gray-700 mx-auto"></div>
-        </div>
 
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div class="p-8">
-                    <div class="flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/3 mb-6 md:mb-0">
-                            <div class="w-48 h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center mx-auto">
-                                <i class="fas fa-building text-gray-500 text-6xl"></i>
-                            </div>
-                        </div>
-                        <div class="md:w-2/3 md:pl-8">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Centro de Operaciones</h3>
-                            <p class="text-gray-700 mb-6">
-                                Nuestra sede principal en La Molina es el corazón de todas nuestras operaciones. Desde aquí coordinamos los programas educativos, gestionamos las donaciones y planificamos la expansión de nuestra red de núcleos de formación.
-                            </p>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-gray-500 mr-3"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Dirección</p>
-                                        <p class="text-gray-600">Av. Principal 123, La Molina, Lima</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-clock text-gray-500 mr-3"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Horario de Atención</p>
-                                        <p class="text-gray-600">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-gray-500 mr-3"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Teléfono</p>
-                                        <p class="text-gray-600">(01) 123-4567</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: Avisos Legales -->
 <section id="avisos-legales" class="py-16 bg-gradient-to-b from-white to-blue-50">
@@ -1506,234 +970,6 @@
 </section>
 
 <!-- Sección: Socios Adherentes -->
-<section id="socios" class="py-16 bg-gradient-to-b from-white to-blue-50">
-           <div class="text-center mb-12">
-            <span class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 
-                        text-white rounded-full text-sm font-semibold mb-4 shadow-lg">
-                <i class="fas fa-handshake mr-2"></i>ALIANZAS ESTRATÉGICAS
-            </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                Socios Adherentes
-            </h2>
-            <div class="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
-                Personas que apoyan nuestra misión cultural y contribuyen 
-                al desarrollo del arte del acordeón en el Perú.
-            </p>
-            
-            <!-- Nueva sección "Sé Parte de Nosotros" -->
-            <div class="max-w-2xl mx-auto mt-12 p-8 bg-gradient-to-r from-blue-50 to-indigo-50 
-                        rounded-2xl border border-blue-100 shadow-lg">
-                <div class="flex flex-col items-center">
-                    <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 
-                                rounded-full flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-users text-3xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                        ¡Sé Parte de Nosotros!
-                    </h3>
-                    
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        Únete a nuestra comunidad de socios adherentes y contribuye al crecimiento 
-                        cultural del Perú. Tu apoyo hace posible que más niños y jóvenes accedan 
-                        a la educación musical.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <a href="#registro" 
-                           class="group relative inline-flex items-center justify-center 
-                                  bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 
-                                  text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl 
-                                  transition-all duration-500 transform hover:scale-105 hover:shadow-2xl
-                                  min-w-[200px]">
-                            <i class="fas fa-user-plus text-xl mr-3 group-hover:rotate-12 transition-transform duration-300"></i>
-                            <span>Regístrate Ahora</span>
-                            <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-400 to-indigo-400 
-                                        opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-500"></div>
-                        </a>
-                        
-                        <a href="#contacto" 
-                           class="group inline-flex items-center justify-center 
-                                  bg-white text-blue-600 hover:text-blue-800 
-                                  border-2 border-blue-200 hover:border-blue-300
-                                  px-8 py-4 rounded-full font-bold text-lg shadow-lg 
-                                  transition-all duration-300 hover:shadow-xl hover:scale-105
-                                  min-w-[200px]">
-                            <i class="fas fa-info-circle text-xl mr-3 group-hover:text-blue-600"></i>
-                            <span>Más Información</span>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-blue-100 w-full">
-                        <p class="text-sm text-gray-600 flex items-center justify-center">
-                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                            Beneficios exclusivos para nuestros socios adherentes
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto mb-12">
-            <div class="socio-card group" data-index="0">
-                <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white 
-                            transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                    <div class="relative h-64 md:h-80 overflow-hidden">
-                        <img src="assets/socio_1.jpg" 
-                             alt="Socio Adherente 1" 
-                             class="w-full h-full object-cover transition-transform duration-700 
-                                    group-hover:scale-110 group-hover:rotate-1"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                      this.alt='Imagen socio 1';"> 
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent 
-                                    opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 
-                                    rounded-full text-xs font-bold shadow-lg">
-                            Socios Oficiales
-                        </div>
-                        
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                    rounded-full flex items-center justify-center opacity-0 
-                                    group-hover:opacity-100 transition-opacity duration-300 
-                                    hover:bg-white cursor-pointer">
-                            <i class="fas fa-expand-alt text-blue-600"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
-                                <i class="fas fa-graduation-cap mr-1"></i>Educación
-                            </span>
-                            <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded-full">
-                                <i class="fas fa-music mr-1"></i>Cultura
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 
-                                transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                </div>
-            </div>
-
-            <div class="socio-card group" data-index="1">
-                <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white 
-                            transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                    <div class="relative h-64 md:h-80 overflow-hidden">
-                        <img src="assets/socio_2.jpg" 
-                             alt="Socio Adherente 2" 
-                             class="w-full h-full object-cover transition-transform duration-700 
-                                    group-hover:scale-110 group-hover:-rotate-1"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                      this.alt='Imagen socio 2';">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent 
-                                    opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 
-                                    rounded-full text-xs font-bold shadow-lg">
-                            Socios Oficiales
-                        </div>
-                        
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                    rounded-full flex items-center justify-center opacity-0 
-                                    group-hover:opacity-100 transition-opacity duration-300 
-                                    hover:bg-white cursor-pointer">
-                            <i class="fas fa-expand-alt text-blue-600"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">
-                                <i class="fas fa-book mr-1"></i>Investigación
-                            </span>
-                            <span class="px-2 py-1 bg-amber-100 text-amber-600 text-xs rounded-full">
-                                <i class="fas fa-archive mr-1"></i>Documentación
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-blue-400 
-                                transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                </div>
-            </div>
-
-            <div class="socio-card group" data-index="2">
-                <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white 
-                            transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                    <div class="relative h-64 md:h-80 overflow-hidden">
-                        <img src="assets/socio_3.jpg" 
-                             alt="Socio Adherente 3" 
-                             class="w-full h-full object-cover transition-transform duration-700 
-                                    group-hover:scale-110 group-hover:rotate-1"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                      this.alt='Imagen socio 3';">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent 
-                                    opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 
-                                    rounded-full text-xs font-bold shadow-lg">
-                            Socios Oficiales
-                        </div>
-                        
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                    rounded-full flex items-center justify-center opacity-0 
-                                    group-hover:opacity-100 transition-opacity duration-300 
-                                    hover:bg-white cursor-pointer">
-                            <i class="fas fa-expand-alt text-blue-600"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full">
-                                <i class="fas fa-trophy mr-1"></i>Eventos
-                            </span>
-                            <span class="px-2 py-1 bg-indigo-100 text-indigo-600 text-xs rounded-full">
-                                <i class="fas fa-users mr-1"></i>Comunidad
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400 
-                                transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-4xl mx-auto text-center bg-gradient-to-r from-blue-50 to-indigo-50 
-                    p-6 md:p-8 rounded-2xl shadow-sm border border-blue-100">
-            <h4 class="text-xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-star text-yellow-500 mr-2"></i>
-                Nuestros Socios hacen posible
-            </h4>
-            <p class="text-gray-700 mb-4">
-                Gracias al apoyo de nuestros socios adherentes, podemos organizar talleres gratuitos, 
-                mantener nuestra escuela de acordeón, restaurar instrumentos históricos y llevar la 
-                música a comunidades de todo el Perú.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 mt-6">
-                <div class="flex items-center">
-                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                    <span class="text-gray-700">Más de 50 talleres anuales</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                    <span class="text-gray-700">Becas para jóvenes talentos</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                    <span class="text-gray-700">Eventos culturales gratuitos</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Modal para vista ampliada -->
 <div id="socio-modal" class="fixed inset-0 z-[9999] hidden bg-black/95">
@@ -1783,124 +1019,9 @@
 </div>
 
 <!-- Sección: Comentarios de Asociados -->
-<section id="comentarios" class="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">COMENTARIOS DE LOS ASOCIADOS</h2>
-        <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Escucha lo que nuestros miembros tienen que decir sobre su experiencia.
-        </p>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div class="testimonial-card p-8 rounded-xl shadow-md">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
-                        K
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xl">Katty Misari</h4>
-                        <p class="text-gray-600">Acordeonista y Profesora</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 italic" align="justify">
-                    "La música es un lenguaje universal y del alma que es capaz de despertar emociones, sensaciones y recuerdos únicos. La música puede ser de cualquier cultura o país y en cualquier idioma; pero, aún así es capaz de ponernos alegres o tristes o de hacernos llorar o bailar."
-                </p>
-            </div>
-            
-            <div class="testimonial-card p-8 rounded-xl shadow-md" align="justify">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
-                        C
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xl">Crisóstomo Gomez</h4>
-                        <p class="text-gray-600">Miembro Fundador</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 italic">
-                    "La música es un arte que ha sido parte de la humanidad desde tiempos inmemoriales. Es una forma de expresión que puede ser disfrutada por personas de todas las edades y culturas. Puede tener un impacto positivo en la sociedad..."
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Sección: Historia -->
-<section id="historia-acordeon" class="py-12 bg-white" align="justify">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title">Historia</h2>
-        
-        <div class="space-y-12">
-            <div class="history-card grid md:grid-cols-2 gap-8 bg-gray-50 p-8 rounded-xl shadow-md items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-700">EL ACORDEÓN EN EL PERÚ</h3>
-                    <p class="text-gray-700 mb-4">
-                        El acordeón es de procedencia fundamentalmente europea. Este simpático instrumento ha atravesado el tiempo sin perder popularidad y, actualmente, goza de una merecida aura de exotismo y elegancia.
-                    </p>
-                    <p class="text-gray-700">
-                        Su uso se asocia directamente a expresiones musicales populares, folklóricas particularmente en las que se toca y canta son en las regiones del centro y sur (Junín, Huancavelica, Ayacucho, entre otros).
-                    </p>
-                </div>
-                <div class="flex justify-center">
-                    <img src="assets/historia_1.jpg" 
-                        alt="Acordeón en el Perú" 
-                        class="w-full h-64 object-cover rounded-xl shadow-lg"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; this.alt='Historia 1';">
-                </div>
-            </div>
-            
-            <div class="history-card grid md:grid-cols-2 gap-8 bg-gray-50 p-8 rounded-xl shadow-md items-center">
-                <div class="order-2 md:order-1">
-                    <img src="assets/historia_2.jpg" 
-                        alt="Llegada del acordeón a Lima" 
-                        class="w-full h-64 object-cover rounded-xl shadow-lg"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; this.alt='Historia 2';">
-                </div>
-                <div class="order-1 md:order-2">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-700">La llegada a Lima</h3>
-                    <p class="text-gray-700 mb-4">
-                        La historia del Acordeón en el Perú en la ciudad de Lima se impulsó con la llegada del profesor Nino Sorrentino Ruperti y su hijo Benito Sorrentino, provenientes de Italia en 1953.
-                    </p>
-                    <p class="text-gray-700">
-                        Inauguraron la primera Academia de Acordeón en el Perú, ubicada en Av. 28 de Julio 564 Miraflores, abriendo paso al surgimiento de la enseñanza del Acordeón en el país.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="history-card grid md:grid-cols-2 gap-8 bg-gray-50 p-8 rounded-xl shadow-md items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-700">La Época de Oro</h3>
-                    <p class="text-gray-700">
-                        Fue la época de oro del Acordeón. Se inauguraban restaurantes de categoría como «SKY ROOM DEL HOTEL CRILLÓN», «RESTAURANTE CALIPSO» donde el lujo se amenizaba con la orquesta de Benito Sorrentino y su Acordeón.
-                    </p>
-                </div>
-                <div class="flex justify-center">
-                    <img src="assets/historia_3.jpg" 
-                        alt="Época de oro del acordeón" 
-                        class="w-full h-64 object-cover rounded-xl shadow-lg"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; this.alt='Historia 3';">
-                </div>
-            </div>
-            
-            <div class="history-card grid md:grid-cols-2 gap-8 bg-gray-50 p-8 rounded-xl shadow-md items-center">
-                <div class="order-2 md:order-1">
-                    <img src="assets/historia_4.jpg" 
-                        alt="Orígenes del acordeón" 
-                        class="w-full h-64 object-cover rounded-xl shadow-lg"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526470498-9ae73c665de8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; this.alt='Historia 4';">
-                </div>
-                <div class="order-1 md:order-2">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-700">Orígenes del Instrumento</h3>
-                    <p class="text-gray-700 mb-4">
-                        El acordeón es un instrumento aerófono de teclado que emite sonido gracias a la vibración de unas lengüetas en su interior. Este principio sonoro tiene su origen en las hojas de los árboles que silban al ser agitadas por el viento.
-                    </p>
-                    <p class="text-gray-700">
-                        Fue inventado en 1829 en Viena por Cyrill Demian, pero es fruto de una larga evolución que culmina con el moderno acordeón convertor de 1959.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- Sección: Actividades y Logros -->
 <section id="actividades" class="py-8 bg-white" align="justify">
@@ -2285,255 +1406,7 @@
 </div>
 
 <!-- Sección: Donaciones -->
-<section id="donaciones" class="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white relative overflow-hidden">
-    <!-- Elementos decorativos -->
-    <div class="absolute top-0 left-0 w-full h-full opacity-10">
-        <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full"></div>
-        <div class="absolute bottom-20 right-20 w-60 h-60 bg-white rounded-full"></div>
-        <div class="absolute top-1/2 left-1/3 w-32 h-32 bg-white rounded-full"></div>
-    </div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center max-w-4xl mx-auto mb-16">
-            <span class="inline-block px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 rounded-full text-lg font-bold mb-6 shadow-xl animate-pulse">
-                <i class="fas fa-heart mr-3 text-xl"></i>APOYA LA CULTURA CON TU CORAZÓN
-            </span>
-            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-lg">
-                ¡Tu Apoyo <span class="text-yellow-300">Transforma</span> Vidas!
-            </h2>
-            <p class="text-2xl md:text-3xl text-white/90 leading-relaxed mb-10 drop-shadow">
-                Cada donación mantiene viva la tradición del acordeón y brinda oportunidades a nuestros jóvenes talentos.
-            </p>
-            
-            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-8 py-4 rounded-full shadow-xl">
-                <i class="fas fa-music text-3xl text-yellow-300 mr-4 animate-bounce"></i>
-                <span class="text-2xl font-bold">
-                    <span class="text-yellow-300">+2,000</span> niños beneficiados
-                </span>
-            </div>
-        </div>
-        
-        <div class="flex flex-col lg:flex-row justify-center items-stretch gap-10 mb-16 max-w-7xl mx-auto">
-            <!-- Transferencia Bancaria -->
-            <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 md:p-10 rounded-3xl backdrop-blur-xl 
-                        border-2 border-red-400/30 hover:border-red-300 hover:bg-white/20 transition-all duration-500 group 
-                        flex-1 min-w-0 transform hover:-translate-y-3 hover:shadow-2xl">
-                <div class="flex flex-col items-center h-full">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full 
-                                flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500 shadow-2xl">
-                        <i class="fas fa-university text-3xl md:text-4xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-lg">
-                        <span class="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
-                            Transferencia Bancaria
-                        </span>
-                    </h3>
-                    
-                    <div class="space-y-6 text-center w-full flex-grow">
-                        <div class="bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl border border-red-500/30">
-                            <div class="flex items-center justify-center mb-4">
-                                <div class="w-12 h-12 bg-red-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
-                                    <span class="font-bold text-white text-lg">BBVA</span>
-                                </div>
-                                <h4 class="text-xl font-bold text-white">Banco BBVA</h4>
-                            </div>
-                            
-                            <div class="space-y-6 mt-6">
-                                <div>
-                                    <p class="text-sm text-red-200 mb-3 font-semibold">💰 Cuenta en Soles:</p>
-                                    <div class="bg-red-900/50 p-4 rounded-xl border border-red-600/50">
-                                        <p class="text-xl md:text-2xl font-mono font-bold tracking-wider text-white select-all">
-                                            0011-0147-0100110245
-                                        </p>
-                                        <p class="text-sm text-red-300 mt-2 font-medium">
-                                            CCI: 011-147000100011024566
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="pt-6 border-t border-red-500/30">
-                                    <p class="text-sm text-red-200 mb-3 font-semibold">💵 Cuenta en Dólares:</p>
-                                    <div class="bg-red-900/50 p-4 rounded-xl border border-red-600/50">
-                                        <p class="text-xl md:text-2xl font-mono font-bold tracking-wider text-white select-all">
-                                            0011-0147010011023763
-                                        </p>
-                                        <p class="text-sm text-red-300 mt-2 font-medium">
-                                            CCI: 011-14700010011023763
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-red-700/50 to-red-600/50 p-5 rounded-2xl border-2 border-red-500/40">
-                            <p class="text-sm font-bold text-red-100 mb-2">👤 Titular de la cuenta:</p>
-                            <p class="text-xl font-bold text-white">ASOCIACIÓN DE ACORDEONISTAS DEL PERÚ</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-red-500/30 text-center w-full">
-                        <p class="text-lg text-red-100 font-medium">
-                            <i class="fas fa-info-circle mr-2 text-yellow-300"></i>
-                            Transferencia desde cualquier banco nacional
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Yape / Plin -->
-            <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 md:p-10 rounded-3xl backdrop-blur-xl 
-                        border-2 border-red-400/30 hover:border-red-300 hover:bg-white/20 transition-all duration-500 group 
-                        flex-1 min-w-0 transform hover:-translate-y-3 hover:shadow-2xl">
-                <div class="flex flex-col items-center h-full">
-                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full 
-                                flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500 shadow-2xl">
-                        <i class="fas fa-mobile-alt text-3xl md:text-4xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center text-white drop-shadow-lg">
-                        <span class="bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
-                            Yape / Plin
-                        </span>
-                    </h3>
-                    
-                    <div class="space-y-6 text-center w-full flex-grow">
-                        <div class="relative">
-                            <div class="absolute -inset-4 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition duration-700"></div>
-                            
-                            <div class="relative bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl backdrop-blur-sm border border-red-500/30">
-                                <div class="relative">
-                                    <img src="assets/qr.png" 
-                                         alt="QR para donación Yape/Plin" 
-                                         class="mx-auto w-56 h-56 md:w-64 md:h-64 object-contain rounded-2xl shadow-2xl 
-                                                border-4 border-white/30 group-hover:border-white/50 
-                                                transition-all duration-500 group-hover:scale-[1.05]"
-                                         onerror="this.onerror=null; this.src='https://via.placeholder.com/256x256/ffffff/374151?text=QR+Yape/Plin'; this.alt='QR no disponible';">
-                                    
-                                    <div class="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-r from-green-400 to-emerald-500 
-                                                rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-                                        <i class="fas fa-qrcode text-lg text-white"></i>
-                                    </div>
-                                    
-                                    <!-- Efecto de brillo -->
-                                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl border border-red-500/30">
-                            <p class="text-lg text-red-100 font-bold mb-4">📱 O usa este número:</p>
-                            <div class="inline-flex items-center bg-red-900/60 px-6 py-4 rounded-2xl border-2 border-red-500/50 shadow-lg hover:bg-red-800/60 transition duration-300">
-                                <i class="fas fa-phone-alt text-2xl text-emerald-300 mr-4"></i>
-                                <div>
-                                    <p class="text-2xl md:text-3xl font-mono font-bold tracking-wider text-white select-all hover:text-yellow-200 transition duration-200 cursor-pointer">
-                                        904 703 990
-                                    </p>
-                                    <p class="text-sm text-emerald-300 mt-2 font-medium">Disponible 24/7</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-green-600/30 to-emerald-600/30 p-5 rounded-2xl border-2 border-emerald-500/40">
-                            <p class="text-lg text-white font-bold">
-                                <i class="fas fa-lightbulb text-yellow-300 mr-3 text-xl"></i>
-                                ¡Escanea el QR con tu app de pagos móviles!
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 pt-6 border-t border-red-500/30 text-center w-full">
-                        <p class="text-lg text-red-100 font-medium">
-                            <i class="fas fa-hand-point-up mr-2 text-2xl animate-bounce text-yellow-300"></i>
-                            Fácil, rápido y seguro
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Información adicional -->
-        <div class="max-w-5xl mx-auto">
-            <div class="bg-gradient-to-r from-red-800/60 via-red-700/60 to-red-800/60 p-8 md:p-10 rounded-3xl 
-                        backdrop-blur-xl border-2 border-red-400/40 shadow-2xl mb-10">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
-                        <div class="w-24 h-24 bg-gradient-to-br from-red-600 to-red-700 rounded-full 
-                                    flex items-center justify-center shadow-2xl animate-pulse">
-                            <i class="fas fa-award text-4xl text-yellow-300"></i>
-                        </div>
-                    </div>
-                    <div class="md:w-3/4 md:pl-10">
-                        <h4 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center">
-                            <i class="fas fa-shield-alt text-yellow-300 mr-4"></i>
-                            Donaciones Deducibles de Impuestos
-                        </h4>
-                        <p class="text-xl text-white/90 leading-relaxed mb-6">
-                            Todas las donaciones a nuestra asociación son <span class="font-bold text-yellow-300">100% deducibles de impuestos</span> 
-                            según la <span class="font-bold">Ley N° 30737</span> del Ministerio de Cultura del Perú. 
-                            Emitimos constancias oficiales de donación para fines tributarios.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
-                                <i class="fas fa-file-invoice-dollar mr-2"></i>Recibo oficial
-                            </span>
-                            <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
-                                <i class="fas fa-check-circle mr-2"></i>Certificado válido
-                            </span>
-                            <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
-                                <i class="fas fa-gem mr-2"></i>Transparencia total
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contacto -->
-            <div class="text-center">
-                <div class="inline-flex flex-col items-center bg-gradient-to-r from-red-700/50 to-red-600/50 
-                            p-8 rounded-3xl backdrop-blur-xl border-2 border-red-400/40 shadow-xl">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-headset text-4xl text-yellow-300 mr-4"></i>
-                        <h5 class="text-2xl font-bold text-white">¿Necesitas ayuda o tienes preguntas?</h5>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
-                        <a href="mailto:donaciones@acordeonistas.pe" 
-                           class="inline-flex items-center bg-white/20 hover:bg-white/30 px-6 py-4 rounded-2xl 
-                                  text-white text-lg font-bold transition duration-300 border-2 border-white/30 
-                                  hover:border-white/50 hover:scale-105 transform">
-                            <i class="fas fa-envelope text-2xl text-yellow-300 mr-3"></i>
-                            donaciones@acordeonistas.pe
-                        </a>
-                        
-                        <a href="tel:+51904703990" 
-                           class="inline-flex items-center bg-white/20 hover:bg-white/30 px-6 py-4 rounded-2xl 
-                                  text-white text-lg font-bold transition duration-300 border-2 border-white/30 
-                                  hover:border-white/50 hover:scale-105 transform">
-                            <i class="fas fa-phone text-2xl text-yellow-300 mr-3"></i>
-                            (01) 234-5678
-                        </a>
-                    </div>
-                    
-                    <p class="text-lg text-red-100 mt-6 font-medium">
-                        <i class="fas fa-clock text-yellow-300 mr-2"></i>
-                        Atención: Lunes a Viernes de 9:00 AM a 6:00 PM
-                    </p>
-                </div>
-                
-                <div class="mt-12">
-                    <div class="inline-flex items-center bg-gradient-to-r from-red-800 to-red-700 
-                                px-8 py-4 rounded-full shadow-xl animate-pulse">
-                        <i class="fas fa-heartbeat text-3xl text-white mr-4"></i>
-                        <p class="text-xl font-bold text-white">
-                            ¡Gracias por ser parte de esta <span class="text-yellow-300">gran familia musical</span>!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
@@ -2569,13 +1442,16 @@
                 </div>
             </div>
             
+            <!-- En el footer del index.html -->
             <div>
                 <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
                 <ul class="space-y-3">
                     <li><a href="#nosotros" class="text-gray-400 hover:text-white">¿Quiénes Somos?</a></li>
-                    <li><a href="#historia-acordeon" class="text-gray-400 hover:text-white">Historia del Acordeón</a></li>
-                    <li><a href="#actividades" class="text-gray-400 hover:text-white">Actividades</a></li>
-                    <li><a href="#donaciones" class="text-gray-400 hover:text-white">Donaciones</a></li>
+                    <li><a href="nuestro_equipo.html" class="text-gray-400 hover:text-white">Nuestro Equipo</a></li>
+                    <li><a href="sedes-programas.html" class="text-gray-400 hover:text-white">Sedes y Programas</a></li>
+                    <li><a href="actividades.html" class="text-gray-400 hover:text-white">Actividades</a></li>
+                    <li><a href="avisos-legales.html" class="text-gray-400 hover:text-white">Avisos Legales</a></li>
+                    <li><a href="donar.html" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300">Apadrinar</a></li>
                 </ul>
             </div>
             
@@ -2606,7 +1482,7 @@
 
 <!-- Botón flotante "Apoyar" para móvil -->
 <div id="floating-donation-btn" class="fixed md:hidden z-40 left-4 bottom-4">
-    <a href="#donaciones" 
+    <a href="donar.html" 
     class="floating-heartbeat-btn bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-4xl transform hover:scale-150 relative overflow-hidden group flex items-center justify-center w-20 h-20">
         
         <i class="fas fa-heart text-2xl floating-heart-icon"></i>
@@ -2622,6 +1498,291 @@
     </a>
 </div>
 
-<script src="js/app.js"></script>
-</body>
-</html>
+<!-- Al final de tu index.html, justo antes del </body> -->
+<script>
+    // Corregir navegación - Permitir enlaces normales
+    document.addEventListener('DOMContentLoaded', function() {
+        // Solo interceptar anclas internas (#)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Solo prevenir comportamiento si es un ancla interna
+                if (href && href.startsWith('#') && href !== '#') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    // Script para manejar efectos de donación y navegación
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Configurar efectos para TODOS los botones de donación
+        const donationButtons = document.querySelectorAll('.heartbeat-btn, .floating-heartbeat-btn');
+        
+        donationButtons.forEach(button => {
+            // Efecto hover
+            button.addEventListener('mouseenter', function() {
+                if (this.classList.contains('heartbeat-btn')) {
+                    this.style.transform = 'scale(1.2) translateY(-5px)';
+                    this.style.boxShadow = '0 25px 50px rgba(239, 68, 68, 0.5)';
+                } else {
+                    this.style.transform = 'scale(1.3)';
+                    this.style.boxShadow = '0 20px 40px rgba(239, 68, 68, 0.6)';
+                }
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+            
+            // Efecto click
+            button.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Crear efectos siempre
+                createHeartsRainEffect();
+                showDonationModalEffect();
+                
+                // Manejar navegación
+                if (href && href.startsWith('#') && href !== '#') {
+                    // Enlace interno: prevenir navegación normal
+                    e.preventDefault();
+                    
+                    // Navegar después de efectos
+                    setTimeout(() => {
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 1500);
+                } else if (href && href.includes('donar.html')) {
+                    // Enlace a donar.html: prevenir navegación inmediata
+                    e.preventDefault();
+                    
+                    // Navegar después de efectos
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 1500);
+                }
+                // Los otros enlaces se comportan normalmente
+            });
+        });
+        
+        // 2. Funciones de efectos (simplificadas del app.js original)
+        function createHeartsRainEffect() {
+            const heartsContainer = document.createElement('div');
+            heartsContainer.className = 'hearts-rain';
+            document.body.appendChild(heartsContainer);
+            
+            const heartCount = 30;
+            const colors = ['#ef4444', '#f87171', '#fca5a5', '#fecaca'];
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '❤️';
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                heart.style.animationDelay = `${Math.random() * 1}s`;
+                heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                heartsContainer.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+            
+            setTimeout(() => {
+                heartsContainer.remove();
+            }, 5000);
+        }
+        
+        function showDonationModalEffect() {
+            let modal = document.querySelector('.donation-modal');
+            
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.className = 'donation-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-heart">❤️</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">¡Gracias por tu Apoyo!</h3>
+                        <p class="text-gray-600 mb-6">
+                            Tu contribución ayuda a preservar la cultura del acordeón en Perú.
+                        </p>
+                        <button class="close-modal bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-2 rounded-full font-semibold hover:from-pink-600 hover:to-red-600 transition duration-300">
+                            Continuar
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                
+                const closeButton = modal.querySelector('.close-modal');
+                closeButton.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                    setTimeout(() => {
+                        modal.remove();
+                    }, 300);
+                });
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                        setTimeout(() => {
+                            modal.remove();
+                        }, 300);
+                    }
+                });
+            }
+            
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            
+            setTimeout(() => {
+                if (modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    setTimeout(() => {
+                        modal.remove();
+                    }, 300);
+                }
+            }, 4000);
+        }
+    });
+</script>
+
+<!-- Al final del index.html -->
+<script>
+    // Script mínimo que SÍ funciona
+    (function() {
+        'use strict';
+        
+        const menuButton = document.getElementById('menu-movil');
+        
+        if (!menuButton) {
+            console.error('❌ Botón del menú no encontrado');
+            return;
+        }
+        
+        console.log('✅ Botón del menú encontrado, configurando...');
+        
+        // Agregar event listener DIRECTO
+        menuButton.onclick = function(e) {
+            e.stopPropagation();
+            toggleMobileMenu();
+        };
+        
+        function toggleMobileMenu() {
+            console.log('Toggle del menú llamado');
+            
+            const existingMenu = document.getElementById('mobile-menu-minimal');
+            if (existingMenu) {
+                existingMenu.remove();
+                return;
+            }
+            
+            // Crear menú minimalista
+            const menu = document.createElement('div');
+            menu.id = 'mobile-menu-minimal';
+            menu.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 16px;
+                z-index: 9999;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                border: 1px solid #e5e7eb;
+                min-width: 200px;
+                padding: 16px;
+                animation: fadeIn 0.2s ease-out;
+            `;
+            
+            menu.innerHTML = `
+                <div style="margin-bottom: 12px; font-weight: bold; color: #374151; text-align: center;">
+                    Menú
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="#inicio" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-home" style="margin-right: 12px; color: #3b82f6;"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="nuestro_equipo.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-users" style="margin-right: 12px; color: #8b5cf6;"></i>
+                        <span>Nuestro Equipo</span>
+                    </a>
+                    <a href="#sedes-programas" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 12px; color: #10b981;"></i>
+                        <span>Sedes y Programas</span>
+                    </a>
+                    <a href="donar.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: white; text-decoration: none; background: linear-gradient(to right, #ec4899, #ef4444);">
+                        <i class="fas fa-heart" style="margin-right: 12px;"></i>
+                        <span>Donar</span>
+                    </a>
+                </div>
+            `;
+            
+            document.body.appendChild(menu);
+            
+            // Agregar animación CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Cerrar al hacer click fuera
+            setTimeout(() => {
+                document.addEventListener('click', function closeMenu(e) {
+                    if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
+                        menu.remove();
+                        document.removeEventListener('click', closeMenu);
+                    }
+                });
+            }, 10);
+            
+            // Cerrar con ESC
+            document.addEventListener('keydown', function closeOnEsc(e) {
+                if (e.key === 'Escape') {
+                    menu.remove();
+                    document.removeEventListener('keydown', closeOnEsc);
+                }
+            });
+            
+            // Navegación suave
+            menu.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    menu.remove();
+                };
+            });
+        }
+        
+        console.log('✅ Menú móvil configurado exitosamente');
+    })();
+</script>

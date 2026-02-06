@@ -1448,3 +1448,126 @@ nav .relative.group:hover > a.menu-font .fa-chevron-down {
     animation: centeredHeartbeat 2s infinite;
     transform-origin: center center;
 }
+
+/* En styles.css */
+#menu-movil {
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: white !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+
+#menu-movil:hover {
+    background: #f3f4f6 !important;
+    transform: scale(1.05) !important;
+}
+
+/* Menú móvil overlay */
+#mobile-menu-universal {
+    transition: opacity 0.3s ease !important;
+}
+
+/* Contenido del menú móvil */
+#mobile-menu-universal > div {
+    animation: slideIn 0.3s ease-out !important;
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+/* Elementos del menú móvil */
+#mobile-menu-universal a {
+    transition: all 0.2s ease !important;
+    border-left: 4px solid transparent !important;
+}
+
+#mobile-menu-universal a:hover {
+    border-left-color: #3b82f6 !important;
+    padding-left: 20px !important;
+}
+
+/* Botón de cerrar */
+#close-mobile-menu {
+    transition: all 0.2s ease !important;
+    border-radius: 50% !important;
+}
+
+#close-mobile-menu:hover {
+    background: #fef2f2 !important;
+    transform: rotate(90deg) !important;
+}
+
+/* Efecto de desvanecimiento */
+#mobile-menu-universal {
+    backdrop-filter: blur(5px) !important;
+}
+
+/* Asegurar que el menú esté sobre todo */
+#mobile-menu-universal {
+    z-index: 9999 !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    #mobile-menu-universal > div {
+        width: 85% !important;
+        max-width: none !important;
+    }
+}
+
+/* Estado activo para enlaces */
+#mobile-menu-universal a:active {
+    transform: scale(0.98) !important;
+}
+
+/* Scroll suave en el menú */
+#mobile-menu-universal > div {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+#mobile-menu-universal > div::-webkit-scrollbar {
+    width: 6px;
+}
+
+#mobile-menu-universal > div::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+#mobile-menu-universal > div::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
+}
+
+
+#mobile-simple-menu {
+    z-index: 9999 !important;
+}
+
+/* Asegurar que el botón sea clickeable */
+button#menu-movil {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Eliminar cualquier superposición */
+button#menu-movil::before,
+button#menu-movil::after {
+    display: none !important;
+}
