@@ -17,7 +17,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,7 @@
     
     <!-- Tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu-fix.css">
     
     <style>
         * {
@@ -101,6 +102,7 @@
 
         <!-- Incluir el script del cargador de navegación -->
         <script src="js/nav-loader.js"></script>
+
     <!-- Sección Hero / Principal -->
     <section id="inicio" class="hero-bg text-white py-20 md:py-40 relative">
         <div class="absolute inset-0 bg-black/10 z-0"></div>
@@ -306,11 +308,11 @@
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="mailto:proteccion@acordeonistas.pe" class="inline-flex items-center bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 transition duration-300">
                             <i class="fas fa-envelope mr-2 text-green-500"></i>
-                            proteccion@acordeonistas.pe
+                            cultura@asociacióndeacordeonistas.pe
                         </a>
                         <a href="tel:+51904703990" class="inline-flex items-center bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 transition duration-300">
                             <i class="fas fa-phone mr-2 text-green-500"></i>
-                            (01) 234-5678
+                            (+51) 904 703 990
                         </a>
                     </div>
                 </div>
@@ -338,7 +340,7 @@
                     <div class="flex items-center">
                         <i class="fas fa-file-alt text-3xl mr-4"></i>
                         <div>
-                            <h3 class="text-2xl font-bold">Memoria Anual 2023</h3>
+                            <h3 class="text-2xl font-bold">Memoria Anual 2025</h3>
                             <p class="text-purple-100">Nuestro compromiso con la rendición de cuentas</p>
                         </div>
                     </div>
@@ -355,7 +357,7 @@
                                 <i class="fas fa-chart-line mr-2"></i>
                                 Informe Financiero
                             </h4>
-                            <p class="text-gray-700">Desglose detallado de ingresos, gastos y destinación de fondos recibidos durante el año 2024.</p>
+                            <p class="text-gray-700">Desglose detallado de ingresos, gastos y destinación de fondos recibidos durante el año 2025.</p>
                         </div>
                         
                         <div class="p-6 bg-indigo-50 rounded-xl">
@@ -370,7 +372,7 @@
                     <div class="mt-8 text-center">
                         <a href="#" class="inline-flex items-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300 shadow-lg hover:shadow-xl">
                             <i class="fas fa-download mr-2"></i>
-                            Descargar Memoria Anual 2024 (PDF)
+                            Descargar Memoria Anual 2025 (PDF)
                         </a>
                         <p class="text-sm text-gray-500 mt-2">Documento completo</p>
                     </div>
@@ -513,6 +515,286 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección: Nuestras Instituciones Colaboradoras -->
+<section id="instituciones-colaboradoras" class="py-16 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 
+                        text-white rounded-full text-sm font-semibold mb-4 shadow-md">
+                <i class="fas fa-handshake mr-2"></i>ALIANZAS ESTRATÉGICAS
+            </span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Nuestras Instituciones Colaboradoras
+            </h2>
+            <div class="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Trabajamos en conjunto con instituciones líderes para fortalecer la cultura del acordeón 
+                y promover el desarrollo social en todo el Perú.
+            </p>
+        </div>
+
+        <div class="flex justify-center items-center mb-8">
+            <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                <span class="text-gray-700 font-semibold">
+                    <i class="fas fa-building text-blue-500 mr-2"></i>
+                    <span id="institution-counter">11</span> instituciones aliadas
+                </span>
+            </div>
+        </div>
+
+        <!-- Contenedor principal del collage -->
+        <div class="max-w-6xl mx-auto">
+            <!-- Fila 1: Instituciones principales -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Ministerio de Cultura -->
+                <div class="institution-card group" data-name="Ministerio de Cultura" data-desc="Puntos de Cultura - Reconocimiento oficial">
+                    <div class="institution-logo-container bg-gradient-to-br from-blue-50 to-indigo-50">
+                        <img src="assets/icon/ministerio_cultura.png" 
+                             alt="Ministerio de Cultura del Perú" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/3b82f6/ffffff?text=MINCUL';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">Ministerio de Cultura</h4>
+                                <p class="institution-desc">Puntos de Cultura</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APCI -->
+                <div class="institution-card group" data-name="APCI" data-desc="Agencia Peruana de Cooperación Internacional">
+                    <div class="institution-logo-container bg-gradient-to-br from-green-50 to-emerald-50">
+                        <img src="assets/icon/apci.png" 
+                             alt="APCI - Agencia Peruana de Cooperación Internacional" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/10b981/ffffff?text=APCI';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">APCI</h4>
+                                <p class="institution-desc">Agencia Peruana de Cooperación Internacional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUNARP -->
+                <div class="institution-card group" data-name="SUNARP" data-desc="Superintendencia Nacional de los Registros Públicos">
+                    <div class="institution-logo-container bg-gradient-to-br from-purple-50 to-violet-50">
+                        <img src="assets/icon/sunarp.png" 
+                             alt="SUNARP" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/8b5cf6/ffffff?text=SUNARP';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">SUNARP</h4>
+                                <p class="institution-desc">Registros Públicos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDECOPI -->
+                <div class="institution-card group" data-name="INDECOPI" data-desc="Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual">
+                    <div class="institution-logo-container bg-gradient-to-br from-red-50 to-pink-50">
+                        <img src="assets/icon/indecopi.png" 
+                             alt="INDECOPI" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/ef4444/ffffff?text=INDECOPI';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">INDECOPI</h4>
+                                <p class="institution-desc">Propiedad Intelectual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 2: Más instituciones -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <!-- CIA -->
+                <div class="institution-card group" data-name="Confédération Internationale des Accordéonistes" data-desc="Máximo ente mundial del acordeón (UNESCO IMC)">
+                    <div class="institution-logo-container bg-gradient-to-br from-indigo-50 to-blue-50">
+                        <img src="assets/icon/cia.png" 
+                             alt="Confédération Internationale des Accordéonistes" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/6366f1/ffffff?text=CIA';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">CIA</h4>
+                                <p class="institution-desc">Confederación Internacional de Acordeonistas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RENTOCA -->
+                <div class="institution-card group" data-name="RENTOCA" data-desc="Registro Nacional de Trabajadores de Cultura">
+                    <div class="institution-logo-container bg-gradient-to-br from-amber-50 to-orange-50">
+                        <img src="assets/icon/rentoca.png" 
+                             alt="RENTOCA" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/f59e0b/ffffff?text=RENTOCA';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">RENTOCA</h4>
+                                <p class="institution-desc">Registro Nacional de Trabajadores de Cultura</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONGD -->
+                <div class="institution-card group" data-name="ONGD" data-desc="Organización No Gubernamental de Desarrollo">
+                    <div class="institution-logo-container bg-gradient-to-br from-emerald-50 to-green-50">
+                        <img src="assets/icon/ongd.png" 
+                             alt="ONGD" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/10b981/ffffff?text=ONGD';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">ONGD</h4>
+                                <p class="institution-desc">Organización No Gubernamental de Desarrollo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUNAT -->
+                <div class="institution-card group" data-name="SUNAT" data-desc="Superintendencia Nacional de Aduanas y de Administración Tributaria">
+                    <div class="institution-logo-container bg-gradient-to-br from-blue-50 to-cyan-50">
+                        <img src="assets/icon/sunat.png" 
+                             alt="SUNAT" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/06b6d4/ffffff?text=SUNAT';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">SUNAT</h4>
+                                <p class="institution-desc">Administración Tributaria</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 3: Instituciones adicionales -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- IPREDA -->
+                <div class="institution-card group" data-name="IPREDA" data-desc="Instituto Peruano de Derecho Ambiental">
+                    <div class="institution-logo-container bg-gradient-to-br from-teal-50 to-emerald-50">
+                        <img src="assets/icon/ipreda.png" 
+                             alt="IPREDA" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/14b8a6/ffffff?text=IPREDA';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">IPREDA</h4>
+                                <p class="institution-desc">Instituto Peruano de Derecho Ambiental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gobierno Amazonas -->
+                <div class="institution-card group" data-name="Gobierno Regional Amazonas" data-desc="Gobierno Regional de Amazonas">
+                    <div class="institution-logo-container bg-gradient-to-br from-green-50 to-lime-50">
+                        <img src="assets/icon/gobierno_amazonas.png" 
+                             alt="Gobierno Regional Amazonas" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/84cc16/ffffff?text=GORE+Amazonas';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">GORE Amazonas</h4>
+                                <p class="institution-desc">Gobierno Regional de Amazonas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Municipalidad de Comas -->
+                <div class="institution-card group" data-name="Municipalidad Distrital de Comas" data-desc="Municipalidad Distrital de Comas, Lima">
+                    <div class="institution-logo-container bg-gradient-to-br from-gray-50 to-blue-50">
+                        <img src="assets/icon/comas_jpg.jpeg" 
+                             alt="Municipalidad de Comas" 
+                             class="institution-logo"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/150x100/6b7280/ffffff?text=Muni+Comas';">
+                        <div class="institution-overlay">
+                            <div class="institution-info">
+                                <h4 class="institution-name">Municipalidad de Comas</h4>
+                                <p class="institution-desc">Gobierno Local de Comas, Lima</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para vista ampliada -->
+        <div id="institution-modal" class="fixed inset-0 z-[10000] hidden bg-black/95">
+            <div class="relative w-full h-full flex items-center justify-center p-4">
+                <div class="relative max-w-4xl w-full max-h-[90vh]">
+                    <button id="institution-modal-close" 
+                            class="absolute -top-12 right-0 md:top-6 md:right-6 z-10 
+                                   text-white text-3xl md:text-4xl hover:text-gray-300 
+                                   transition duration-200 w-12 h-12 flex items-center justify-center
+                                   bg-black/50 rounded-full hover:bg-black/70">
+                        &times;
+                    </button>
+                    
+                    <div class="w-full h-full flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="flex-1 flex items-center justify-center">
+                            <img id="institution-modal-image" 
+                                 src="" 
+                                 alt="" 
+                                 class="max-w-full max-h-[50vh] md:max-h-[70vh] object-contain 
+                                        rounded-lg shadow-2xl bg-white p-4">
+                        </div>
+                        
+                        <div id="institution-modal-info" 
+                             class="flex-1 text-white p-4 md:p-6">
+                            <h3 id="institution-modal-title" class="text-2xl md:text-3xl font-bold mb-4"></h3>
+                            <p id="institution-modal-description" class="text-lg md:text-xl opacity-90 mb-6"></p>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 mr-3 text-xl"></i>
+                                    <span class="text-gray-200">Colaboración activa y continua</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-handshake text-blue-400 mr-3 text-xl"></i>
+                                    <span class="text-gray-200">Alianza estratégica formalizada</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-3 text-xl"></i>
+                                    <span class="text-gray-200">Reconocimiento mutuo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                <i class="fas fa-info-circle text-blue-500 mr-1"></i>
+                Haz clic en cualquier logo para ver más información sobre nuestra colaboración.
+            </p>
+            
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200 max-w-2xl mx-auto">
+                <h4 class="text-xl font-bold text-gray-800 mb-3">
+                    <i class="fas fa-users text-blue-600 mr-2"></i>
+                    Trabajo en Red
+                </h4>
+                <p class="text-gray-700">
+                    Estas alianzas nos permiten ampliar nuestro impacto, acceder a mejores recursos 
+                    y garantizar la sostenibilidad de nuestros programas culturales y educativos.
+                </p>
             </div>
         </div>
     </div>
@@ -674,737 +956,84 @@
     </div>
 </section>
 
-<!-- Sección: Nuestro Equipo -->
 
-<!-- Sección: Sedes y Programas -->
-
-
-<!-- Sección: Impacto Social -->
+<!-- Al final de tu index.html, antes del </body> -->
 
 
-<!-- Sección: ¿Cómo Ayudar? -->
 
-
-<!-- Sección: Sede Principal -->
-
-
-<!-- Sección: Avisos Legales -->
-<section id="avisos-legales" class="py-16 bg-gradient-to-b from-white to-blue-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-3">
-                DOCUMENTOS LEGALES
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Avisos Legales
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección: Política de Privacidad -->
-<section id="privacidad" class="py-16 bg-gradient-to-b from-white to-indigo-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div class="bg-gradient-to-r from-indigo-600 to-blue-600 p-6 text-white">
-                    <div class="flex items-center">
-                        <i class="fas fa-lock text-3xl mr-4"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">Política de Privacidad y Protección de Datos Personales</h3>
-                            <p class="text-indigo-100">Ley N° 29733</p>
-                        </div>
-                    </div>
-                </div>
+<script>
+// Script para manejar el modal de instituciones colaboradoras
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar eventos para las tarjetas de instituciones
+    const institutionCards = document.querySelectorAll('.institution-card');
+    const institutionModal = document.getElementById('institution-modal');
+    const modalImage = document.getElementById('institution-modal-image');
+    const modalTitle = document.getElementById('institution-modal-title');
+    const modalDescription = document.getElementById('institution-modal-description');
+    const closeButton = document.getElementById('institution-modal-close');
+    
+    if (institutionCards.length > 0) {
+        institutionCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const logoImg = this.querySelector('.institution-logo');
+                const name = this.getAttribute('data-name');
+                const desc = this.getAttribute('data-desc');
                 
-                <div class="p-8">
-                    <div class="mb-8">
-                        <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                            De conformidad con la <strong>Ley N° 29733</strong> (Ley de Protección de Datos Personales), informamos que los datos personales proporcionados a través de nuestros formularios serán tratados con la única finalidad de gestionar su participación como donante, voluntario o beneficiario.
-                        </p>
-                    </div>
+                if (logoImg && modalImage && modalTitle && modalDescription) {
+                    modalImage.src = logoImg.src;
+                    modalImage.alt = logoImg.alt;
+                    modalTitle.textContent = name;
+                    modalDescription.textContent = desc;
                     
-                    <div class="space-y-6">
-                        <div class="p-6 bg-indigo-50 rounded-xl border-l-4 border-indigo-500">
-                            <h4 class="font-bold text-indigo-700 mb-3 flex items-center">
-                                <i class="fas fa-shield-alt mr-2"></i>
-                                Principios Fundamentales
-                            </h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>No compartimos información con terceros sin consentimiento explícito</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Mantenemos medidas de seguridad técnicas y organizativas</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Conservamos los datos solo durante el tiempo necesario</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="p-6 bg-blue-50 rounded-xl border-l-4 border-blue-500">
-                            <h4 class="font-bold text-blue-700 mb-3 flex items-center">
-                                <i class="fas fa-user-check mr-2"></i>
-                                Derechos ARCO
-                            </h4>
-                            <p class="text-gray-700 mb-3">
-                                Usted puede ejercer sus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) enviando un correo a:
-                            </p>
-                            <div class="bg-white p-4 rounded-lg">
-                                <i class="fas fa-envelope text-blue-500 mr-2"></i>
-                                <a href="mailto:privacidad@acordeonistas.pe" class="text-blue-600 font-medium hover:text-blue-800">
-                                    privacidad@acordeonistas.pe
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="p-6 bg-gray-50 rounded-xl">
-                            <h4 class="font-bold text-gray-700 mb-3">Responsable del Tratamiento</h4>
-                            <p class="text-gray-700">
-                                <strong>Asociación de Acordeonistas del Perú</strong><br>
-                                Av. 28 de Julio 564, Miraflores, Lima<br>
-                                RUC: 20123456789
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección: Términos de Donaciones -->
-<section id="terminos-donaciones" class="py-16 bg-gradient-to-b from-white to-green-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-6 text-white">
-                    <div class="flex items-center">
-                        <i class="fas fa-file-contract text-3xl mr-4"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">Términos y Condiciones de Donaciones</h3>
-                            <p class="text-green-100">Normativa de recaudación de fondos</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="p-8">
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
-                                Finalidad del Recurso
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Todas las donaciones recibidas se destinan exclusivamente al mantenimiento de los instrumentos musicales, honorarios de los maestros capacitados, adquisición de materiales didácticos y sostenibilidad de los centros de enseñanza.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
-                                Certificado de Donación
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed mb-3">
-                                La organización emitirá el certificado correspondiente para fines de deducción de impuestos, previa validación de los datos del donante. El certificado se enviará dentro de los 15 días hábiles siguientes a la recepción de la donación.
-                            </p>
-                            <div class="bg-green-50 p-4 rounded-lg">
-                                <p class="text-sm text-gray-700">
-                                    <i class="fas fa-info-circle text-green-500 mr-2"></i>
-                                    <strong>Importante:</strong> Las donaciones son deducibles de impuestos según la Ley N° 30737 del Ministerio de Cultura.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
-                                Seguridad en Línea
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Utilizamos pasarelas de pago cifradas con tecnología SSL de 256 bits para garantizar la protección absoluta de sus datos bancarios. No almacenamos información de tarjetas de crédito o débito en nuestros servidores.
-                            </p>
-                            <div class="flex flex-wrap gap-4 mt-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-lock text-green-500 mr-2"></i>
-                                    <span class="text-sm text-gray-700">Cifrado SSL 256-bit</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-shield-alt text-green-500 mr-2"></i>
-                                    <span class="text-sm text-gray-700">Protección antifraude</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-user-shield text-green-500 mr-2"></i>
-                                    <span class="text-sm text-gray-700">Autenticación segura</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8 pt-8 border-t border-gray-200">
-                            <div class="flex flex-col sm:flex-row items-center justify-between">
-                                <div>
-                                    <h5 class="font-bold text-gray-800 mb-2">Documento Completo</h5>
-                                    <p class="text-sm text-gray-600">Descarga los términos y condiciones completos</p>
-                                </div>
-                                <a href="#" 
-                                   class="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300 mt-4 sm:mt-0">
-                                    <i class="fas fa-download mr-2"></i>
-                                    Descargar PDF
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección: Protección al Menor -->
-<section id="proteccion-menor" class="py-16 bg-gradient-to-b from-white to-amber-50">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-6 text-white">
-                    <div class="flex items-center">
-                        <i class="fas fa-child text-3xl mr-4"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">Política de Protección al Menor</h3>
-                            <p class="text-amber-100">Tolerancia Cero - Espacios Seguros</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="p-8">
-                    <div class="mb-8">
-                        <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                            Siguiendo los estándares internacionales de salvaguarda y la normativa peruana, nuestra organización mantiene una política de <strong class="text-red-600">TOLERANCIA CERO</strong> ante cualquier forma de maltrato, abuso, explotación o discriminación.
-                        </p>
-                        
-                        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
-                            <p class="text-red-700 font-bold flex items-center">
-                                <i class="fas fa-exclamation-triangle mr-2"></i>
-                                Todos nuestros centros de enseñanza son espacios seguros auditados constantemente por nuestro Comité de Protección.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-user-shield text-amber-600 mr-3"></i>
-                                Medidas de Prevención
-                            </h4>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Selección rigurosa de personal y voluntarios</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Verificación de antecedentes penales obligatoria</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Capacitación anual en protección infantil</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                    <span>Protocolos claros de actuación ante sospechas</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-phone-alt text-amber-600 mr-3"></i>
-                                Canales de Denuncia
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="p-4 bg-amber-50 rounded-lg">
-                                    <p class="font-medium text-gray-800 mb-1">Línea Confidencial</p>
-                                    <a href="tel:+51904703990" class="text-amber-600 hover:text-amber-800">
-                                        <i class="fas fa-phone mr-1"></i> 904 703 990
-                                    </a>
-                                </div>
-                                <div class="p-4 bg-orange-50 rounded-lg">
-                                    <p class="font-medium text-gray-800 mb-1">Correo Electrónico</p>
-                                    <a href="mailto:proteccion@acordeonistas.pe" class="text-orange-600 hover:text-orange-800">
-                                        <i class="fas fa-envelope mr-1"></i> proteccion@acordeonistas.pe
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 p-6 bg-gray-50 rounded-xl">
-                        <h4 class="font-bold text-gray-800 mb-3">Marco Legal de Referencia</h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-700">Código del Niño y Adolescente</p>
-                                <p class="text-gray-600">Ley N° 27337</p>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-700">Ley de Protección frente a la Violencia Familiar</p>
-                                <p class="text-gray-600">Ley N° 30364</p>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-700">Convención sobre los Derechos del Niño</p>
-                                <p class="text-gray-600">ONU - Ratificada por el Perú</p>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-700">Protocolos de Actuación Conjunta</p>
-                                <p class="text-gray-600">MIMP - Ministerio de Cultura</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección: Socios Adherentes -->
-
-<!-- Modal para vista ampliada -->
-<div id="socio-modal" class="fixed inset-0 z-[9999] hidden bg-black/95">
-    <div class="relative w-full h-full flex items-center justify-center p-4">
-        <div class="relative max-w-5xl w-full max-h-[90vh]">
-            <button id="modal-close" 
-                    class="absolute -top-12 right-0 md:top-4 md:right-4 z-10 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-10 h-10 flex items-center justify-center
-                           bg-black/50 rounded-full">
-                &times;
-            </button>
-            
-            <button id="modal-prev" 
-                    class="absolute left-0 md:left-4 top-1/2 transform -translate-y-1/2 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-10 h-10 flex items-center justify-center
-                           bg-black/50 rounded-full">
-                ‹
-            </button>
-            
-            <button id="modal-next" 
-                    class="absolute right-0 md:right-4 top-1/2 transform -translate-y-1/2 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-10 h-10 flex items-center justify-center
-                           bg-black/50 rounded-full">
-                ›
-            </button>
-            
-            <div class="w-full h-full flex items-center justify-center">
-                <img id="modal-image" 
-                     src="" 
-                     alt="" 
-                     class="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain 
-                            rounded-lg shadow-2xl">
-            </div>
-            
-            <div id="modal-info" 
-                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent 
-                        text-white p-4 md:p-6 rounded-b-lg">
-                <h3 id="modal-title" class="text-lg md:text-xl font-bold mb-1"></h3>
-                <p id="modal-description" class="text-sm md:text-base opacity-90"></p>
-                <p id="modal-index" class="text-xs opacity-70 mt-2"></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Sección: Comentarios de Asociados -->
-
-<!-- Sección: Historia -->
+                    institutionModal.classList.add('flex');
+                    institutionModal.classList.remove('hidden');
+                }
+            });
+        });
+    }
+    
+    // Configurar botón para cerrar modal
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            institutionModal.classList.remove('flex');
+            institutionModal.classList.add('hidden');
+        });
+    }
+    
+    // Cerrar modal al hacer clic fuera
+    if (institutionModal) {
+        institutionModal.addEventListener('click', function(e) {
+            if (e.target === institutionModal) {
+                institutionModal.classList.remove('flex');
+                institutionModal.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && institutionModal.classList.contains('flex')) {
+            institutionModal.classList.remove('flex');
+            institutionModal.classList.add('hidden');
+        }
+    });
+});
+</script>
 
 
-<!-- Sección: Actividades y Logros -->
-<section id="actividades" class="py-8 bg-white" align="justify">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 section-title">Actividades y Logros</h2>
-        <p class="text-xl text-gray-700 mb-12 max-w-3xl">
-            Un recorrido por nuestros momentos más destacados y el impacto de nuestra asociación.
-        </p>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_1.jpg" 
-                         alt="Copa Mundial del Acordeón - Italia" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Copa Mundial del Acordeón';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">COPA MUNDIAL DEL ACORDEON - ITALIA</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        Nuestro presidente, José Alfonso Maslucán, participó en la Copa Mundial de Acordeonistas en Osimo, Italia, del 11 al 14 de Septiembre del 2017, un evento organizado por la Confederación Internacional de Acordeonistas (CIA) que reúne a los mejores talentos del mundo.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_2.jpg" 
-                         alt="Participación en el Carnaval de Ayacucho" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Carnaval de Ayacucho';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Participación en el CARNAVAL DE AYACUCHO</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        La asociación participó en el tradicional festival de carnavales en Ayacucho, uniendo a nuevos afiliados con alegría y entusiasmo. Agradecemos a la región por la cálida bienvenida con su típica comparsa de acordeones.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_3.jpg" 
-                         alt="Capacitación de Acordeonistas en Ayacucho" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Capacitación en Ayacucho';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Capacitación de Acordeonistas en Ayacucho</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        Cumpliendo con nuestro cronograma, realizamos un importante evento de capacitación e intercambio de experiencias en Ayacucho, fortaleciendo el arte y la música de nuestro Perú profundo y planificando futuros campeonatos regionales.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_4.jpg" 
-                         alt="Agradecimiento a la Asociación de Uruguay" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Agradecimiento a Uruguay';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Agradecimiento a la Asociación de Acordeonistas de Uruguay</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        Extendemos nuestro agradecimiento a Silvio Previale, presidente de la asociación uruguaya, por la invitación a un gran evento en Montevideo, que contó con la presencia de Mirco Patarini, presidente de la Confederación Internacional de Acordeonistas.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_5.jpg" 
-                         alt="Entrega de Certificados en Ayacucho" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Entrega de Certificados';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Entrega de Certificados en Ayacucho</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        El 20 de Mayo del 2018, en un evento en Huamanga, entregamos certificados a nuestros afiliados, consolidando nuestra creciente familia de acordeonistas y acordando instalar una nueva sede de la asociación en la región de Ayacucho.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_6.jpg" 
-                         alt="Reconocimiento del Ministerio de Cultura" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Reconocimiento del Ministerio';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Reconocimiento del Ministerio de Cultura</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        La Ministra de Cultura, Patricia Balbuena, entregó un presente al acordeonista Mirco Patarini durante el "Primer Concierto Internacional de Acordeón en el Perú", un evento que contó con importantes autoridades y reafirmó nuestro compromiso cultural.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img src="assets/actividad_7.jpg" 
-                         alt="Castelfidardo, Italia - Cuna del Acordeón" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'; this.alt='Castelfidardo, Italia';">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">Castelfidardo, Italia - "CUNA DEL ACORDEON"</h3>
-                    <p class="text-gray-700 italic text-sm">
-                        Visitamos Castelfidardo, el corazón de la fabricación de acordeones, un pueblo italiano donde se ubican las fábricas más prestigiosas del mundo, manteniendo una tradición de calidad insuperable a pesar de los nuevos mercados.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-12">
-            <button id="btn-catalogo" 
-                    class="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg transition duration-300 transform hover:scale-105">
-                <i class="fas fa-file-pdf mr-2"></i> Ver Catálogo Instritucional
-            </button>
-        </div>
-    </div>
-</section>
 
-<!-- Sección: Galería de Momentos -->
-<section id="galeria" class="py-16 bg-gradient-to-b from-white to-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 
-                        text-white rounded-full text-sm font-semibold mb-4 shadow-md">
-                <i class="fas fa-camera-retro mr-2"></i>MEMORIAS VISUALES
-            </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                Galería de Momentos
-            </h2>
-            <div class="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Revive la emoción, la pasión y los momentos inolvidables de nuestros eventos 
-                a través de esta colección especial de fotografías.
-            </p>
-        </div>
 
-        <div class="flex justify-center items-center mb-8">
-            <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                <span class="text-gray-700 font-semibold">
-                    <i class="fas fa-images text-blue-500 mr-2"></i>
-                    <span id="image-counter">4</span> momentos capturados
-                </span>
-            </div>
-        </div>
+<!-- Al final del body, antes de </body> -->
+<script src="js/nav-loader.js"></script>
+<script src="js/menu-mobile-simple.js"></script>
+<script src="js/app.js"></script>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <div class="gallery-item group" data-index="0">
-                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl 
-                            transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-                    <img src="assets/momento_1.jpg" 
-                         alt="Momento especial de la Asociación 1" 
-                         class="w-full h-64 md:h-80 object-cover transition-transform duration-700 
-                                group-hover:scale-110 group-hover:rotate-1"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                  this.alt='Momento musical 1';">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                rounded-full flex items-center justify-center opacity-0 
-                                group-hover:opacity-100 transition-all duration-300 
-                                hover:bg-white hover:scale-110 cursor-pointer">
-                        <i class="fas fa-expand-alt text-blue-600 text-lg"></i>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full 
-                                group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-bold text-lg mb-1">Concierto Anual 2023</h3>
-                        <p class="text-sm opacity-90">Gran noche de música y cultura</p>
-                        <div class="flex items-center mt-2 text-xs opacity-75">
-                            <i class="fas fa-calendar-alt mr-1"></i>
-                            <span>Diciembre 15, 2023</span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-4 right-4 bg-blue-500 text-white text-xs 
-                                px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 
-                                transition-opacity duration-300">
-                        Haz clic para ampliar
-                    </div>
-                </div>
-            </div>
 
-            <div class="gallery-item group" data-index="1">
-                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl 
-                            transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-                    <img src="assets/momento_2.jpg" 
-                         alt="Momento especial de la Asociación 2" 
-                         class="w-full h-64 md:h-80 object-cover transition-transform duration-700 
-                                group-hover:scale-110 group-hover:-rotate-1"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                  this.alt='Momento musical 2';">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                rounded-full flex items-center justify-center opacity-0 
-                                group-hover:opacity-100 transition-all duration-300 
-                                hover:bg-white hover:scale-110 cursor-pointer">
-                        <i class="fas fa-expand-alt text-blue-600 text-lg"></i>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full 
-                                group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-bold text-lg mb-1">Taller de Acordeón</h3>
-                        <p class="text-sm opacity-90">Capacitación para nuevos talentos</p>
-                        <div class="flex items-center mt-2 text-xs opacity-75">
-                            <i class="fas fa-users mr-1"></i>
-                            <span>25 participantes</span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-4 right-4 bg-blue-500 text-white text-xs 
-                                px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 
-                                transition-opacity duration-300">
-                        Haz clic para ampliar
-                    </div>
-                </div>
-            </div>
 
-            <div class="gallery-item group" data-index="2">
-                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl 
-                            transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-                    <img src="assets/momento_3.jpg" 
-                         alt="Momento especial de la Asociación 3" 
-                         class="w-full h-64 md:h-80 object-cover transition-transform duration-700 
-                                group-hover:scale-110 group-hover:rotate-1"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                  this.alt='Momento musical 3';">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                rounded-full flex items-center justify-center opacity-0 
-                                group-hover:opacity-100 transition-all duration-300 
-                                hover:bg-white hover:scale-110 cursor-pointer">
-                        <i class="fas fa-expand-alt text-blue-600 text-lg"></i>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full 
-                                group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-bold text-lg mb-1">Festival Nacional</h3>
-                        <p class="text-sm opacity-90">Encuentro de acordeonistas del Perú</p>
-                        <div class="flex items-center mt-2 text-xs opacity-75">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            <span>Lima, Perú</span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-4 right-4 bg-blue-500 text-white text-xs 
-                                px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 
-                                transition-opacity duration-300">
-                        Haz clic para ampliar
-                    </div>
-                </div>
-            </div>
 
-            <div class="gallery-item group" data-index="3">
-                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl 
-                            transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-                    <img src="assets/momento_4.jpg" 
-                         alt="Momento especial de la Asociación 4" 
-                         class="w-full h-64 md:h-80 object-cover transition-transform duration-700 
-                                group-hover:scale-110 group-hover:-rotate-1"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'; 
-                                  this.alt='Momento musical 4';">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent 
-                                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-10 h-10 
-                                rounded-full flex items-center justify-center opacity-0 
-                                group-hover:opacity-100 transition-all duration-300 
-                                hover:bg-white hover:scale-110 cursor-pointer">
-                        <i class="fas fa-expand-alt text-blue-600 text-lg"></i>
-                    </div>
-                    
-                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full 
-                                group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-bold text-lg mb-1">Premiación Juvenil</h3>
-                        <p class="text-sm opacity-90">Reconocimiento a jóvenes talentos</p>
-                        <div class="flex items-center mt-2 text-xs opacity-75">
-                            <i class="fas fa-trophy mr-1"></i>
-                            <span>10 ganadores</span>
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-4 right-4 bg-blue-500 text-white text-xs 
-                                px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 
-                                transition-opacity duration-300">
-                        Haz clic para ampliar
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="text-center mt-12">
-            <button id="btn-mas-fotos" 
-                    class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 
-                           hover:from-blue-600 hover:to-indigo-600 text-white rounded-full font-semibold 
-                           transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                <i class="fas fa-plus-circle mr-2"></i>
-                Cargar más momentos
-                <span class="ml-2 text-sm opacity-80">(Próximamente)</span>
-            </button>
-            
-            <p class="text-gray-600 text-sm mt-4">
-                <i class="fas fa-info-circle text-blue-500 mr-1"></i>
-                Haz clic en cualquier imagen para verla en tamaño completo
-            </p>
-        </div>
-    </div>
-</section>
 
-<!-- Modal para galería -->
-<div id="gallery-modal" class="fixed inset-0 z-[10000] hidden bg-black/95">
-    <div class="relative w-full h-full flex items-center justify-center p-4">
-        <div class="relative max-w-6xl w-full max-h-[90vh]">
-            <button id="gallery-modal-close" 
-                    class="absolute -top-12 right-0 md:top-6 md:right-6 z-10 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-12 h-12 flex items-center justify-center
-                           bg-black/50 rounded-full hover:bg-black/70">
-                &times;
-            </button>
-            
-            <button id="gallery-modal-prev" 
-                    class="absolute left-0 md:left-6 top-1/2 transform -translate-y-1/2 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-12 h-12 flex items-center justify-center
-                           bg-black/50 rounded-full hover:bg-black/70">
-                ‹
-            </button>
-            
-            <button id="gallery-modal-next" 
-                    class="absolute right-0 md:right-6 top-1/2 transform -translate-y-1/2 
-                           text-white text-3xl md:text-4xl hover:text-gray-300 
-                           transition duration-200 w-12 h-12 flex items-center justify-center
-                           bg-black/50 rounded-full hover:bg-black/70">
-                ›
-            </button>
-            
-            <div class="w-full h-full flex items-center justify-center">
-                <img id="gallery-modal-image" 
-                     src="" 
-                     alt="" 
-                     class="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain 
-                            rounded-lg shadow-2xl">
-            </div>
-            
-            <div id="gallery-modal-info" 
-                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent 
-                        text-white p-4 md:p-6 rounded-b-lg">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 id="gallery-modal-title" class="text-lg md:text-xl font-bold mb-1"></h3>
-                        <p id="gallery-modal-description" class="text-sm md:text-base opacity-90"></p>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button id="gallery-modal-download" 
-                                class="bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-lg 
-                                       text-sm transition duration-200 flex items-center">
-                            <i class="fas fa-download mr-2"></i>
-                            Guardar
-                        </button>
-                        <span id="gallery-modal-index" class="text-sm opacity-70"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+</body>
 <!-- Sección: Donaciones -->
 
 
@@ -1449,9 +1078,9 @@
                     <li><a href="#nosotros" class="text-gray-400 hover:text-white">¿Quiénes Somos?</a></li>
                     <li><a href="nuestro_equipo.html" class="text-gray-400 hover:text-white">Nuestro Equipo</a></li>
                     <li><a href="sedes-programas.html" class="text-gray-400 hover:text-white">Sedes y Programas</a></li>
-                    <li><a href="actividades.html" class="text-gray-400 hover:text-white">Actividades</a></li>
+                    <li><a href="actividades.html" class="text-gray-400 hover:text-white">Novedades y Noticias</a></li>
                     <li><a href="avisos-legales.html" class="text-gray-400 hover:text-white">Avisos Legales</a></li>
-                    <li><a href="donar.html" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300">Apadrinar</a></li>
+                    <li><a href="donar.html" class="text-gray-400 hover:text-white">Donaciones</a></li>
                 </ul>
             </div>
             
@@ -1481,7 +1110,7 @@
 </footer>
 
 <!-- Botón flotante "Apoyar" para móvil -->
-<div id="floating-donation-btn" class="fixed md:hidden z-40 left-4 bottom-4">
+ <div id="floating-donation-btn" class="fixed md:hidden z-40 left-4 bottom-4">
     <a href="donar.html" 
     class="floating-heartbeat-btn bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-4xl transform hover:scale-150 relative overflow-hidden group flex items-center justify-center w-20 h-20">
         
@@ -1665,6 +1294,99 @@
         }
     });
 </script>
+
+<script>
+// Script de respaldo para el menú móvil
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('menu-movil');
+    
+    if (menuButton) {
+        // Asegurar que sea clickeable
+        menuButton.style.cssText = `
+            cursor: pointer !important;
+            z-index: 1000 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        `;
+        
+        // Agregar evento directo como respaldo
+        menuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Verificar si ya hay un menú
+            const existingMenu = document.getElementById('mobile-simple-menu');
+            if (existingMenu) {
+                existingMenu.remove();
+                return;
+            }
+            
+            // Crear menú simple
+            const menu = document.createElement('div');
+            menu.id = 'mobile-simple-menu';
+            menu.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 16px;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                border: 1px solid #e5e7eb;
+                min-width: 200px;
+                padding: 16px;
+                z-index: 9999;
+            `;
+            
+            menu.innerHTML = `
+                <div style="margin-bottom: 12px; font-weight: bold; color: #374151;">
+                    Menú
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="index.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-home" style="margin-right: 12px; color: #3b82f6;"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="nuestro_equipo.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-users" style="margin-right: 12px; color: #8b5cf6;"></i>
+                        <span>Nuestro Equipo</span>
+                    </a>
+                    <a href="sedes-programas.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 12px; color: #10b981;"></i>
+                        <span>Sedes y Programas</span>
+                    </a>
+                    <a href="actividades.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-newspaper" style="margin-right: 12px; color: #6366f1;"></i>
+                        <span>Actividades</span>
+                    </a>
+                    <a href="avisos-legales.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
+                        <i class="fas fa-file-contract" style="margin-right: 12px; color: #6b7280;"></i>
+                        <span>Avisos Legales</span>
+                    </a>
+                    <a href="donar.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: white; text-decoration: none; background: linear-gradient(to right, #ec4899, #ef4444);">
+                        <i class="fas fa-heart" style="margin-right: 12px;"></i>
+                        <span>Donar</span>
+                    </a>
+                </div>
+            `;
+            
+            document.body.appendChild(menu);
+            
+            // Cerrar al hacer click fuera
+            setTimeout(() => {
+                document.addEventListener('click', function closeMenu(e) {
+                    if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
+                        menu.remove();
+                        document.removeEventListener('click', closeMenu);
+                    }
+                });
+            }, 10);
+        });
+    }
+});
+</script>
+
+
 
 <!-- Al final del index.html -->
 <script>

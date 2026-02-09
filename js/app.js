@@ -39,11 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 4. MENÚ MÓVIL SIMPLE
-   /*  document.getElementById('menu-movil')?.addEventListener('click', function() {
-        crearMenuMovilSimple(); */
-    });
-    
+        
     // 5. EFECTO DE CARGA PARA IMÁGENES
     const images = document.querySelectorAll('img');
     images.forEach(img => {
@@ -174,200 +170,7 @@ function setupDonationButton() {
     });
 }
 
-// MENÚ MÓVIL
-/*
-function crearMenuMovilSimple() {
-    const existingMenu = document.getElementById('mobile-simple-menu');
-    if (existingMenu) {
-        existingMenu.remove();
-        return;
-    }
-    
-    const menu = document.createElement('div');
-    menu.id = 'mobile-simple-menu';
-    menu.className = 'fixed top-20 right-4 z-50 bg-white rounded-lg shadow-2xl border border-gray-200 min-w-56';
-    
-    const menuItems = [
-        { 
-            text: 'Inicio', 
-            href: '#inicio', 
-            icon: 'fas fa-home',
-            submenu: [
-                { text: '¿Quiénes Somos?', href: '#nosotros', icon: 'fas fa-users' },
-                { text: 'Políticas de Protección', href: '#politicas', icon: 'fas fa-shield-alt' },
-                { text: 'Transparencia y Acreditaciones', href: '#transparencia', icon: 'fas fa-file-contract' },
-                { text: 'Registros Institucionales', href: '#registros', icon: 'fas fa-archive' },
-                { text: 'Ética y Cumplimiento', href: '#etica', icon: 'fas fa-handshake' }
-            ]
-        },
-        { 
-            text: 'Nuestro Equipo', 
-            href: '#equipo', 
-            icon: 'fas fa-user-friends',
-            submenu: [
-                { text: 'Nuestro Equipo', href: '#equipo', icon: 'fas fa-user-friends' },
-                { text: 'Socios Adherentes', href: '#socios', icon: 'fas fa-handshake' },
-                { text: 'Comentarios', href: '#comentarios', icon: 'fas fa-comments' },
-                { text: 'Historia del Acordeón', href: '#historia-acordeon', icon: 'fas fa-book' }
-            ]
-        },
-        { 
-            text: 'Sedes y Programas', 
-            href: '#sedes-programas', 
-            icon: 'fas fa-map-marked-alt',
-            submenu: [
-                { text: 'Núcleos de Formación', href: '#sedes-programas', icon: 'fas fa-map-marker-alt' },
-                { text: 'Impacto Social', href: '#impacto', icon: 'fas fa-heart' },
-                { text: '¿Cómo Ayudar?', href: '#como-ayudar', icon: 'fas fa-hands-helping' },
-                { text: 'Nuestra Sede Principal', href: '#sedes-locales', icon: 'fas fa-building' }
-            ]
-        },
-    // En la función crearMenuMovilSimple() en app.js
-// Actualizar las secciones de actividades y avisos legales
 
-// Dentro de menuItems, cambiar:
-            { 
-                text: 'Actividades', 
-                href: 'actividades.html',  // Cambiado de '#actividades' a 'actividades.html'
-                icon: 'fas fa-calendar-alt',
-                submenu: [
-                    { text: 'Actividades y Logros', href: 'actividades.html#actividades', icon: 'fas fa-trophy' },
-                    { text: 'Galería de Momentos', href: 'actividades.html#galeria', icon: 'fas fa-images' },
-                    { text: 'Catálogo Institucional', href: 'actividades.html#catalogo', icon: 'fas fa-file-pdf' }
-                ]
-            },
-            { 
-                text: 'Avisos Legales', 
-                href: 'avisos-legales.html',  // Cambiado de '#avisos-legales' a 'avisos-legales.html'
-                icon: 'fas fa-gavel',
-                submenu: [
-                    { text: 'Política de Privacidad', href: 'avisos-legales.html#privacidad', icon: 'fas fa-lock' },
-                    { text: 'Términos de Donaciones', href: 'avisos-legales.html#terminos-donaciones', icon: 'fas fa-file-contract' },
-                    { text: 'Protección al Menor', href: 'avisos-legales.html#proteccion-menor', icon: 'fas fa-child' },
-                    { text: 'Documentos para Descargar', href: 'avisos-legales.html#descargas', icon: 'fas fa-download' }
-                ]
-            },    
-        { text: 'Dona ❤️', href: '#donaciones', icon: 'fas fa-heart heartbeat-icon' }
-    ];
-    
-    // Función para crear elementos del menú
-    function createMenuItem(item) {
-        if (item.submenu) {
-            // Crear contenedor para menú desplegable
-            const container = document.createElement('div');
-            container.className = 'border-b border-gray-100';
-            
-            // Botón principal
-            const mainButton = document.createElement('div');
-            mainButton.className = 'flex items-center justify-between py-3 px-4 text-gray-700 hover:bg-blue-50 transition duration-200 cursor-pointer';
-            mainButton.innerHTML = `
-                <div class="flex items-center">
-                    <i class="${item.icon} mr-3 text-gray-400 w-5 text-center"></i>
-                    <span class="font-medium">${item.text}</span>
-                </div>
-                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
-            `;
-            
-            // Submenú (inicialmente oculto)
-            const submenuContainer = document.createElement('div');
-            submenuContainer.className = 'bg-gray-50 pl-8 hidden';
-            submenuContainer.id = `submenu-${item.text.toLowerCase().replace(/\s+/g, '-')}`;
-            
-            item.submenu.forEach(subItem => {
-                const subLink = document.createElement('a');
-                subLink.href = subItem.href;
-                subLink.className = 'flex items-center py-2 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-100 transition duration-200';
-                subLink.innerHTML = `
-                    <i class="${subItem.icon} mr-3 text-gray-400 w-5 text-center"></i>
-                    <span class="text-sm">${subItem.text}</span>
-                `;
-                
-                subLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(subItem.href);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                    menu.remove();
-                });
-                
-                submenuContainer.appendChild(subLink);
-            });
-            
-            // Toggle para mostrar/ocultar submenú
-            mainButton.addEventListener('click', function() {
-                const submenu = document.getElementById(`submenu-${item.text.toLowerCase().replace(/\s+/g, '-')}`);
-                const icon = this.querySelector('.fa-chevron-down');
-                
-                if (submenu.classList.contains('hidden')) {
-                    submenu.classList.remove('hidden');
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                } else {
-                    submenu.classList.add('hidden');
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                }
-            });
-            
-            container.appendChild(mainButton);
-            container.appendChild(submenuContainer);
-            menu.appendChild(container);
-        } else {
-            // Enlace normal
-            const a = document.createElement('a');
-            a.href = item.href;
-            a.className = 'flex items-center py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 border-b border-gray-100 last:border-b-0';
-            a.innerHTML = `
-                <i class="${item.icon} mr-3 text-gray-400 w-5 text-center"></i>
-                <span class="font-medium">${item.text}</span>
-            `;
-            
-            a.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetElement = document.querySelector(item.href);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-                menu.remove();
-            });
-            
-            menu.appendChild(a);
-        }
-    }
-    
-    // Crear todos los elementos del menú
-    menuItems.forEach(createMenuItem);
-    
-    document.body.appendChild(menu);
-    
-    // Cerrar al hacer click fuera
-    setTimeout(() => {
-        const closeMenu = function(e) {
-            if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
-                menu.remove();
-                document.removeEventListener('click', closeMenu);
-            }
-        };
-        document.addEventListener('click', closeMenu);
-    }, 10);
-    
-    // Cerrar con ESC
-    const closeOnEsc = function(e) {
-        if (e.key === 'Escape') {
-            menu.remove();
-            document.removeEventListener('keydown', closeOnEsc);
-        }
-    };
-    document.addEventListener('keydown', closeOnEsc);
-}
-*/
 // BOTÓN FLOTANTE
 function setupFloatingDonationButton() {
     const floatingBtn = document.getElementById('floating-donation-btn');
@@ -1372,3 +1175,35 @@ function setupQuienesSomos() {
     
     console.log('Sección Quiénes Somos configurada exitosamente');
 }
+
+// Configurar botones de descarga para avisos legales
+function setupLegalDownloads() {
+    const downloadButtons = document.querySelectorAll('.download-btn');
+    
+    if (downloadButtons.length === 0) return;
+    
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const docType = this.getAttribute('data-doc');
+            const docNames = {
+                privacidad: 'Política de Privacidad',
+                donaciones: 'Términos de Donaciones',
+                proteccion: 'Política de Protección al Menor',
+                personeria: 'Certificado de Personería Jurídica'
+            };
+            
+            // Mostrar notificación (en producción aquí se descargaría el PDF real)
+            showNotification(`Documento "${docNames[docType]}" descargado`, 'success');
+            
+            // Efecto visual
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+}
+
+// Llamar a esta función en DOMContentLoaded
+// Agrega esto en tu función principal de app.js:
+// setupLegalDownloads();

@@ -1,8 +1,7 @@
-<!-- acordeonistas/nav.html -->
+<!-- acordeonistas/nav.html - VERSIÓN CORREGIDA -->
 <nav class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-    <!-- Logo con imagen y texto en dos filas -->
+    <!-- Logo -->
     <a href="index.html" class="flex items-center no-underline hover:no-underline group">
-        <!-- Contenedor del logo con imagen -->
         <div class="w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center mr-3 md:mr-5 overflow-hidden bg-white shadow-sm border border-gray-100 p-1 group-hover:shadow-md transition duration-300">
             <img src="assets/logo_1.png" 
                 alt="Logo Asociación de Acordeonistas" 
@@ -10,7 +9,6 @@
                 onerror="this.onerror=null; this.src='https://via.placeholder.com/70x70?text=Logo'; this.alt='Logo no disponible';">
         </div>
         
-        <!-- Texto en dos filas -->
         <div class="flex flex-col">
             <span class="logo-text text-xl md:text-2xl text-gray-500 leading-tight group-hover:text-gray-700 transition duration-300">
                 Asociación de
@@ -21,10 +19,10 @@
         </div>
     </a>
     
-    <!-- Navegación Desktop COMPLETA -->
-    <div class="flex space-x-4 md:space-x-8 lg:space-x-10 items-center">
+    <!-- Navegación Desktop -->
+    <div class="hidden md:flex space-x-4 md:space-x-8 lg:space-x-10 items-center">
         <!-- Inicio -->
-        <div class="relative group hidden sm:block">
+        <div class="relative group">
             <a href="index.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
                 Inicio
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -56,7 +54,7 @@
         </div>
         
         <!-- Nuestro Equipo -->
-        <div class="relative group hidden sm:block">
+        <div class="relative group">
             <a href="nuestro_equipo.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
                 Nuestro Equipo
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -84,7 +82,7 @@
         </div>
         
         <!-- Sedes y Programas -->
-        <div class="relative group hidden sm:block">
+        <div class="relative group">
             <a href="sedes-programas.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
                 Sedes y Programas
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -111,17 +109,17 @@
             </div>
         </div>
         
-        <!-- Actividades -->
-        <div class="relative group hidden sm:block">
+        <!-- Novedades y Noticias -->
+        <div class="relative group">
             <a href="actividades.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
-                Actividades
+                Novedades y Noticias
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
             </a>
             <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform -translate-y-2 group-hover:translate-y-0">
                 <div class="py-2">
                     <a href="actividades.html#actividades" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
-                        <i class="fas fa-trophy text-blue-500 mr-3 w-5 text-center"></i>
-                        Actividades y Logros
+                        <i class="fas fa-newspaper text-blue-500 mr-3 w-5 text-center"></i>
+                        Novedades Destacadas
                     </a>
                     <a href="actividades.html#galeria" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 flex items-center">
                         <i class="fas fa-images text-purple-500 mr-3 w-5 text-center"></i>
@@ -136,7 +134,7 @@
         </div>
         
         <!-- Avisos Legales -->
-        <div class="relative group hidden sm:block">
+        <div class="relative group">
             <a href="avisos-legales.html" class="menu-font text-base md:text-lg text-gray-700 hover:text-blue-600 transition duration-200 relative inline-flex items-center">
                 Avisos Legales
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -163,17 +161,18 @@
             </div>
         </div>
         
-        <!-- Botón "Donar" -->
-        <a href="donar.html" class="menu-font bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-125 relative overflow-hidden group heartbeat-btn text-base md:text-lg hidden md:flex flex-col items-center justify-center w-32 h-32 no-underline">
+        <!-- Botón "Donar" (Desktop) -->
+        <a href="donar.html" class="menu-font bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-125 relative overflow-hidden group heartbeat-btn text-base md:text-lg flex flex-col items-center justify-center w-32 h-32 no-underline">
             <div class="flex flex-col items-center justify-center w-full h-full p-4">
                 <i class="fas fa-heart heartbeat-icon text-3xl mb-2"></i>
                 <span class="relative z-10 text-lg font-bold">DONAR</span>
             </div>
         </a>
-        
-        <!-- Menú móvil -->
-        <button id="menu-movil" class="sm:hidden text-xl text-gray-700 hover:text-blue-600 transition duration-200">
-            <i class="fas fa-ellipsis-v"></i>
-        </button>
     </div>
+    
+    <!-- Botón hamburguesa SOLO para móvil -->
+    <!-- Cambia esta línea en nav.html -->
+    <button id="menu-movil" class="hidden md:hidden lg:hidden xl:hidden 2xl:hidden text-xl text-gray-700 hover:text-blue-600 transition duration-200">
+        <i class="fas fa-bars"></i>
+    </button>
 </nav>

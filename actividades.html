@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Actividades y Logros - Asociación de Acordeonistas del Perú. Descubre nuestras actividades destacadas, galería de momentos y logros institucionales.">
+    <meta name="description" content="Novedades y Noticias - Asociación de Acordeonistas del Perú. Descubre nuestras novedades destacadas, galería de momentos y logros institucionales.">
+    <meta property="og:title" content="Novedades y Noticias - Asociación de Acordeonistas del Perú">
     <meta name="keywords" content="actividades, logros, galería, eventos, conciertos, festivales, asociación, cultura, Perú">
     <meta name="author" content="Asociación de Acordeonistas del Perú">
     <meta property="og:title" content="Actividades y Logros - Asociación de Acordeonistas del Perú">
@@ -11,7 +12,7 @@
     <meta property="og:image" content="assets/logo_1.png">
     <meta property="og:url" content="https://tu-sitio-web.pe/actividades.html">
     
-    <title>Actividades y Logros - Asociación de Acordeonistas del Perú</title>
+    <title>Novedades y Noticias - Asociación de Acordeonistas del Perú</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +32,7 @@
     
     <!-- Tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu-fix.css">
     
     <style>
         * {
@@ -74,18 +76,23 @@
             height: 3px;
             background-color: #3b82f6;
         }
+        
+        /* Estilos para la galería */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     
-    <!-- Header / Navegación -->
     <!-- Header / Navegación UNIVERSAL -->
-        <header class="sticky top-0 z-50 bg-white shadow-md">
-            <!-- La navegación se cargará dinámicamente -->
-        </header>
-
-        <!-- Incluir el script del cargador de navegación -->
-        <script src="js/nav-loader.js"></script>
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <!-- La navegación se cargará dinámicamente -->
+    </header>
 
     <!-- Hero específico para Actividades y Logros -->
     <section class="hero-bg text-white py-20 md:py-28 relative">
@@ -95,19 +102,19 @@
                 <i class="fas fa-trophy mr-2"></i>NUESTRAS ACTIVIDADES
             </div>
             <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Actividades y <span class="text-yellow-300">Logros</span>
+                Novedades y <span class="text-yellow-300">Noticias</span>
             </h1>
             
             <p class="hero-subtitle text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
-                Un recorrido por los momentos más destacados de nuestra asociación. 
-                Cada evento, cada logro, es una nota en la sinfonía de transformación que creamos juntos.
+                Mantente informado sobre nuestras últimas novedades, eventos destacados 
+                y noticias relevantes de nuestra asociación.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#actividades" 
                 class="hero-btn bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white px-6 py-3 sm:px-7 sm:py-3 rounded-full font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center">
                     <i class="fas fa-calendar-alt mr-2 text-lg"></i>
-                    Actividades Destacadas
+                     Novedades Destacadas
                 </a>
                 
                 <a href="#galeria" 
@@ -125,7 +132,7 @@
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#actividades" class="inline-flex items-center px-4 py-2 bg-white rounded-full text-gray-700 hover:bg-purple-100 hover:text-purple-700 transition duration-300 shadow-sm">
                     <i class="fas fa-trophy mr-2"></i>
-                    Actividades Destacadas
+                    Novedades Destacadas
                 </a>
                 <a href="#galeria" class="inline-flex items-center px-4 py-2 bg-white rounded-full text-gray-700 hover:bg-purple-100 hover:text-purple-700 transition duration-300 shadow-sm">
                     <i class="fas fa-images mr-2"></i>
@@ -148,7 +155,7 @@
                     <i class="fas fa-trophy mr-2"></i>ACTIVIDADES DESTACADAS
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Nuestras Actividades y Logros
+                    Nuestras Novedades y Noticia
                 </h2>
                 <div class="w-32 h-1 bg-gradient-to-r from-purple-400 to-indigo-500 mx-auto mb-6"></div>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -779,7 +786,7 @@
         </a>
     </div>
 
-    <!-- Modal para galería (copia del index.html) -->
+    <!-- Modal para galería -->
     <div id="gallery-modal" class="fixed inset-0 z-[10000] hidden bg-black/95">
         <div class="relative w-full h-full flex items-center justify-center p-4">
             <div class="relative max-w-6xl w-full max-h-[90vh]">
@@ -838,468 +845,10 @@
         </div>
     </div>
 
-    <!-- Script para página de actividades -->
-    <script>
-        // Script específico para página de actividades
-        (function() {
-            'use strict';
-            
-            const menuButton = document.getElementById('menu-movil');
-            
-            if (!menuButton) {
-                console.error('❌ Botón del menú no encontrado');
-                return;
-            }
-            
-            console.log('✅ Botón del menú encontrado, configurando...');
-            
-            // Agregar event listener DIRECTO
-            menuButton.onclick = function(e) {
-                e.stopPropagation();
-                toggleMobileMenu();
-            };
-            
-            function toggleMobileMenu() {
-                console.log('Toggle del menú llamado');
-                
-                const existingMenu = document.getElementById('mobile-menu-actividades');
-                if (existingMenu) {
-                    existingMenu.remove();
-                    return;
-                }
-                
-                // Crear menú minimalista
-                const menu = document.createElement('div');
-                menu.id = 'mobile-menu-actividades';
-                menu.style.cssText = `
-                    position: fixed;
-                    top: 80px;
-                    right: 16px;
-                    z-index: 9999;
-                    background: white;
-                    border-radius: 12px;
-                    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                    border: 1px solid #e5e7eb;
-                    min-width: 220px;
-                    padding: 16px;
-                    animation: fadeIn 0.2s ease-out;
-                `;
-                
-                menu.innerHTML = `
-                    <div style="margin-bottom: 12px; font-weight: bold; color: #374151; text-align: center;">
-                        Actividades y Logros
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <a href="index.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                            <i class="fas fa-home" style="margin-right: 12px; color: #3b82f6;"></i>
-                            <span>Volver al Inicio</span>
-                        </a>
-                        <a href="#actividades" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                            <i class="fas fa-trophy" style="margin-right: 12px; color: #8b5cf6;"></i>
-                            <span>Actividades Destacadas</span>
-                        </a>
-                        <a href="#galeria" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                            <i class="fas fa-images" style="margin-right: 12px; color: #3b82f6;"></i>
-                            <span>Galería de Momentos</span>
-                        </a>
-                        <a href="#catalogo" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                            <i class="fas fa-file-pdf" style="margin-right: 12px; color: #ef4444;"></i>
-                            <span>Catálogo Institucional</span>
-                        </a>
-                        <a href="donar.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: white; text-decoration: none; background: linear-gradient(to right, #ec4899, #ef4444); margin-top: 8px;">
-                            <i class="fas fa-heart" style="margin-right: 12px;"></i>
-                            <span>¡Donar Ahora!</span>
-                        </a>
-                    </div>
-                `;
-                
-                document.body.appendChild(menu);
-                
-                // Agregar animación CSS
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes fadeIn {
-                        from { opacity: 0; transform: translateY(-10px); }
-                        to { opacity: 1; transform: translateY(0); }
-                    }
-                `;
-                document.head.appendChild(style);
-                
-                // Cerrar al hacer click fuera
-                setTimeout(() => {
-                    document.addEventListener('click', function closeMenu(e) {
-                        if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
-                            menu.remove();
-                            document.removeEventListener('click', closeMenu);
-                        }
-                    });
-                }, 10);
-                
-                // Cerrar con ESC
-                document.addEventListener('keydown', function closeOnEsc(e) {
-                    if (e.key === 'Escape') {
-                        menu.remove();
-                        document.removeEventListener('keydown', closeOnEsc);
-                    }
-                });
-                
-                // Navegación suave para enlaces internos
-                menu.querySelectorAll('a[href^="#"]').forEach(link => {
-                    link.onclick = function(e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            window.scrollTo({
-                                top: target.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                        menu.remove();
-                    };
-                });
-            }
-            
-            // Navegación suave para enlaces internos de la página
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Solo manejar anclas internas (que empiezan con #)
-                    if(href.startsWith('#')) {
-                        e.preventDefault();
-                        
-                        if(href === '#') return;
-                        
-                        const targetElement = document.querySelector(href);
-                        if(targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-            
-            // Efecto heartbeat para botón donar
-            const heartbeatBtn = document.querySelector('.heartbeat-btn');
-            if (heartbeatBtn) {
-                const heartbeatIcon = heartbeatBtn.querySelector('.heartbeat-icon');
-                
-                heartbeatBtn.addEventListener('mouseenter', function() {
-                    if (heartbeatIcon) {
-                        heartbeatIcon.style.animation = 'heartbeat 0.8s infinite';
-                    }
-                });
-                
-                heartbeatBtn.addEventListener('mouseleave', function() {
-                    if (heartbeatIcon) {
-                        heartbeatIcon.style.animation = 'heartbeat 1.5s infinite';
-                    }
-                });
-            }
-            
-            // Configurar galería
-            setupActivitiesGallery();
-            
-            // Configurar botón de catálogo
-            setupCatalogoButton();
-            
-            console.log('✅ Página de Actividades configurada exitosamente');
-        })();
-        
-        // Función para configurar galería de actividades
-        function setupActivitiesGallery() {
-            console.log('Inicializando galería de actividades...');
-            
-            const galleryModal = document.getElementById('gallery-modal');
-            const galleryModalImage = document.getElementById('gallery-modal-image');
-            const galleryModalTitle = document.getElementById('gallery-modal-title');
-            const galleryModalDescription = document.getElementById('gallery-modal-description');
-            const galleryModalIndex = document.getElementById('gallery-modal-index');
-            const galleryModalClose = document.getElementById('gallery-modal-close');
-            const galleryModalPrev = document.getElementById('gallery-modal-prev');
-            const galleryModalNext = document.getElementById('gallery-modal-next');
-            const galleryModalDownload = document.getElementById('gallery-modal-download');
-            
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const btnMasFotos = document.getElementById('btn-mas-fotos');
-            
-            if (!galleryModal || !galleryModalImage || galleryItems.length === 0) {
-                console.log('Elementos de galería no encontrados');
-                return;
-            }
-            
-            console.log(`Encontradas ${galleryItems.length} imágenes en la galería`);
-            
-            // Actualizar contador
-            const imageCounter = document.getElementById('image-counter');
-            if (imageCounter) {
-                imageCounter.textContent = galleryItems.length;
-            }
-            
-            let currentGalleryIndex = 0;
-            const totalGalleryImages = galleryItems.length;
-            
-            // FUNCIÓN PARA ABRIR EL MODAL DE GALERÍA
-            function openGalleryModal(index) {
-                if (index < 0 || index >= totalGalleryImages) return;
-                
-                currentGalleryIndex = index;
-                const item = galleryItems[index];
-                
-                // Obtener imagen
-                const itemImg = item.querySelector('img');
-                if (itemImg && itemImg.src) {
-                    galleryModalImage.src = itemImg.src;
-                    galleryModalImage.alt = itemImg.alt || `Momento ${index + 1}`;
-                }
-                
-                // Obtener información del overlay
-                const overlayTitle = item.querySelector('h3')?.textContent || 'Momento Especial';
-                const overlayDesc = item.querySelector('p.text-sm')?.textContent || 'Evento de la Asociación';
-                
-                // Establecer información
-                if (galleryModalTitle) galleryModalTitle.textContent = overlayTitle;
-                if (galleryModalDescription) galleryModalDescription.textContent = overlayDesc;
-                if (galleryModalIndex) galleryModalIndex.textContent = `${index + 1} / ${totalGalleryImages}`;
-                
-                // Configurar botón de descarga
-                if (galleryModalDownload && itemImg) {
-                    galleryModalDownload.onclick = function(e) {
-                        e.stopPropagation();
-                        downloadImage(itemImg.src, `momento_${index + 1}.jpg`);
-                    };
-                }
-                
-                // Mostrar modal
-                galleryModal.classList.remove('hidden');
-                galleryModal.classList.add('flex');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            // FUNCIÓN PARA CERRAR EL MODAL DE GALERÍA
-            function closeGalleryModal() {
-                galleryModal.classList.remove('flex');
-                galleryModal.classList.add('hidden');
-                document.body.style.overflow = '';
-                if (galleryModalImage) galleryModalImage.src = '';
-            }
-            
-            // FUNCIÓN PARA NAVEGAR EN GALERÍA
-            function navigateGallery(direction) {
-                const newIndex = (currentGalleryIndex + direction + totalGalleryImages) % totalGalleryImages;
-                openGalleryModal(newIndex);
-            }
-            
-            // FUNCIÓN PARA DESCARGAR IMAGEN
-            function downloadImage(url, filename) {
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = filename;
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                // Mostrar notificación
-                showNotification('Imagen descargada', 'success');
-            }
-            
-            // FUNCIÓN DE NOTIFICACIÓN
-            function showNotification(message, type) {
-                const notification = document.createElement('div');
-                notification.className = `fixed top-4 right-4 z-[10001] px-6 py-3 rounded-lg shadow-xl text-white font-semibold transition-all duration-300 transform translate-x-full ${
-                    type === 'success' ? 'bg-green-500' : 'bg-red-500'
-                }`;
-                notification.innerHTML = `
-                    <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle mr-2"></i>
-                    ${message}
-                `;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-full');
-                    notification.classList.add('translate-x-0');
-                }, 10);
-                
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-0');
-                    notification.classList.add('translate-x-full');
-                    
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            document.body.removeChild(notification);
-                        }
-                    }, 300);
-                }, 3000);
-            }
-            
-            // CONFIGURAR EVENTOS EN LAS IMÁGENES DE GALERÍA
-            galleryItems.forEach((item, index) => {
-                // Click en toda la tarjeta
-                item.addEventListener('click', function(e) {
-                    // Evitar si se hace click en el botón de zoom específicamente
-                    if (e.target.closest('.fa-expand-alt') || e.target.classList.contains('fa-expand-alt')) {
-                        return;
-                    }
-                    openGalleryModal(index);
-                });
-                
-                // Click en botón de zoom
-                const zoomBtn = item.querySelector('.fa-expand-alt')?.closest('div');
-                if (zoomBtn) {
-                    zoomBtn.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        openGalleryModal(index);
-                    });
-                }
-            });
-            
-            // CONTROLES DEL MODAL DE GALERÍA
-            if (galleryModalClose) {
-                galleryModalClose.addEventListener('click', closeGalleryModal);
-            }
-            
-            if (galleryModalPrev) {
-                galleryModalPrev.addEventListener('click', function() {
-                    navigateGallery(-1);
-                });
-            }
-            
-            if (galleryModalNext) {
-                galleryModalNext.addEventListener('click', function() {
-                    navigateGallery(1);
-                });
-            }
-            
-            // CERRAR CON TECLA ESC
-            document.addEventListener('keydown', function(e) {
-                if (galleryModal && !galleryModal.classList.contains('hidden')) {
-                    switch(e.key) {
-                        case 'Escape':
-                            closeGalleryModal();
-                            break;
-                        case 'ArrowLeft':
-                            navigateGallery(-1);
-                            break;
-                        case 'ArrowRight':
-                            navigateGallery(1);
-                            break;
-                    }
-                }
-            });
-            
-            // CERRAR AL HACER CLICK FUERA
-            if (galleryModal) {
-                galleryModal.addEventListener('click', function(e) {
-                    if (e.target === galleryModal) {
-                        closeGalleryModal();
-                    }
-                });
-            }
-            
-            // BOTÓN "CARGAR MÁS FOTOS"
-            if (btnMasFotos) {
-                btnMasFotos.addEventListener('click', function() {
-                    // Efecto visual
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                    
-                    // Simular carga de más fotos
-                    showNotification('Próximamente agregaremos más momentos', 'info');
-                });
-            }
-            
-            console.log('Galería de actividades configurada exitosamente');
-        }
-        
-        // Función para configurar botón de catálogo
-        function setupCatalogoButton() {
-            const catalogoBtn = document.getElementById('btn-catalogo');
-            
-            if (!catalogoBtn) {
-                console.log('Botón de catálogo no encontrado');
-                return;
-            }
-            
-            catalogoBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Ruta al archivo PDF
-                const pdfPath = 'assets/Catalogo.pdf';
-                
-                // Abrir PDF en nueva pestaña
-                window.open(pdfPath, '_blank');
-                
-                // Mostrar mensaje de éxito
-                showNotification('¡Catálogo abierto en nueva pestaña!', 'success');
-            });
-            
-            // Efectos visuales adicionales
-            catalogoBtn.addEventListener('mouseenter', function() {
-                if (this.querySelector('i')) {
-                    this.querySelector('i').style.transform = 'rotate(15deg)';
-                }
-                this.style.boxShadow = '0 10px 25px rgba(128, 90, 213, 0.5)';
-            });
-            
-            catalogoBtn.addEventListener('mouseleave', function() {
-                if (this.querySelector('i')) {
-                    this.querySelector('i').style.transform = 'rotate(0deg)';
-                }
-                this.style.boxShadow = '';
-            });
-            
-            // Verificar disponibilidad del PDF
-            const pdfPath = 'assets/Catalogo.pdf';
-            fetch(pdfPath, { method: 'HEAD' })
-                .then(response => {
-                    if (!response.ok) {
-                        catalogoBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i> Catálogo no disponible';
-                        catalogoBtn.className = catalogoBtn.className.replace('from-purple-600 to-indigo-600', 'from-gray-400 to-gray-500');
-                        catalogoBtn.classList.remove('hover:from-purple-700', 'hover:to-indigo-700');
-                        catalogoBtn.classList.add('hover:from-gray-500', 'hover:to-gray-600');
-                        catalogoBtn.style.cursor = 'not-allowed';
-                        catalogoBtn.disabled = true;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error verificando PDF:', error);
-                });
-            
-            function showNotification(message, type) {
-                const notification = document.createElement('div');
-                notification.className = `fixed top-4 right-4 z-[10001] px-6 py-3 rounded-lg shadow-xl text-white font-semibold transition-all duration-300 transform translate-x-full ${
-                    type === 'success' ? 'bg-green-500' : 'bg-red-500'
-                }`;
-                notification.innerHTML = `
-                    <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle mr-2"></i>
-                    ${message}
-                `;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-full');
-                    notification.classList.add('translate-x-0');
-                }, 10);
-                
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-0');
-                    notification.classList.add('translate-x-full');
-                    
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            document.body.removeChild(notification);
-                        }
-                    }, 300);
-                }, 3000);
-            }
-        }
-    </script>
+    <!-- Scripts al final del body -->
+    <script src="js/nav-loader.js"></script>
+    <script src="js/menu-mobile-simple.js"></script>
+    <script src="js/app.js"></script>
+
 </body>
 </html>
