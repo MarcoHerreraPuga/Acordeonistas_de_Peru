@@ -34,19 +34,31 @@
     <link rel="stylesheet" href="css/menu-fix.css">
     
     <style>
+        /* Definición de colores personalizados */
+        :root {
+            --azul-principal: #26234E;
+            --rojo-principal: #FF0000;
+            --amarillo-principal: #D18813;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+        }
+        
         * {
             font-family: 'Inter', sans-serif;
         }
+        
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
+        
         .logo-img {
             width: 60px;
             height: 60px;
             object-fit: contain;
         }
+        
         @media (min-width: 768px) {
             .logo-img {
                 width: 70px;
@@ -55,7 +67,7 @@
         }
         
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(38, 35, 78, 0.8), rgba(38, 35, 78, 0.6)), 
                         url('assets/campo.png');
             background-size: cover;
             background-position: center;
@@ -66,6 +78,7 @@
             position: relative;
             padding-bottom: 1rem;
         }
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -73,7 +86,50 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background-color: #3b82f6;
+            background-color: var(--rojo-principal);
+        }
+        
+        /* Colores de texto */
+        .text-rojo {
+            color: var(--rojo-principal);
+        }
+        
+        .text-azul {
+            color: var(--azul-principal);
+        }
+        
+        .text-amarillo {
+            color: var(--amarillo-principal);
+        }
+        
+        /* Fondos de colores */
+        .bg-rojo {
+            background-color: var(--rojo-principal);
+        }
+        
+        .bg-azul {
+            background-color: var(--azul-principal);
+        }
+        
+        .bg-amarillo {
+            background-color: var(--amarillo-principal);
+        }
+        
+        /* Gradientes */
+        .gradiente-rojo {
+            background: linear-gradient(135deg, var(--rojo-principal), #CC0000);
+        }
+        
+        .gradiente-azul {
+            background: linear-gradient(135deg, var(--azul-principal), #1E1B3F);
+        }
+        
+        .gradiente-azul-rojo {
+            background: linear-gradient(135deg, var(--azul-principal), var(--rojo-principal));
+        }
+        
+        .gradiente-rojo-amarillo {
+            background: linear-gradient(135deg, var(--rojo-principal), var(--amarillo-principal));
         }
     </style>
 </head>
@@ -81,7 +137,7 @@
     
     <!-- Header / Navegación MODIFICADO para página independiente -->
     <!-- Header / Navegación UNIVERSAL -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
+    <header class="sticky top-0 z-50 bg-azul shadow-md">
         <!-- La navegación se cargará dinámicamente -->
     </header>
 
@@ -90,13 +146,13 @@
 
     <!-- Hero específico para donaciones -->
     <section class="hero-bg text-white py-20 md:py-28 relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-red-600/30 to-red-800/30 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-rojo-principal/40 to-rojo-principal/60 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 rounded-full text-sm font-semibold mb-6 shadow-lg">
+            <div class="inline-block px-4 py-2 gradiente-rojo rounded-full text-sm font-semibold mb-6 shadow-lg">
                 <i class="fas fa-heart mr-2"></i>APOYO A LA CULTURA
             </div>
             <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Tu Donación <span class="text-yellow-300">Transforma</span> Vidas
+                Tu Donación <span class="text-amarillo-principal">Transforma</span> Vidas
             </h1>
             
             <p class="hero-subtitle text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
@@ -106,98 +162,68 @@
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#donaciones" 
-                class="hero-btn bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 sm:px-7 sm:py-3 rounded-full font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center animate-pulse">
+                class="hero-btn gradiente-rojo hover:opacity-90 text-white px-6 py-3 sm:px-7 sm:py-3 rounded-full font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center animate-pulse">
                     <i class="fas fa-heart mr-2 text-lg"></i>
                     Donar Ahora
                 </a>
-                
-                
             </div>
         </div>
     </section>
 
-    <!-- Sección de estadísticas -->
-    <section class="py-12 bg-gradient-to-r from-red-50 to-orange-50">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-red-600 mb-2">+2,000</div>
-                    <div class="text-gray-700 text-sm md:text-base">Niños beneficiados</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-red-600 mb-2">15</div>
-                    <div class="text-gray-700 text-sm md:text-base">Centros de enseñanza</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-red-600 mb-2">100%</div>
-                    <div class="text-gray-700 text-sm md:text-base">Dedicación a la causa</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-red-600 mb-2">70+</div>
-                    <div class="text-gray-700 text-sm md:text-base">Años de tradición</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- Sección: Por qué donar -->
     <section id="porque-donar" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <span class="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full text-sm font-semibold mb-4 shadow-md">
+                <span class="inline-block px-4 py-2 gradiente-rojo-amarillo text-white rounded-full text-sm font-semibold mb-4 shadow-md">
                     <i class="fas fa-question-circle mr-2"></i>¿POR QUÉ DONAR?
                 </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-azul mb-6">
                     Tu Apoyo Hace la Diferencia
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <div class="w-24 h-1 gradiente-rojo-amarillo mx-auto mb-6"></div>
+                <p class="text-lg text-azul/80 max-w-3xl mx-auto">
                     Cada donación contribuye directamente a proyectos específicos que transforman vidas a través de la música.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="text-center p-6 bg-gradient-to-b from-white to-red-50 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-rojo-principal to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-music text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Instrumentos Musicales</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-xl font-bold text-azul mb-4">Instrumentos Musicales</h3>
+                    <p class="text-azul/80 mb-4">
                         Adquisición y mantenimiento de acordeones para nuestros estudiantes.
                     </p>
-                    
                 </div>
 
                 <div class="text-center p-6 bg-gradient-to-b from-white to-orange-50 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-amarillo-principal to-amber-700 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-user-graduate text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Becas Educativas</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-xl font-bold text-azul mb-4">Becas Educativas</h3>
+                    <p class="text-azul/80 mb-4">
                         Educación musical completa para un niño por un año escolar.
                     </p>
-                    
                 </div>
 
                 <div class="text-center p-6 bg-gradient-to-b from-white to-amber-50 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-rojo-principal rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-hands-helping text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Talleres Comunitarios</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-xl font-bold text-azul mb-4">Talleres Comunitarios</h3>
+                    <p class="text-azul/80 mb-4">
                         Talleres gratuitos de música en comunidades vulnerables.
                     </p>
-                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Formas de Donar -->
-    
-
     <!-- Sección: Donaciones (Versión completa del index) -->
-    <section id="donaciones" class="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white relative overflow-hidden">
+    <section id="donaciones" class="py-20 gradiente-azul text-white relative overflow-hidden">
         <!-- Elementos decorativos -->
         <div class="absolute top-0 left-0 w-full h-full opacity-10">
             <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full"></div>
@@ -207,11 +233,11 @@
         
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center max-w-4xl mx-auto mb-16">
-                <span class="inline-block px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 rounded-full text-lg font-bold mb-6 shadow-xl animate-pulse">
+                <span class="inline-block px-6 py-3 gradiente-rojo rounded-full text-lg font-bold mb-6 shadow-xl animate-pulse">
                     <i class="fas fa-heart mr-3 text-xl"></i>APOYA LA CULTURA CON TU CORAZÓN
                 </span>
                 <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white drop-shadow-lg">
-                    ¡Tu Apoyo <span class="text-yellow-300">Transforma</span> Vidas!
+                    ¡Tu Apoyo <span class="text-amarillo-principal">Transforma</span> Vidas!
                 </h2>
                 <p class="text-2xl md:text-3xl text-white/90 leading-relaxed mb-10 drop-shadow">
                     Cada donación mantiene viva la tradición del acordeón y brinda oportunidades a nuestros jóvenes talentos.
@@ -221,11 +247,10 @@
                     Elige la Forma que más te Convenga
                 </p>
                 
-
                 <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-8 py-4 rounded-full shadow-xl">
-                    <i class="fas fa-music text-3xl text-yellow-300 mr-4 animate-bounce"></i>
+                    <i class="fas fa-music text-3xl text-amarillo-principal mr-4 animate-bounce"></i>
                     <span class="text-2xl font-bold">
-                        <span class="text-yellow-300">+2,000</span> niños beneficiados
+                        <span class="text-amarillo-principal">+2,000</span> niños beneficiados
                     </span>
                 </div>
             </div>
@@ -233,10 +258,10 @@
             <div class="flex flex-col lg:flex-row justify-center items-stretch gap-10 mb-16 max-w-7xl mx-auto">
                 <!-- Transferencia Bancaria -->
                 <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 md:p-10 rounded-3xl backdrop-blur-xl 
-                            border-2 border-red-400/30 hover:border-red-300 hover:bg-white/20 transition-all duration-500 group 
+                            border-2 border-rojo-principal/50 hover:border-rojo-principal hover:bg-white/20 transition-all duration-500 group 
                             flex-1 min-w-0 transform hover:-translate-y-3 hover:shadow-2xl">
                     <div class="flex flex-col items-center h-full">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full 
+                        <div class="w-20 h-20 gradiente-rojo rounded-full 
                                     flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500 shadow-2xl">
                             <i class="fas fa-university text-3xl md:text-4xl text-white"></i>
                         </div>
@@ -248,9 +273,9 @@
                         </h3>
                         
                         <div class="space-y-6 text-center w-full flex-grow">
-                            <div class="bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl border border-red-500/30">
+                            <div class="bg-gradient-to-b from-azul-principal/60 to-azul-principal/40 p-6 rounded-2xl border border-rojo-principal/50">
                                 <div class="flex items-center justify-center mb-4">
-                                    <div class="w-12 h-12 bg-red-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                    <div class="w-12 h-12 bg-rojo-principal rounded-full flex items-center justify-center mr-4 shadow-lg">
                                         <span class="font-bold text-white text-lg">BBVA</span>
                                     </div>
                                     <h4 class="text-xl font-bold text-white">Banco BBVA</h4>
@@ -259,7 +284,7 @@
                                 <div class="space-y-6 mt-6">
                                     <div>
                                         <p class="text-sm text-red-200 mb-3 font-semibold">💰 Cuenta en Soles:</p>
-                                        <div class="bg-red-900/50 p-4 rounded-xl border border-red-600/50">
+                                        <div class="bg-azul-principal/70 p-4 rounded-xl border border-rojo-principal/50">
                                             <p class="text-xl md:text-2xl font-mono font-bold tracking-wider text-white select-all">
                                                 0011-0147-0100110245
                                             </p>
@@ -269,9 +294,9 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="pt-6 border-t border-red-500/30">
+                                    <div class="pt-6 border-t border-rojo-principal/50">
                                         <p class="text-sm text-red-200 mb-3 font-semibold">💵 Cuenta en Dólares:</p>
-                                        <div class="bg-red-900/50 p-4 rounded-xl border border-red-600/50">
+                                        <div class="bg-azul-principal/70 p-4 rounded-xl border border-rojo-principal/50">
                                             <p class="text-xl md:text-2xl font-mono font-bold tracking-wider text-white select-all">
                                                 0011-0147010011023763
                                             </p>
@@ -283,15 +308,15 @@
                                 </div>
                             </div>
                             
-                            <div class="bg-gradient-to-r from-red-700/50 to-red-600/50 p-5 rounded-2xl border-2 border-red-500/40">
+                            <div class="bg-gradient-to-r from-rojo-principal/70 to-red-700/60 p-5 rounded-2xl border-2 border-rojo-principal/60">
                                 <p class="text-sm font-bold text-red-100 mb-2">👤 Titular de la cuenta:</p>
                                 <p class="text-xl font-bold text-white">ASOCIACIÓN DE ACORDEONISTAS DEL PERÚ</p>
                             </div>
                         </div>
                         
-                        <div class="mt-8 pt-6 border-t border-red-500/30 text-center w-full">
+                        <div class="mt-8 pt-6 border-t border-rojo-principal/50 text-center w-full">
                             <p class="text-lg text-red-100 font-medium">
-                                <i class="fas fa-info-circle mr-2 text-yellow-300"></i>
+                                <i class="fas fa-info-circle mr-2 text-amarillo-principal"></i>
                                 Transferencia desde cualquier banco nacional
                             </p>
                         </div>
@@ -300,7 +325,7 @@
                 
                 <!-- Yape / Plin -->
                 <div class="bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 md:p-10 rounded-3xl backdrop-blur-xl 
-                            border-2 border-red-400/30 hover:border-red-300 hover:bg-white/20 transition-all duration-500 group 
+                            border-2 border-rojo-principal/50 hover:border-rojo-principal hover:bg-white/20 transition-all duration-500 group 
                             flex-1 min-w-0 transform hover:-translate-y-3 hover:shadow-2xl">
                     <div class="flex flex-col items-center h-full">
                         <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full 
@@ -318,7 +343,7 @@
                             <div class="relative">
                                 <div class="absolute -inset-4 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition duration-700"></div>
                                 
-                                <div class="relative bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl backdrop-blur-sm border border-red-500/30">
+                                <div class="relative bg-gradient-to-b from-azul-principal/60 to-azul-principal/40 p-6 rounded-2xl backdrop-blur-sm border border-rojo-principal/50">
                                     <div class="relative">
                                         <img src="assets/qr.png" 
                                              alt="QR para donación Yape/Plin" 
@@ -327,7 +352,7 @@
                                                     transition-all duration-500 group-hover:scale-[1.05]"
                                              onerror="this.onerror=null; this.src='https://via.placeholder.com/256x256/ffffff/374151?text=QR+Yape/Plin'; this.alt='QR no disponible';">
                                         
-                                        <div class="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-r from-green-400 to-emerald-500 
+                                        <div class="absolute -top-3 -right-3 w-14 h-14 gradiente-rojo 
                                                     rounded-full flex items-center justify-center shadow-2xl animate-pulse">
                                             <i class="fas fa-qrcode text-lg text-white"></i>
                                         </div>
@@ -338,9 +363,9 @@
                                 </div>
                             </div>
                             
-                            <div class="bg-gradient-to-b from-red-900/40 to-red-800/20 p-6 rounded-2xl border border-red-500/30">
+                            <div class="bg-gradient-to-b from-azul-principal/60 to-azul-principal/40 p-6 rounded-2xl border border-rojo-principal/50">
                                 <p class="text-lg text-red-100 font-bold mb-4">📱 O usa este número:</p>
-                                <div class="inline-flex items-center bg-red-900/60 px-6 py-4 rounded-2xl border-2 border-red-500/50 shadow-lg hover:bg-red-800/60 transition duration-300">
+                                <div class="inline-flex items-center bg-azul-principal/80 px-6 py-4 rounded-2xl border-2 border-rojo-principal/60 shadow-lg hover:bg-azul-principal/70 transition duration-300">
                                     <i class="fas fa-phone-alt text-2xl text-emerald-300 mr-4"></i>
                                     <div>
                                         <p class="text-2xl md:text-3xl font-mono font-bold tracking-wider text-white select-all hover:text-yellow-200 transition duration-200 cursor-pointer">
@@ -353,15 +378,15 @@
                             
                             <div class="bg-gradient-to-r from-green-600/30 to-emerald-600/30 p-5 rounded-2xl border-2 border-emerald-500/40">
                                 <p class="text-lg text-white font-bold">
-                                    <i class="fas fa-lightbulb text-yellow-300 mr-3 text-xl"></i>
+                                    <i class="fas fa-lightbulb text-amarillo-principal mr-3 text-xl"></i>
                                     ¡Escanea el QR con tu app de pagos móviles!
                                 </p>
                             </div>
                         </div>
                         
-                        <div class="mt-8 pt-6 border-t border-red-500/30 text-center w-full">
+                        <div class="mt-8 pt-6 border-t border-rojo-principal/50 text-center w-full">
                             <p class="text-lg text-red-100 font-medium">
-                                <i class="fas fa-hand-point-up mr-2 text-2xl animate-bounce text-yellow-300"></i>
+                                <i class="fas fa-hand-point-up mr-2 text-2xl animate-bounce text-amarillo-principal"></i>
                                 Fácil, rápido y seguro
                             </p>
                         </div>
@@ -371,33 +396,33 @@
             
             <!-- Información adicional -->
             <div class="max-w-5xl mx-auto">
-                <div class="bg-gradient-to-r from-red-800/60 via-red-700/60 to-red-800/60 p-8 md:p-10 rounded-3xl 
-                            backdrop-blur-xl border-2 border-red-400/40 shadow-2xl mb-10">
+                <div class="bg-gradient-to-r from-azul-principal/80 via-azul-principal/70 to-azul-principal/80 p-8 md:p-10 rounded-3xl 
+                            backdrop-blur-xl border-2 border-rojo-principal/60 shadow-2xl mb-10">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
-                            <div class="w-24 h-24 bg-gradient-to-br from-red-600 to-red-700 rounded-full 
+                            <div class="w-24 h-24 gradiente-rojo rounded-full 
                                         flex items-center justify-center shadow-2xl animate-pulse">
-                                <i class="fas fa-award text-4xl text-yellow-300"></i>
+                                <i class="fas fa-award text-4xl text-amarillo-principal"></i>
                             </div>
                         </div>
                         <div class="md:w-3/4 md:pl-10">
                             <h4 class="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center">
-                                <i class="fas fa-shield-alt text-yellow-300 mr-4"></i>
+                                <i class="fas fa-shield-alt text-amarillo-principal mr-4"></i>
                                 Donaciones Deducibles de Impuestos
                             </h4>
                             <p class="text-xl text-white/90 leading-relaxed mb-6">
-                                Todas las donaciones a nuestra asociación son <span class="font-bold text-yellow-300">100% deducibles de impuestos</span> 
+                                Todas las donaciones a nuestra asociación son <span class="font-bold text-amarillo-principal">100% deducibles de impuestos</span> 
                                 según la <span class="font-bold">Ley N° 30737</span> del Ministerio de Cultura del Perú. 
                                 Emitimos constancias oficiales de donación para fines tributarios.
                             </p>
                             <div class="flex flex-wrap gap-4">
-                                <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
+                                <span class="px-4 py-2 bg-azul-principal/70 rounded-full text-white font-medium border border-rojo-principal/50">
                                     <i class="fas fa-file-invoice-dollar mr-2"></i>Recibo oficial
                                 </span>
-                                <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
+                                <span class="px-4 py-2 bg-azul-principal/70 rounded-full text-white font-medium border border-rojo-principal/50">
                                     <i class="fas fa-check-circle mr-2"></i>Certificado válido
                                 </span>
-                                <span class="px-4 py-2 bg-red-900/50 rounded-full text-white font-medium border border-red-500/50">
+                                <span class="px-4 py-2 bg-azul-principal/70 rounded-full text-white font-medium border border-rojo-principal/50">
                                     <i class="fas fa-gem mr-2"></i>Transparencia total
                                 </span>
                             </div>
@@ -407,10 +432,10 @@
                 
                 <!-- Contacto -->
                 <div id="contacto" class="text-center">
-                    <div class="inline-flex flex-col items-center bg-gradient-to-r from-red-700/50 to-red-600/50 
-                                p-8 rounded-3xl backdrop-blur-xl border-2 border-red-400/40 shadow-xl">
+                    <div class="inline-flex flex-col items-center bg-gradient-to-r from-rojo-principal/70 to-red-700/60 
+                                p-8 rounded-3xl backdrop-blur-xl border-2 border-rojo-principal/60 shadow-xl">
                         <div class="flex items-center mb-6">
-                            <i class="fas fa-headset text-4xl text-yellow-300 mr-4"></i>
+                            <i class="fas fa-headset text-4xl text-amarillo-principal mr-4"></i>
                             <h5 class="text-2xl font-bold text-white">¿Necesitas ayuda o tienes preguntas?</h5>
                         </div>
                         
@@ -419,7 +444,7 @@
                                class="inline-flex items-center bg-white/20 hover:bg-white/30 px-6 py-4 rounded-2xl 
                                       text-white text-lg font-bold transition duration-300 border-2 border-white/30 
                                       hover:border-white/50 hover:scale-105 transform">
-                                <i class="fas fa-envelope text-2xl text-yellow-300 mr-3"></i>
+                                <i class="fas fa-envelope text-2xl text-amarillo-principal mr-3"></i>
                                 donaciones@acordeonistas.pe
                             </a>
                             
@@ -427,23 +452,23 @@
                                class="inline-flex items-center bg-white/20 hover:bg-white/30 px-6 py-4 rounded-2xl 
                                       text-white text-lg font-bold transition duration-300 border-2 border-white/30 
                                       hover:border-white/50 hover:scale-105 transform">
-                                <i class="fas fa-phone text-2xl text-yellow-300 mr-3"></i>
+                                <i class="fas fa-phone text-2xl text-amarillo-principal mr-3"></i>
                                 (+51) 904 703 990
                             </a>
                         </div>
                         
                         <p class="text-lg text-red-100 mt-6 font-medium">
-                            <i class="fas fa-clock text-yellow-300 mr-2"></i>
+                            <i class="fas fa-clock text-amarillo-principal mr-2"></i>
                             Atención: Lunes a Viernes de 9:00 AM a 6:00 PM
                         </p>
                     </div>
                     
                     <div class="mt-12">
-                        <div class="inline-flex items-center bg-gradient-to-r from-red-800 to-red-700 
+                        <div class="inline-flex items-center gradiente-rojo 
                                     px-8 py-4 rounded-full shadow-xl animate-pulse">
                             <i class="fas fa-heartbeat text-3xl text-white mr-4"></i>
                             <p class="text-xl font-bold text-white">
-                                ¡Gracias por ser parte de esta <span class="text-yellow-300">gran familia musical</span>!
+                                ¡Gracias por ser parte de esta <span class="text-amarillo-principal">gran familia musical</span>!
                             </p>
                         </div>
                     </div>
@@ -453,34 +478,34 @@
     </section>
 
     <!-- Footer adaptado para página de donaciones -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-azul text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-accordion mr-3 text-blue-400"></i>
+                        <i class="fas fa-accordion mr-3 text-rojo"></i>
                         Asociación de Acordeonistas
                     </h3>
-                    <p class="text-gray-400 mb-6">
+                    <p class="text-gray-300 mb-6">
                         Promoviendo la cultura del acordeón en el Perú desde 1953. Reconocidos por el Ministerio de Cultura del Perú.
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/197JA?_rdc=1&_rdr#" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center">
+                        class="w-10 h-10 bg-azul-principal/80 hover:bg-rojo-principal rounded-full flex items-center justify-center">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="https://www.instagram.com/tu-cuenta-instagram" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center">
+                        class="w-10 h-10 bg-azul-principal/80 hover:bg-rojo-principal rounded-full flex items-center justify-center">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://www.youtube.com/@acordeonistasdelperu" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-full flex items-center justify-center">
+                        class="w-10 h-10 bg-azul-principal/80 hover:bg-rojo-principal rounded-full flex items-center justify-center">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -489,10 +514,10 @@
                 <div>
                     <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Inicio Principal</a></li>
-                        <li><a href="index.html#nosotros" class="text-gray-400 hover:text-white">¿Quiénes Somos?</a></li>
-                        <li><a href="index.html#actividades" class="text-gray-400 hover:text-white">Nuestras Actividades</a></li>
-                        <li><a href="#donaciones" class="text-gray-400 hover:text-white">Opciones de Donación</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-rojo">Inicio Principal</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-300 hover:text-rojo">¿Quiénes Somos?</a></li>
+                        <li><a href="index.html#actividades" class="text-gray-300 hover:text-rojo">Nuestras Actividades</a></li>
+                        <li><a href="#donaciones" class="text-gray-300 hover:text-rojo">Opciones de Donación</a></li>
                     </ul>
                 </div>
                 
@@ -500,24 +525,24 @@
                     <h4 class="text-xl font-bold mb-6">Contacto</h4>
                     <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
-                            <span class="text-gray-400">Av. 28 de Julio 564, Miraflores, Lima</span>
+                            <i class="fas fa-map-marker-alt text-rojo mr-3"></i>
+                            <span class="text-gray-300">Av. 28 de Julio 564, Miraflores, Lima</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone text-blue-400 mr-3"></i>
-                            <span class="text-gray-400">(+51) 904 703 990</span>
+                            <i class="fas fa-phone text-rojo mr-3"></i>
+                            <span class="text-gray-300">(+51) 904 703 990</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
-                            <span class="text-gray-400">donaciones@acordeonistas.pe</span>
+                            <i class="fas fa-envelope text-rojo mr-3"></i>
+                            <span class="text-gray-300">donaciones@acordeonistas.pe</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+            <div class="border-t border-azul-principal mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2026 Asociación de Acordeonistas del Perú. Todos los derechos reservados.</p>
-                <p class="text-sm mt-2">Página de donaciones dedicada - <a href="index.html" class="text-blue-400 hover:text-blue-300">Volver al sitio principal</a></p>
+                <p class="text-sm mt-2">Página de donaciones dedicada - <a href="index.html" class="text-rojo hover:text-red-300">Volver al sitio principal</a></p>
             </div>
         </div>
     </footer>
@@ -525,20 +550,40 @@
     <!-- Botón flotante "Volver al inicio" para móvil -->
     <div id="floating-home-btn" class="fixed md:hidden z-40 right-4 bottom-4">
         <a href="index.html" 
-        class="floating-home-btn bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-4xl transform hover:scale-150 relative overflow-hidden group flex items-center justify-center w-20 h-20">
+        class="floating-home-btn gradiente-azul text-white rounded-full font-bold transition-all duration-500 shadow-2xl hover:shadow-4xl transform hover:scale-150 relative overflow-hidden group flex items-center justify-center w-20 h-20">
             
             <i class="fas fa-home text-2xl"></i>
             
-            <span class="absolute -inset-3 rounded-full border-4 border-blue-300 animate-ping opacity-30"></span>
+            <span class="absolute -inset-3 rounded-full border-4 border-rojo/50 animate-ping opacity-30"></span>
             
             <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full"></span>
             
-            <span class="floating-label absolute left-full ml-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-bold px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 shadow-lg">
+            <span class="floating-label absolute left-full ml-4 gradiente-azul text-white text-sm font-bold px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-4 group-hover:translate-x-0 shadow-lg">
                 Volver al Inicio
-                <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-500 rotate-45"></div>
+                <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-azul rotate-45"></div>
             </span>
         </a>
     </div>
+
+    <!-- Script para agregar las clases CSS personalizadas a Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul': '#26234E',
+                        'rojo': '#FF0000',
+                        'amarillo': '#D18813',
+                        'blanco': '#FFFFFF',
+                        'negro': '#000000',
+                        'azul-principal': '#26234E',
+                        'rojo-principal': '#FF0000',
+                        'amarillo-principal': '#D18813'
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Script simplificado para página de donaciones -->
     <script>
@@ -569,11 +614,11 @@
                     if (window.scrollY > 100) {
                         header.classList.add('shadow-lg');
                         header.style.backdropFilter = 'blur(10px)';
-                        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        header.style.backgroundColor = 'rgba(38, 35, 78, 0.95)';
                     } else {
                         header.classList.remove('shadow-lg');
                         header.style.backdropFilter = 'none';
-                        header.style.backgroundColor = 'white';
+                        header.style.backgroundColor = '#26234E';
                     }
                 }
             });
@@ -590,8 +635,8 @@
             setupCopyToClipboard();
             
             // Consola de bienvenida
-            console.log('%c💖 Página de Donaciones - Asociación de Acordeonistas 💖', 'color: #ef4444; font-size: 18px; font-weight: bold;');
-            console.log('%c¡Gracias por tu interés en apoyar nuestra causa cultural!', 'color: #666;');
+            console.log('%c💖 Página de Donaciones - Asociación de Acordeonistas 💖', 'color: #FF0000; font-size: 18px; font-weight: bold;');
+            console.log('%c¡Gracias por tu interés en apoyar nuestra causa cultural!', 'color: #26234E;');
         });
 
         // MENÚ MÓVIL PARA PÁGINA DE DONACIONES
@@ -617,9 +662,9 @@
             menuItems.forEach(item => {
                 const a = document.createElement('a');
                 a.href = item.href;
-                a.className = 'flex items-center py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200 border-b border-gray-100 last:border-b-0';
+                a.className = 'flex items-center py-3 px-4 text-azul hover:bg-red-50 hover:text-rojo transition duration-200 border-b border-gray-100 last:border-b-0';
                 a.innerHTML = `
-                    <i class="${item.icon} mr-3 text-gray-400 w-5 text-center"></i>
+                    <i class="${item.icon} mr-3 text-azul/60 w-5 text-center"></i>
                     <span class="font-medium">${item.text}</span>
                 `;
                 
@@ -673,7 +718,7 @@
             // Efectos hover
             floatingHomeBtn.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.2)';
-                this.style.boxShadow = '0 15px 30px rgba(59, 130, 246, 0.5)';
+                this.style.boxShadow = '0 15px 30px rgba(38, 35, 78, 0.5)';
             });
             
             floatingHomeBtn.addEventListener('mouseleave', function() {
@@ -759,7 +804,7 @@
             // Crear notificación
             const notification = document.createElement('div');
             notification.className = `fixed bottom-20 right-4 z-[10001] px-4 py-2 rounded-lg shadow-xl text-white font-semibold text-sm transition-all duration-300 transform translate-y-4 opacity-0 ${
-                type === 'success' ? 'bg-green-500' : 'bg-red-500'
+                type === 'success' ? 'bg-rojo' : 'bg-red-700'
             }`;
             notification.innerHTML = `
                 <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle mr-2"></i>
@@ -791,8 +836,8 @@
                 const originalColor = element.style.color;
                 const originalBg = element.style.backgroundColor;
                 
-                element.style.color = '#10B981';
-                element.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+                element.style.color = '#FF0000';
+                element.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
                 
                 setTimeout(() => {
                     element.style.color = originalColor;
@@ -802,14 +847,10 @@
         }
     </script>
 
-
 <!-- Al final del body, antes de </body> -->
 <script src="js/nav-loader.js"></script>
 <script src="js/menu-mobile-simple.js"></script>
 <script src="js/app.js"></script>
-
-
-
 
 </body>
 </html>

@@ -28,6 +28,9 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/styles.css">
@@ -136,13 +139,14 @@
 <section id="nosotros" class="py-16 bg-gradient-to-b from-white to-blue-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-3">
-                NUESTRA IDENTIDAD
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                ¿Quiénes Somos?
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#26234E]">
+                    ¿Quiénes Somos?
+                </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-[#26234E] to-[#26234E] mx-auto relative">
+        <div class="w-24 h-1 bg-[#26234E] mx-auto relative">
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#FF0000] rounded-full"></div>
+</div>
+</div>
         </div>
 
         <div class="max-w-4xl mx-auto mb-12">
@@ -157,34 +161,66 @@
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto mb-8">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <button class="nosotros-btn bg-gradient-to-br from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-4 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex flex-col items-center justify-center text-center" data-content="historia">
-                    <i class="fas fa-landmark text-xl mb-2"></i>
-                    <span class="text-sm md:text-base">Nuestra Historia</span>
-                </button>
+     <div class="max-w-6xl mx-auto mb-8">
 
-                <button class="nosotros-btn bg-gradient-to-br from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex flex-col items-center justify-center text-center" data-content="mision">
-                    <i class="fas fa-bullseye text-xl mb-2"></i>
-                    <span class="text-sm md:text-base">Misión</span>
-                </button>
 
-                <button class="nosotros-btn bg-gradient-to-br from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 text-white px-4 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex flex-col items-center justify-center text-center" data-content="vision">
-                    <i class="fas fa-eye text-xl mb-2"></i>
-                    <span class="text-sm md:text-base">Visión</span>
-                </button>
 
-                <button class="nosotros-btn bg-gradient-to-br from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-4 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex flex-col items-center justify-center text-center" data-content="valores">
-                    <i class="fas fa-heart text-xl mb-2"></i>
-                    <span class="text-sm md:text-base">Valores</span>
-                </button>
-
-                <button class="nosotros-btn bg-gradient-to-br from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-4 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex flex-col items-center justify-center text-center" data-content="filosofia">
-                    <i class="fas fa-brain text-xl mb-2"></i>
-                    <span class="text-sm md:text-base">Nuestra Filosofía</span>
-                </button>
-            </div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+    <!-- Historia -->
+    <button class="nosotros-btn bg-gradient-to-br from-azul via-blue-800 to-azul hover:from-blue-800 hover:via-azul hover:to-blue-800 text-white px-5 py-6 rounded-2xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 flex flex-col items-center justify-center text-center group" data-content="historia">
+        <div class="relative">
+            <i class="fas fa-landmark text-5xl md:text-6xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"></i>
+            <div class="absolute -inset-4 bg-white/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
         </div>
+        <span class="text-base md:text-lg font-bold mt-2">Nuestra Historia</span>
+        <div class="w-8 h-1 bg-white/50 rounded-full mt-2 group-hover:w-12 transition-all duration-300"></div>
+    </button>
+
+    <!-- Misión -->
+    <button class="nosotros-btn bg-gradient-to-br from-rojo via-red-700 to-rojo hover:from-red-700 hover:via-rojo hover:to-red-700 text-white px-5 py-6 rounded-2xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 flex flex-col items-center justify-center text-center group" data-content="mision">
+        <div class="relative">
+            <i class="fas fa-bullseye text-5xl md:text-6xl mb-4 group-hover:scale-110 group-hover:animate-pulse transition-all duration-300"></i>
+            <div class="absolute -inset-3 bg-white/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <span class="text-base md:text-lg font-bold mt-2">Misión</span>
+        <div class="w-8 h-1 bg-white/50 rounded-full mt-2 group-hover:w-12 transition-all duration-300"></div>
+    </button>
+
+    <!-- Visión -->
+    <button class="nosotros-btn bg-gradient-to-br from-azul via-indigo-800 to-azul hover:from-indigo-800 hover:via-azul hover:to-indigo-800 text-white px-5 py-6 rounded-2xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 flex flex-col items-center justify-center text-center group" data-content="vision">
+        <div class="relative">
+            <i class="fas fa-eye text-5xl md:text-6xl mb-4 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300"></i>
+            <div class="absolute -inset-3 bg-white/15 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <span class="text-base md:text-lg font-bold mt-2">Visión</span>
+        <div class="w-8 h-1 bg-white/50 rounded-full mt-2 group-hover:w-12 transition-all duration-300"></div>
+    </button>
+
+    <!-- Valores -->
+    <button class="nosotros-btn bg-gradient-to-br from-amarillo via-yellow-600 to-amarillo hover:from-yellow-600 hover:via-amarillo hover:to-yellow-600 text-white px-5 py-6 rounded-2xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 flex flex-col items-center justify-center text-center group" data-content="valores">
+        <div class="relative">
+            <i class="fas fa-heart text-5xl md:text-6xl mb-4 group-hover:scale-110 group-hover:animate-bounce transition-all duration-300"></i>
+            <div class="absolute -inset-3 bg-white/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <span class="text-base md:text-lg font-bold mt-2">Valores</span>
+        <div class="w-8 h-1 bg-white/50 rounded-full mt-2 group-hover:w-12 transition-all duration-300"></div>
+    </button>
+
+    <!-- Filosofía -->
+    <button class="nosotros-btn bg-gradient-to-br from-rojo via-pink-700 to-rojo hover:from-pink-700 hover:via-rojo hover:to-pink-700 text-white px-5 py-6 rounded-2xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 flex flex-col items-center justify-center text-center group" data-content="filosofia">
+        <div class="relative">
+            <i class="fas fa-brain text-5xl md:text-6xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"></i>
+            <div class="absolute -inset-3 bg-white/15 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        </div>
+        <span class="text-base md:text-lg font-bold mt-2">Nuestra Filosofía</span>
+        <div class="w-8 h-1 bg-white/50 rounded-full mt-2 group-hover:w-12 transition-all duration-300"></div>
+    </button>
+</div>
+    
+
+
+
+</div>
 
         <div class="max-w-5xl mx-auto mt-8">
             <div id="contenido-nosotros" class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 min-h-[300px] transition-all duration-500">
@@ -202,24 +238,7 @@
             </div>
         </div>
 
-        <div class="mt-16 pt-8 border-t border-gray-200">
-            <div class="max-w-2xl mx-auto px-4">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">+2 000</div>
-                        <div class="text-gray-600 text-sm md:text-base">Almas conectadas</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">15</div>
-                        <div class="text-gray-600 text-sm md:text-base">Centros de enseñanza en todo el Perú</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">80%</div>
-                        <div class="text-gray-600 text-sm md:text-base">Mejora en Habilidades socioemocionales</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </section>
 
@@ -227,13 +246,13 @@
 <section id="politicas" class="py-16 bg-gradient-to-b from-white to-green-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-3">
-                COMPROMISO
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-                Políticas de Protección y Salvaguarda
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
+            
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#FF0000]">
+                    Políticas de Protección y Salvaguarda
+                </h2>
+            <div class="w-24 h-1 bg-[#FF0000] mx-auto relative">
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#D18813] rounded-full"></div>
+</div>
         </div>
 
         <div class="max-w-4xl mx-auto">
@@ -244,7 +263,7 @@
                     </p>
                 </div>
 
-                <div class="mb-8 p-6 bg-green-50 rounded-xl border-l-4 border-green-500">
+                <!-- <div class="mb-8 p-6 bg-green-50 rounded-xl border-l-4 border-green-500">
                     <h3 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
                         <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
                         Nuestro Compromiso
@@ -297,25 +316,61 @@
                     <p class="text-gray-700 leading-relaxed">
                         Ante cualquier sospecha o reporte de vulneración de derechos, activamos de inmediato protocolos de respuesta centrados en el interés superior del menor, asegurando el acompañamiento y la derivación a las autoridades competentes si fuera necesario.
                     </p>
-                </div>
+                </div> -->
+                    <div class="mb-8 p-6 bg-white rounded-xl border-l-4 border-[#26234E] shadow-md">
+    <h3 class="text-2xl font-bold text-[#26234E] mb-4 flex items-center">
+        <span class="bg-[#26234E] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
+        Nuestro Compromiso
+    </h3>
+    <p class="text-gray-800 leading-relaxed">
+        Nuestra Política de Protección garantiza que todas nuestras actividades, núcleos de formación y eventos sigan los más altos estándares éticos. Nos alineamos con la Convención sobre los Derechos del Niño y las leyes nacionales para prevenir cualquier situación que vulnere la integridad física o emocional de nuestros beneficiarios.
+    </p>
+</div>
 
-                <div class="mt-8 p-6 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl text-center">
-                    <h4 class="text-xl font-bold text-gray-800 mb-3">
-                        <i class="fas fa-phone-alt text-green-600 mr-2"></i>
-                        Canales de Denuncia
-                    </h4>
-                    <p class="text-gray-700 mb-4">Para reportar cualquier situación:</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="mailto:proteccion@acordeonistas.pe" class="inline-flex items-center bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 transition duration-300">
-                            <i class="fas fa-envelope mr-2 text-green-500"></i>
-                            cultura@asociacióndeacordeonistas.pe
-                        </a>
-                        <a href="tel:+51904703990" class="inline-flex items-center bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-green-50 transition duration-300">
-                            <i class="fas fa-phone mr-2 text-green-500"></i>
-                            (+51) 904 703 990
-                        </a>
-                    </div>
-                </div>
+<div class="mb-8 p-6 bg-white rounded-xl border-l-4 border-[#FF0000] shadow-md">
+    <h3 class="text-2xl font-bold text-[#FF0000] mb-4 flex items-center">
+        <span class="bg-[#FF0000] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
+        Tolerancia Cero
+    </h3>
+    <p class="text-gray-800 leading-relaxed">
+        Mantenemos una política de tolerancia cero ante el abuso, el maltrato, la explotación o la discriminación. Este compromiso es vinculante para todo nuestro equipo: maestros, administrativos, voluntarios, aliados y proveedores.
+    </p>
+</div>
+
+<div class="mb-8 p-6 bg-white rounded-xl border-l-4 border-[#D18813] shadow-md">
+    <h3 class="text-2xl font-bold text-[#D18813] mb-4 flex items-center">
+        <span class="bg-[#D18813] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
+        Pilares de nuestra Política
+    </h3>
+    <ul class="space-y-4">
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-[#26234E] mt-1 mr-3"></i>
+            <span class="text-gray-800"><strong>Entornos Seguros:</strong> Espacios de aprendizaje diseñados para el desarrollo integral en un clima de confianza.</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-[#26234E] mt-1 mr-3"></i>
+            <span class="text-gray-800"><strong>Selección Rigurosa:</strong> Todo nuestro personal pasa por un proceso de selección estricto que incluye la verificación de antecedentes y capacitaciones constantes en prevención.</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-[#26234E] mt-1 mr-3"></i>
+            <span class="text-gray-800"><strong>Código de Conducta:</strong> Normas claras que rigen la interacción entre adultos y menores, promoviendo siempre el respeto y los límites adecuados.</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-[#26234E] mt-1 mr-3"></i>
+            <span class="text-gray-800"><strong>Canales de Denuncia:</strong> Contamos con mecanismos confidenciales y seguros para reportar cualquier comportamiento que contravenga nuestros principios de protección.</span>
+        </li>
+    </ul>
+</div>
+
+<div class="p-6 bg-white rounded-xl border-l-4 border-[#26234E] shadow-md">
+    <h3 class="text-2xl font-bold text-[#26234E] mb-4 flex items-center">
+        <span class="bg-[#26234E] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">4</span>
+        Acción y Respuesta
+    </h3>
+    <p class="text-gray-800 leading-relaxed">
+        Ante cualquier sospecha o reporte de vulneración de derechos, activamos de inmediato protocolos de respuesta centrados en el interés superior del menor, asegurando el acompañamiento y la derivación a las autoridades competentes si fuera necesario.
+    </p>
+</div>
             </div>
         </div>
     </div>
@@ -325,23 +380,24 @@
 <section id="transparencia" class="py-16 bg-gradient-to-b from-white to-purple-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-3">
-                TRANSPARENCIA Y ACREDITACIONES
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#26234E]">
                 Transparencia y Acreditaciones
             </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto"></div>
+            <div class="w-24 h-1 bg-[#26234E] mx-auto relative">
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#FF0000] rounded-full"></div>
+            </div>
+
         </div>
 
         <div class="max-w-5xl mx-auto">
             <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-8">
-                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 p-6 text-white">
+                <div class="bg-gradient-to-r from-[#26234E] to-[#1a1640] p-6 text-white">
                     <div class="flex items-center">
                         <i class="fas fa-file-alt text-3xl mr-4"></i>
                         <div>
                             <h3 class="text-2xl font-bold">Memoria Anual 2025</h3>
-                            <p class="text-purple-100">Nuestro compromiso con la rendición de cuentas</p>
+                            <p class="text-blue-100">Nuestro compromiso con la rendición de cuentas</p>
                         </div>
                     </div>
                 </div>
@@ -370,9 +426,14 @@
                     </div>
                     
                     <div class="mt-8 text-center">
-                        <a href="#" class="inline-flex items-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300 shadow-lg hover:shadow-xl">
-                            <i class="fas fa-download mr-2"></i>
-                            Descargar Memoria Anual 2025 (PDF)
+                       <a href="#" class="inline-flex items-center bg-gradient-to-r from-[#26234E] to-[#1a1640] hover:bg-gradient-to-r hover:from-[#FF0000] hover:to-[#cc0000] text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <div class="bg-white bg-opacity-10 p-2 rounded-lg mr-3">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <span class="text-center">
+                                Descargar Memoria Anual 2025<br>
+                                <span class="text-sm font-normal opacity-90">(Documento PDF)</span>
+                            </span>
                         </a>
                         <p class="text-sm text-gray-500 mt-2">Documento completo</p>
                     </div>
@@ -389,15 +450,18 @@
 <section id="reconocimientos-alianzas" class="py-16 bg-gradient-to-b from-white to-blue-50">
     <div class="container mx-auto px-4">
         <!-- Encabezado principal -->
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 
-                        text-white rounded-full text-sm font-semibold mb-4 shadow-md">
-                <i class="fas fa-award mr-2"></i>RECONOCIMIENTOS Y TRANSPARENCIA
-            </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+        <div id="trayectoria" class="text-center mb-12">
+            
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#D18813] mb-6">
                 Nuestra Trayectoria y Alianzas
             </h2>
-            <div class="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-6"></div>
+<div class="flex justify-center items-center space-x-4 mb-6">
+    <div class="w-12 h-1 bg-[#D18813]"></div>
+    <div class="w-3 h-3 bg-[#26234E] rounded-full"></div>
+    <div class="w-12 h-1 bg-[#D18813]"></div>
+    <div class="w-3 h-3 bg-[#FF0000] rounded-full"></div>
+    <div class="w-12 h-1 bg-[#D18813]"></div>
+</div>
             <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Somos una institución formalmente reconocida que trabaja con las principales autoridades 
                 y organizaciones para promover la cultura del acordeón en todo el Perú.
@@ -417,14 +481,14 @@
         <!-- Contenido unificado en pestañas -->
         <div class="max-w-6xl mx-auto">
             <!-- Navegación por pestañas -->
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="tab-btn active px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg" data-tab="instituciones">
+           <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="tab-btn active px-6 py-3 bg-[#26234E] text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg hover:bg-[#1a1640]" data-tab="instituciones">
                     <i class="fas fa-building mr-2"></i>Instituciones Aliadas
                 </button>
-                <button class="tab-btn px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg" data-tab="registros">
+                <button class="tab-btn px-6 py-3 bg-[#FF0000] text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg hover:bg-[#cc0000]" data-tab="registros">
                     <i class="fas fa-file-certificate mr-2"></i>Registros Oficiales
                 </button>
-                <button class="tab-btn px-6 py-3 bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg" data-tab="etica">
+                <button class="tab-btn px-6 py-3 bg-[#D18813] text-white rounded-full font-semibold transition duration-300 shadow-md hover:shadow-lg hover:bg-[#b37410]" data-tab="etica">
                     <i class="fas fa-handshake mr-2"></i>Ética y Cumplimiento
                 </button>
             </div>
@@ -583,165 +647,175 @@
 
                 <!-- Pestaña 2: Registros Oficiales -->
                 <div id="tab-registros" class="tab-pane hidden">
-                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-                        <div class="space-y-6">
-                            <!-- Ministerio de Cultura -->
-                            <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-500">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-landmark text-blue-600 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800">Ministerio de Cultura</h3>
-                                        <p class="text-blue-600 font-semibold">Puntos de Cultura</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-700">
-                                    Reconocidos mediante la <strong>Resolución Directoral N° 000490-2022-DGIA/MC</strong>, que nos acredita como una organización que emplea el arte para el desarrollo comunitario.
-                                </p>
-                            </div>
-
-                            <!-- APCI -->
-                            <div class="p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-500">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-globe-americas text-green-600 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800">APCI</h3>
-                                        <p class="text-green-600 font-semibold">Agencia Peruana de Cooperación Internacional</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-700">
-                                    Inscritos como ONGD de desarrollo nacional en el registro de la APCI, lo que nos faculta para la ejecución de proyectos de cooperación técnica (Inscripción vigente conforme a la normativa de transparencia).
-                                </p>
-                            </div>
-
-                            <!-- SUNARP -->
-                            <div class="p-6 bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl border-l-4 border-purple-500">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-file-contract text-purple-600 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800">SUNARP</h3>
-                                        <p class="text-purple-600 font-semibold">Registros Públicos</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-700">
-                                    Institución formalmente constituida e inscrita en la <strong>Partida Registral N° 13919632</strong> de la Zona Registral N° IX - Sede Lima.
-                                </p>
-                            </div>
-
-                            <!-- INDECOPI -->
-                            <div class="p-6 bg-gradient-to-r from-red-50 to-pink-50 rounded-xl border-l-4 border-red-500">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-copyright text-red-600 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800">INDECOPI</h3>
-                                        <p class="text-red-600 font-semibold">Propiedad Intelectual</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-700">
-                                    Titulares de la marca y signos distintivos registrados ante la Dirección de Signos Distintivos (Certificado conforme al expediente de propiedad intelectual).
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Documentos descargables -->
-                        <div class="mt-8 p-6 bg-gray-50 rounded-xl">
-                            <h4 class="text-lg font-bold text-gray-800 mb-3">
-                                <i class="fas fa-file-pdf text-red-500 mr-2"></i>
-                                Documentos Oficiales
-                            </h4>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <a href="#" class="flex items-center p-3 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition duration-300">
-                                    <i class="fas fa-download text-blue-500 mr-3"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Resolución Ministerial</p>
-                                        <p class="text-sm text-gray-600">PDF - 2.5 MB</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="flex items-center p-3 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition duration-300">
-                                    <i class="fas fa-download text-green-500 mr-3"></i>
-                                    <div>
-                                        <p class="font-medium text-gray-800">Registro SUNARP</p>
-                                        <p class="text-sm text-gray-600">PDF - 1.8 MB</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+        <div class="space-y-6">
+            <!-- Ministerio de Cultura -->
+            <div class="p-6 bg-gradient-to-r from-red-50 to-rose-50 rounded-xl border-l-4 border-[#FF0000]">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-[#FF0000] bg-opacity-10 rounded-lg flex items-center justify-center mr-4 border border-[#FF0000] border-opacity-20">
+                        <i class="fas fa-landmark text-[#FF0000] text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Ministerio de Cultura</h3>
+                        <p class="text-[#FF0000] font-semibold">Puntos de Cultura</p>
                     </div>
                 </div>
+                <p class="text-gray-700">
+                    Reconocidos mediante la <strong class="text-[#FF0000]">Resolución Directoral N° 000490-2022-DGIA/MC</strong>, que nos acredita como una organización que emplea el arte para el desarrollo comunitario.
+                </p>
+            </div>
+
+            <!-- APCI -->
+            <div class="p-6 bg-gradient-to-r from-red-50 to-rose-50 rounded-xl border-l-4 border-[#cc0000]">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-[#cc0000] bg-opacity-10 rounded-lg flex items-center justify-center mr-4 border border-[#cc0000] border-opacity-20">
+                        <i class="fas fa-globe-americas text-[#cc0000] text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">APCI</h3>
+                        <p class="text-[#cc0000] font-semibold">Agencia Peruana de Cooperación Internacional</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Inscritos como ONGD de desarrollo nacional en el registro de la APCI, lo que nos faculta para la ejecución de proyectos de cooperación técnica (Inscripción vigente conforme a la normativa de transparencia).
+                </p>
+            </div>
+
+            <!-- SUNARP -->
+            <div class="p-6 bg-gradient-to-r from-red-50 to-rose-50 rounded-xl border-l-4 border-[#990000]">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-[#990000] bg-opacity-10 rounded-lg flex items-center justify-center mr-4 border border-[#990000] border-opacity-20">
+                        <i class="fas fa-file-contract text-[#990000] text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">SUNARP</h3>
+                        <p class="text-[#990000] font-semibold">Registros Públicos</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Institución formalmente constituida e inscrita en la <strong class="text-[#990000]">Partida Registral N° 13919632</strong> de la Zona Registral N° IX - Sede Lima.
+                </p>
+            </div>
+
+            <!-- INDECOPI -->
+            <div class="p-6 bg-gradient-to-r from-red-50 to-rose-50 rounded-xl border-l-4 border-[#660000]">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 bg-[#660000] bg-opacity-10 rounded-lg flex items-center justify-center mr-4 border border-[#660000] border-opacity-20">
+                        <i class="fas fa-copyright text-[#660000] text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">INDECOPI</h3>
+                        <p class="text-[#660000] font-semibold">Propiedad Intelectual</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">
+                    Titulares de la marca y signos distintivos registrados ante la Dirección de Signos Distintivos (Certificado conforme al expediente de propiedad intelectual).
+                </p>
+            </div>
+        </div>
+
+        <!-- Documentos descargables -->
+        <div class="mt-8 p-6 bg-red-50 rounded-xl border border-[#FF0000] border-opacity-20">
+            <h4 class="text-lg font-bold text-[#FF0000] mb-3 flex items-center">
+                <i class="fas fa-file-pdf text-[#FF0000] mr-2 text-xl"></i>
+                Documentos Oficiales
+            </h4>
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="#" class="flex items-center p-3 bg-white rounded-lg border border-red-200 hover:border-[#FF0000] hover:shadow-md transition duration-300 group">
+                    <div class="bg-[#FF0000] bg-opacity-10 p-2 rounded-lg mr-3 group-hover:bg-[#FF0000] transition duration-300">
+                        <i class="fas fa-download text-[#FF0000] group-hover:text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-800 group-hover:text-[#FF0000] transition duration-300">Resolución Ministerial</p>
+                        <p class="text-sm text-gray-600">PDF - 2.5 MB</p>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center p-3 bg-white rounded-lg border border-red-200 hover:border-[#FF0000] hover:shadow-md transition duration-300 group">
+                    <div class="bg-[#FF0000] bg-opacity-10 p-2 rounded-lg mr-3 group-hover:bg-[#FF0000] transition duration-300">
+                        <i class="fas fa-download text-[#FF0000] group-hover:text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-800 group-hover:text-[#FF0000] transition duration-300">Registro SUNARP</p>
+                        <p class="text-sm text-gray-600">PDF - 1.8 MB</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Pestaña 3: Ética y Cumplimiento -->
-                <div id="tab-etica" class="tab-pane hidden">
-                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-                        <div class="mb-8">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">
-                                <i class="fas fa-handshake text-emerald-600 mr-2"></i>
-                                Código de Ética y Conducta
-                            </h3>
-                            <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                                Contamos con un <strong>Código de Ética y Conducta</strong> que guía el comportamiento de todos nuestros colaboradores, maestros y voluntarios, asegurando un entorno seguro y de respeto.
-                            </p>
-                            
-                            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                                <div class="p-4 bg-emerald-50 rounded-lg">
-                                    <h4 class="font-bold text-emerald-700 mb-2 flex items-center">
-                                        <i class="fas fa-user-shield mr-2"></i>
-                                        Principios Éticos
-                                    </h4>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
-                                            <span>Integridad en todas nuestras acciones</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
-                                            <span>Respeto a la dignidad humana</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
-                                            <span>Transparencia en la gestión</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="p-4 bg-green-50 rounded-lg">
-                                    <h4 class="font-bold text-green-700 mb-2 flex items-center">
-                                        <i class="fas fa-clipboard-check mr-2"></i>
-                                        Mecanismos de Control
-                                    </h4>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                            <span>Auditorías internas periódicas</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                            <span>Comité de Ética institucional</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                            <span>Canales de denuncia confidenciales</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+               <div id="tab-etica" class="tab-pane hidden">
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold text-[#D18813] mb-4 flex items-center">
+                <i class="fas fa-handshake text-[#D18813] mr-3 bg-[#D18813] bg-opacity-10 p-3 rounded-full"></i>
+                Código de Ética y Conducta
+            </h3>
+            <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                Contamos con un <strong class="text-[#D18813]">Código de Ética y Conducta</strong> que guía el comportamiento de todos nuestros colaboradores, maestros y voluntarios, asegurando un entorno seguro y de respeto.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="p-5 bg-gradient-to-r from-[#D18813]/10 to-[#D18813]/5 rounded-xl border-l-4 border-[#D18813] shadow-sm">
+                    <h4 class="font-bold text-[#D18813] mb-3 flex items-center">
+                        <div class="bg-[#D18813] p-2 rounded-lg mr-3">
+                            <i class="fas fa-user-shield text-white"></i>
                         </div>
-
-                        <div class="text-center">
-                            <a href="#" 
-                               class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white px-6 py-3 rounded-lg font-bold transition duration-300 shadow-lg hover:shadow-xl">
-                                <i class="fas fa-download mr-2"></i>
-                                Descargar Código de Ética Completo (PDF)
-                            </a>
-                        </div>
-                    </div>
+                        Principios Éticos
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#D18813] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Integridad en todas nuestras acciones</span>
+                        </li>
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#D18813] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Respeto a la dignidad humana</span>
+                        </li>
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#D18813] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Transparencia en la gestión</span>
+                        </li>
+                    </ul>
                 </div>
+                
+                <div class="p-5 bg-gradient-to-r from-[#b37410]/10 to-[#b37410]/5 rounded-xl border-l-4 border-[#b37410] shadow-sm">
+                    <h4 class="font-bold text-[#b37410] mb-3 flex items-center">
+                        <div class="bg-[#b37410] p-2 rounded-lg mr-3">
+                            <i class="fas fa-clipboard-check text-white"></i>
+                        </div>
+                        Mecanismos de Control
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#b37410] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Auditorías internas periódicas</span>
+                        </li>
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#b37410] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Comité de Ética institucional</span>
+                        </li>
+                        <li class="flex items-start bg-white p-3 rounded-lg">
+                            <i class="fas fa-check-circle text-[#b37410] mt-1 mr-3"></i>
+                            <span class="text-gray-800">Canales de denuncia confidenciales</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="#" 
+               class="inline-flex items-center bg-gradient-to-r from-[#D18813] to-[#b37410] hover:from-[#b37410] hover:to-[#95600d] text-white px-6 py-4 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <div class="bg-white bg-opacity-20 p-2 rounded-full mr-3">
+                    <i class="fas fa-download"></i>
+                </div>
+                Descargar Código de Ética Completo (PDF)
+            </a>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -942,7 +1016,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div>
                 <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
                 <ul class="space-y-3">
-                    <li><a href="#nosotros" class="text-gray-400 hover:text-white">¿Quiénes Somos?</a></li>
                     <li><a href="nuestro_equipo.html" class="text-gray-400 hover:text-white">Nuestro Equipo</a></li>
                     <li><a href="sedes-programas.html" class="text-gray-400 hover:text-white">Sedes y Programas</a></li>
                     <li><a href="actividades.html" class="text-gray-400 hover:text-white">Novedades y Noticias</a></li>

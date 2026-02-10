@@ -1004,6 +1004,7 @@ function setupQuienesSomos() {
             icono: 'fas fa-landmark',
             color: 'from-blue-500 to-indigo-600',
             texto: `
+                
                 <p>Inspirados en la convicción de que el arte es un derecho, nacimos para rescatar la tradición del acordeón y convertirla en un motor de inclusión.</p>
                 <p>Al igual que una sinfonía, nuestra organización armoniza el esfuerzo individual con la potencia del colectivo, creando melodías de transformación social que resuenan en cada comunidad que tocamos.</p>
                 <p>Desde nuestros inicios, hemos sido testigos de cómo el acordeón puede ser más que un instrumento musical: es una herramienta para unir generaciones, preservar nuestra identidad cultural y abrir puertas a un futuro lleno de oportunidades.</p>
