@@ -2889,3 +2889,56 @@ iframe {
         height: 400px;
     }
 }
+
+/* Para desktop: pantallas medianas en adelante */
+/* ESTO SE EJECUTARÁ DESPUÉS DE TODO, INCLUYENDO JS */
+@media (min-width: 768px) {
+    a[href="donar.html"].heartbeat-btn {
+        border-radius: 60% / 60% !important;
+        width: 100px !important;
+        height: 60px !important;
+        min-width: 192px !important;
+        min-height: 100px !important;
+        max-width: 50px !important;
+        max-height: 60px !important;
+    }
+}
+    
+    a[href="donar.html"].menu-font:hover {
+        background: #FF3333 !important;
+        background-image: none !important;
+    }
+}
+
+/* Agrega esto a tu CSS */
+.oval-btn {
+    border-radius: 40% / 70% 10% 10% 10%; /* Óvalo personalizado */
+    width: 160px;
+    height: 110px;
+}
+
+/* En tu archivo CSS */
+/* En tu archivo CSS */
+.rounded-oval {
+    border-radius: 50% / 60%;
+}
+
+.rounded-oval-pronounced {
+    border-radius: 50% / 70%;
+}
+
+
+/* En tu archivo css/styles.css */
+@media (max-width: 767px) {
+    /* Logo texto en blanco para móvil */
+    .logo-text {
+        color: white !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Fondo oscuro para header en móvil */
+    nav.bg-azul,
+    header.bg-azul {
+        background-color: #26234E !important;
+    }
+}

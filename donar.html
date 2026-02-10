@@ -137,9 +137,20 @@
     
     <!-- Header / Navegación MODIFICADO para página independiente -->
     <!-- Header / Navegación UNIVERSAL -->
-    <header class="sticky top-0 z-50 bg-azul shadow-md">
-        <!-- La navegación se cargará dinámicamente -->
-    </header>
+    <header class="sticky top-0 z-50 bg-[#26234E] text-white shadow-md py-3">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="assets/logo_1.png" alt="Logo" class="logo-img w-12 h-12">
+            <span class="logo-text text-xl font-bold">Acordeonistas del Perú</span>
+        </a>
+        
+        <!-- Botón Donar TEMPORAL -->
+        <a href="donar.html" 
+           class="bg-[#FF0000] hover:bg-[#CC0000] text-white px-6 py-2 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+            <i class="fas fa-heart mr-2"></i>DONAR
+        </a>
+    </div>
+</header>
 
     <!-- Incluir el script del cargador de navegación -->
     <script src="js/nav-loader.js"></script>
@@ -846,6 +857,36 @@
             }
         }
     </script>
+
+<style>
+    /* SOLO para móvil en la página donar.html */
+    @media (max-width: 767px) {
+        /* Cambia el color del texto del logo */
+        .logo-text,
+        header .logo-text,
+        .navbar-brand,
+        [class*="logo"] {
+            color: white !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* También asegura que el fondo del header sea oscuro */
+        header.bg-azul,
+        header.bg-\[#26234E\],
+        header {
+            background-color: #26234E !important;
+            background-image: none !important;
+        }
+        
+        /* Si el texto está dentro de un enlace */
+        header a .logo-text,
+        .navbar-brand span {
+            color: white !important;
+        }
+    }
+</style>
+
+
 
 <!-- Al final del body, antes de </body> -->
 <script src="js/nav-loader.js"></script>
