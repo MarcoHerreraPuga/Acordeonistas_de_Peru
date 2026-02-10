@@ -2316,3 +2316,65 @@ html, body {
     transform: scale(1.05) !important;
 }
 
+/* CORRECCIÓN PARA IMÁGENES DE INSTITUCIONES */
+.institution-logo {
+    filter: grayscale(0%) !important; /* Quitar escala de grises */
+    opacity: 1 !important; /* Hacer completamente visible */
+}
+
+.institution-logo-container {
+    background: white !important; /* Fondo blanco para mejor contraste */
+}
+
+.institution-overlay {
+    display: none !important; /* Desactivar overlay que oscurece */
+}
+
+.institution-card:hover .institution-logo {
+    transform: scale(1.05) !important; /* Mantener efecto de hover */
+    filter: grayscale(0%) !important;
+}
+
+/* ============================================
+   CORRECCIÓN CRÍTICA PARA IMÁGENES DE INSTITUCIONES
+   ============================================ */
+
+/* 1. Quitar filtros que ocultan las imágenes */
+.institution-logo {
+    filter: grayscale(0) !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* 2. Mejorar contenedor para mejor visibilidad */
+.institution-logo-container {
+    background: white !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+/* 3. Mejorar efecto hover (sin oscurecer) */
+.institution-card:hover .institution-logo-container {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15) !important;
+}
+
+.institution-card:hover .institution-logo {
+    transform: scale(1.08) !important;
+}
+
+/* 4. Desactivar overlay que oscurece imágenes */
+.institution-overlay {
+    display: none !important;
+}
+
+/* 5. Asegurar que las imágenes se vean en móvil */
+@media (max-width: 640px) {
+    .institution-logo {
+        max-height: 70px !important;
+    }
+    
+    .institution-logo-container {
+        padding: 1rem !important;
+        height: 140px !important;
+    }
+}
