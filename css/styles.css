@@ -2942,3 +2942,48 @@ iframe {
         background-color: #26234E !important;
     }
 }
+
+/* Asegurar que el texto del header sea legible */
+header {
+    background-color: white !important;
+}
+
+.logo-text {
+    color: #26234E !important; /* Azul principal */
+}
+
+/* Corrección para el menú móvil si existe */
+#menu-movil {
+    color: #26234E !important;
+}
+
+/* Asegurar que los enlaces sean visibles */
+header a {
+    text-decoration: none;
+}
+
+/* Corrección para dispositivos móviles */
+@media (max-width: 767px) {
+    header {
+        background-color: white !important;
+    }
+    
+    .logo-text {
+        color: #26234E !important;
+    }
+    
+    /* Eliminar la regla anterior que ponía texto blanco */
+    .logo-text,
+    header .logo-text,
+    .navbar-brand,
+    [class*="logo"] {
+        color: #26234E !important; /* Cambiado de white a azul */
+        text-shadow: none;
+    }
+    
+    header.bg-azul,
+    header.bg-\[#26234E\],
+    header {
+        background-color: white !important; /* Cambiado de #26234E a white */
+    }
+}
