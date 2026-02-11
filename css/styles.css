@@ -2987,3 +2987,66 @@ header a {
         background-color: white !important; /* Cambiado de #26234E a white */
     }
 }
+
+/* ============================================
+   CORRECCIÓN DEFINITIVA PARA DROPDOWNS
+   ============================================ */
+
+/* 1. Asegurar que los dropdowns tengan buen z-index */
+.relative.group {
+    position: relative !important;
+}
+
+.relative.group .absolute {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* 2. Corregir hover - versión simplificada */
+.relative.group:hover .absolute {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* 3. Asegurar que los enlaces dentro sean clickeables */
+.relative.group .absolute a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* 4. Espacio entre el enlace y el dropdown (para que no desaparezca) */
+.relative.group .absolute {
+    margin-top: 10px !important;
+    padding-top: 5px !important;
+}
+
+/* 5. Triángulo invisible para conectar hover */
+.relative.group::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    z-index: 9998;
+}
+
+/* 6. Transiciones más suaves */
+.relative.group .absolute {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-delay: 0.1s !important;
+}
+
+/* 7. Asegurar que el grupo mantenga el hover */
+.relative.group:hover {
+    z-index: 10000 !important;
+}
+
+/* 8. También hover en el dropdown */
+.relative.group .absolute:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}

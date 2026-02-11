@@ -972,10 +972,345 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Al final del body, antes de </body> -->
 <script src="js/nav-loader.js"></script>
-<script src="js/menu-mobile-simple.js"></script>
+<!-- <script src="js/menu-mobile-simple.js"></script> -->
 <script src="js/app.js"></script>
 
-
+<!-- SCRIPT ÚNICO PARA MENÚ MÓVIL - VERSIÓN SIMPLIFICADA Y FUNCIONAL -->
+<script>
+(function() {
+    'use strict';
+    
+    console.log('🚀 Inicializando menú móvil...');
+    
+    // Esperar a que el DOM esté completamente listo
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('✅ DOM cargado, configurando menú...');
+        
+        // Esperar un poco más para asegurar que el nav se cargó
+        setTimeout(initMobileMenu, 500);
+    });
+    
+    function initMobileMenu() {
+        console.log('🔧 Configurando menú móvil...');
+        
+        const menuButton = document.getElementById('menu-movil');
+        
+        if (!menuButton) {
+            console.error('❌ Botón del menú no encontrado (#menu-movil)');
+            console.log('🔍 Buscando en DOM completo...');
+            
+            // Intentar crear el botón si no existe
+            setTimeout(() => {
+                const newButton = document.getElementById('menu-movil');
+                if (newButton) {
+                    console.log('✅ Botón encontrado después de espera');
+                    setupMenuButton(newButton);
+                } else {
+                    console.error('❌ Botón no encontrado después de espera');
+                    createFallbackMenuButton();
+                }
+            }, 1000);
+            return;
+        }
+        
+        console.log('✅ Botón encontrado:', menuButton);
+        setupMenuButton(menuButton);
+    }
+    
+    function setupMenuButton(button) {
+        // Limpiar eventos anteriores
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        const freshButton = document.getElementById('menu-movil');
+        
+        // Agregar evento DIRECTAMENTE (sin delegation)
+        freshButton.onclick = function(e) {
+            console.log('🎯 Click en botón menú');
+            e.stopPropagation();
+            e.preventDefault();
+            toggleMobileMenu();
+            return false;
+        };
+        
+        // Asegurar que sea clickeable
+        freshButton.style.cssText = `
+            cursor: pointer !important;
+            z-index: 1000 !important;
+            position: relative !important;
+        `;
+        
+        console.log('✅ Botón configurado correctamente');
+    }
+    
+    function createFallbackMenuButton() {
+        console.log('⚠️ Creando botón de respaldo...');
+        const header = document.querySelector('header');
+        if (!header) return;
+        
+        const button = document.createElement('button');
+        button.id = 'menu-movil';
+        button.className = 'md:hidden text-2xl text-gray-800 hover:text-blue-700';
+        button.innerHTML = '<i class="fas fa-bars"></i>';
+        button.style.cssText = `
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 44px !important;
+            height: 44px !important;
+            background: white !important;
+            border-radius: 10px !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+            border: 1px solid #e5e7eb !important;
+            cursor: pointer !important;
+            z-index: 1000 !important;
+        `;
+        
+        header.appendChild(button);
+        
+        button.onclick = function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            toggleMobileMenu();
+            return false;
+        };
+    }
+    
+    function toggleMobileMenu() {
+        console.log('🔄 Alternando menú...');
+        
+        // Verificar si ya existe
+        const existingMenu = document.getElementById('mobile-menu-unique');
+        if (existingMenu) {
+            console.log('🗑️ Cerrando menú existente');
+            closeMobileMenu();
+            return;
+        }
+        
+        console.log('➕ Creando nuevo menú...');
+        
+        // Crear overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 9998;
+            animation: fadeIn 0.3s ease;
+        `;
+        
+        // Crear menú
+        const menu = document.createElement('div');
+        menu.id = 'mobile-menu-unique';
+        menu.style.cssText = `
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-out;
+            overflow-y: auto;
+        `;
+        
+        // Contenido del menú (versión simplificada)
+        menu.innerHTML = `
+            <div style="padding: 20px; border-bottom: 1px solid #e5e7eb; background: #26234E; color: white;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-weight: bold; font-size: 18px;">Menú</div>
+                    <button id="close-mobile-menu-btn" style="font-size: 28px; color: white; background: none; border: none; cursor: pointer; padding: 5px;">
+                        &times;
+                    </button>
+                </div>
+            </div>
+            
+            <div style="padding: 20px;">
+                <a href="index.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-bottom: 10px; background: #f3f4f6; border-radius: 8px; color: #374151; text-decoration: none;">
+                    <i class="fas fa-home" style="margin-right: 10px; color: #3b82f6;"></i>Inicio
+                </a>
+                
+                <a href="nuestro_equipo.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-bottom: 10px; background: #f3f4f6; border-radius: 8px; color: #374151; text-decoration: none;">
+                    <i class="fas fa-users" style="margin-right: 10px; color: #8b5cf6;"></i>Nuestro Equipo
+                </a>
+                
+                <a href="sedes-programas.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-bottom: 10px; background: #f3f4f6; border-radius: 8px; color: #374151; text-decoration: none;">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #10b981;"></i>Sedes y Programas
+                </a>
+                
+                <a href="actividades.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-bottom: 10px; background: #f3f4f6; border-radius: 8px; color: #374151; text-decoration: none;">
+                    <i class="fas fa-newspaper" style="margin-right: 10px; color: #6366f1;"></i>Novedades y Noticias
+                </a>
+                
+                <a href="avisos-legales.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-bottom: 10px; background: #f3f4f6; border-radius: 8px; color: #374151; text-decoration: none;">
+                    <i class="fas fa-file-contract" style="margin-right: 10px; color: #6b7280;"></i>Avisos Legales
+                </a>
+                
+                <a href="donar.html" class="mobile-menu-link" style="display: block; padding: 15px; margin-top: 20px; background: linear-gradient(to right, #ec4899, #ef4444); border-radius: 12px; color: white; text-decoration: none; text-align: center; font-weight: bold;">
+                    <i class="fas fa-heart" style="margin-right: 8px;"></i>DONAR
+                </a>
+            </div>
+        `;
+        
+        // Agregar al DOM
+        document.body.appendChild(overlay);
+        document.body.appendChild(menu);
+        document.body.style.overflow = 'hidden';
+        
+        // Configurar eventos DESPUÉS de agregar al DOM
+        setTimeout(() => {
+            // Botón cerrar
+            const closeBtn = document.getElementById('close-mobile-menu-btn');
+            if (closeBtn) {
+                closeBtn.onclick = function(e) {
+                    e.stopPropagation();
+                    closeMobileMenu();
+                };
+            }
+            
+            // Overlay
+            overlay.onclick = function(e) {
+                if (e.target === overlay) {
+                    closeMobileMenu();
+                }
+            };
+            
+            // Enlaces del menú
+            const links = menu.querySelectorAll('.mobile-menu-link');
+            links.forEach(link => {
+                link.onclick = function(e) {
+                    e.stopPropagation();
+                    const href = this.getAttribute('href');
+                    closeMobileMenu();
+                    
+                    // Navegar después de cerrar el menú
+                    setTimeout(() => {
+                        if (href.startsWith('#')) {
+                            // Enlace interno
+                            const target = document.querySelector(href);
+                            if (target) {
+                                window.scrollTo({
+                                    top: target.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        } else {
+                            // Enlace externo
+                            window.location.href = href;
+                        }
+                    }, 300);
+                };
+            });
+            
+            // Cerrar con ESC
+            document.addEventListener('keydown', function escHandler(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                    document.removeEventListener('keydown', escHandler);
+                }
+            });
+        }, 10);
+        
+        console.log('✅ Menú creado exitosamente');
+    }
+    
+    function closeMobileMenu() {
+        console.log('❌ Cerrando menú...');
+        
+        const menu = document.getElementById('mobile-menu-unique');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+        
+        if (menu) {
+            menu.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                if (menu.parentNode) {
+                    menu.parentNode.removeChild(menu);
+                }
+            }, 250);
+        }
+        
+        if (overlay) {
+            overlay.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                if (overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                }
+            }, 250);
+        }
+        
+        document.body.style.overflow = '';
+        
+        // Remover eventos de teclado
+        const escHandlers = document.querySelectorAll('[data-esc-handler]');
+        escHandlers.forEach(handler => {
+            document.removeEventListener('keydown', handler);
+        });
+    }
+    
+    // Agregar estilos de animación
+    if (!document.getElementById('mobile-menu-animations')) {
+        const style = document.createElement('style');
+        style.id = 'mobile-menu-animations';
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+            
+            /* Estilos para el botón en móvil */
+            @media (max-width: 767px) {
+                #menu-movil {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    width: 44px !important;
+                    height: 44px !important;
+                    background: white !important;
+                    border-radius: 10px !important;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+                    border: 1px solid #e5e7eb !important;
+                    cursor: pointer !important;
+                    z-index: 1000 !important;
+                }
+                
+                #menu-movil:hover {
+                    background: #f3f4f6 !important;
+                    transform: scale(1.05) !important;
+                }
+            }
+            
+            @media (min-width: 768px) {
+                #menu-movil {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    console.log('✅ Script de menú móvil cargado');
+})();
+</script>
 
 
 
@@ -1241,216 +1576,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-<script>
-// Script de respaldo para el menú móvil
-document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.getElementById('menu-movil');
-    
-    if (menuButton) {
-        // Asegurar que sea clickeable
-        menuButton.style.cssText = `
-            cursor: pointer !important;
-            z-index: 1000 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        `;
-        
-        // Agregar evento directo como respaldo
-        menuButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Verificar si ya hay un menú
-            const existingMenu = document.getElementById('mobile-simple-menu');
-            if (existingMenu) {
-                existingMenu.remove();
-                return;
-            }
-            
-            // Crear menú simple
-            const menu = document.createElement('div');
-            menu.id = 'mobile-simple-menu';
-            menu.style.cssText = `
-                position: fixed;
-                top: 80px;
-                right: 16px;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                border: 1px solid #e5e7eb;
-                min-width: 200px;
-                padding: 16px;
-                z-index: 9999;
-            `;
-            
-            menu.innerHTML = `
-                <div style="margin-bottom: 12px; font-weight: bold; color: #374151;">
-                    Menú
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="index.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-home" style="margin-right: 12px; color: #3b82f6;"></i>
-                        <span>Inicio</span>
-                    </a>
-                    <a href="nuestro_equipo.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-users" style="margin-right: 12px; color: #8b5cf6;"></i>
-                        <span>Nuestro Equipo</span>
-                    </a>
-                    <a href="sedes-programas.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-map-marker-alt" style="margin-right: 12px; color: #10b981;"></i>
-                        <span>Sedes y Programas</span>
-                    </a>
-                    <a href="actividades.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-newspaper" style="margin-right: 12px; color: #6366f1;"></i>
-                        <span>Actividades</span>
-                    </a>
-                    <a href="avisos-legales.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-file-contract" style="margin-right: 12px; color: #6b7280;"></i>
-                        <span>Avisos Legales</span>
-                    </a>
-                    <a href="donar.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: white; text-decoration: none; background: linear-gradient(to right, #ec4899, #ef4444);">
-                        <i class="fas fa-heart" style="margin-right: 12px;"></i>
-                        <span>Donar</span>
-                    </a>
-                </div>
-            `;
-            
-            document.body.appendChild(menu);
-            
-            // Cerrar al hacer click fuera
-            setTimeout(() => {
-                document.addEventListener('click', function closeMenu(e) {
-                    if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
-                        menu.remove();
-                        document.removeEventListener('click', closeMenu);
-                    }
-                });
-            }, 10);
-        });
-    }
-});
-</script>
+
 
 
 
 <!-- Al final del index.html -->
-<script>
-    // Script mínimo que SÍ funciona
-    (function() {
-        'use strict';
-        
-        const menuButton = document.getElementById('menu-movil');
-        
-        if (!menuButton) {
-            console.error('❌ Botón del menú no encontrado');
-            return;
-        }
-        
-        console.log('✅ Botón del menú encontrado, configurando...');
-        
-        // Agregar event listener DIRECTO
-        menuButton.onclick = function(e) {
-            e.stopPropagation();
-            toggleMobileMenu();
-        };
-        
-        function toggleMobileMenu() {
-            console.log('Toggle del menú llamado');
-            
-            const existingMenu = document.getElementById('mobile-menu-minimal');
-            if (existingMenu) {
-                existingMenu.remove();
-                return;
-            }
-            
-            // Crear menú minimalista
-            const menu = document.createElement('div');
-            menu.id = 'mobile-menu-minimal';
-            menu.style.cssText = `
-                position: fixed;
-                top: 80px;
-                right: 16px;
-                z-index: 9999;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                border: 1px solid #e5e7eb;
-                min-width: 200px;
-                padding: 16px;
-                animation: fadeIn 0.2s ease-out;
-            `;
-            
-            menu.innerHTML = `
-                <div style="margin-bottom: 12px; font-weight: bold; color: #374151; text-align: center;">
-                    Menú
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="#inicio" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-home" style="margin-right: 12px; color: #3b82f6;"></i>
-                        <span>Inicio</span>
-                    </a>
-                    <a href="nuestro_equipo.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-users" style="margin-right: 12px; color: #8b5cf6;"></i>
-                        <span>Nuestro Equipo</span>
-                    </a>
-                    <a href="#sedes-programas" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: #374151; text-decoration: none; background: #f3f4f6;">
-                        <i class="fas fa-map-marker-alt" style="margin-right: 12px; color: #10b981;"></i>
-                        <span>Sedes y Programas</span>
-                    </a>
-                    <a href="donar.html" style="display: flex; align-items: center; padding: 12px; border-radius: 8px; color: white; text-decoration: none; background: linear-gradient(to right, #ec4899, #ef4444);">
-                        <i class="fas fa-heart" style="margin-right: 12px;"></i>
-                        <span>Donar</span>
-                    </a>
-                </div>
-            `;
-            
-            document.body.appendChild(menu);
-            
-            // Agregar animación CSS
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(-10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Cerrar al hacer click fuera
-            setTimeout(() => {
-                document.addEventListener('click', function closeMenu(e) {
-                    if (!menu.contains(e.target) && e.target.id !== 'menu-movil') {
-                        menu.remove();
-                        document.removeEventListener('click', closeMenu);
-                    }
-                });
-            }, 10);
-            
-            // Cerrar con ESC
-            document.addEventListener('keydown', function closeOnEsc(e) {
-                if (e.key === 'Escape') {
-                    menu.remove();
-                    document.removeEventListener('keydown', closeOnEsc);
-                }
-            });
-            
-            // Navegación suave
-            menu.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.onclick = function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                    menu.remove();
-                };
-            });
-        }
-        
-        console.log('✅ Menú móvil configurado exitosamente');
-    })();
-</script>
+
+<!-- Script único y definitivo para menú móvil -->
+
+
+<style>
+/* Estilos adicionales para asegurar funcionalidad */
+@media (min-width: 768px) {
+    #menu-movil {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
+}
+
+/* Asegurar que el menú desktop funcione */
+.relative.group .absolute {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+.relative.group:hover .absolute {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+</style>

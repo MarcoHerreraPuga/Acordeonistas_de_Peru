@@ -1,168 +1,53 @@
-/* css/menu-fix.css - FIX para el menú responsive */
+/* css/menu-fix.css - VERSIÓN CORREGIDA DEFINITIVA */
 
 /* ============================================
-   RESET Y SEGURIDAD PARA EL MENÚ
+   BOTÓN HAMBURGUESA - VISIBILIDAD CORRECTA
    ============================================ */
 
-/* css/menu-fix.css - FIX para el menú responsive */
-
-/* ============================================
-   BOTÓN HAMBURGUESA - SOLO VISIBLE EN MÓVIL
-   ============================================ */
-
-/* Por defecto: OCULTAR el botón hamburguesa */
+/* 1. OCULTAR POR DEFECTO (para desktop) */
 #menu-movil {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
 }
 
-/* Solo mostrar en móvil */
-@media (max-width: 768px) {
+/* 2. MOSTRAR SOLO EN MÓVIL */
+@media (max-width: 767px) {
     #menu-movil {
         display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         width: 44px !important;
         height: 44px !important;
+        padding: 0 !important;
+        margin: 0 !important;
         background: white !important;
         border-radius: 10px !important;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
         border: 1px solid #e5e7eb !important;
         cursor: pointer !important;
         z-index: 1000 !important;
-        position: relative !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.25rem !important;
+        color: #374151 !important;
+        transition: all 0.2s ease !important;
     }
     
     #menu-movil:hover {
         background: #f3f4f6 !important;
         transform: scale(1.05) !important;
-    }
-    
-    #menu-movil i.fa-bars {
-        font-size: 1.25rem !important;
-        color: #374151 !important;
-    }
-    
-    #menu-movil:hover i.fa-bars {
         color: #3b82f6 !important;
     }
-    
-    /* En móvil, ocultar la navegación desktop completa */
-    nav .hidden.md\\:flex {
-        display: none !important;
-    }
 }
 
-/* ============================================
-   NAVEGACIÓN DESKTOP - SOLO VISIBLE EN DESKTOP
-   ============================================ */
-
-/* Asegurar que la navegación desktop se muestre */
-@media (min-width: 769px) {
-    /* Mostrar navegación desktop */
-    nav .hidden.md\\:flex {
-        display: flex !important;
-    }
-    
-    /* Asegurar que el botón Donar desktop se vea */
-    .heartbeat-btn.hidden.md\\:flex {
-        display: flex !important;
-    }
-    
-    /* Ocultar completamente el botón hamburguesa en desktop */
-    #menu-movil {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
-}
-
-/* ============================================
-   ANIMACIONES PARA MENÚ MÓVIL
-   ============================================ */
-
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideOut {
-    from { transform: translateX(0); opacity: 1; }
-    to { transform: translateX(100%); opacity: 0; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* ============================================
-   ESTILOS PARA EL MENÚ MÓVIL ABIERTO
-   ============================================ */
-
-#mobile-simple-menu {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 280px !important;
-    max-width: 85% !important;
-    background: white !important;
-    z-index: 9999 !important;
-    box-shadow: -2px 0 20px rgba(0,0,0,0.15) !important;
-    overflow-y: auto !important;
-    animation: slideIn 0.3s ease-out !important;
-}
-
-/* Overlay oscuro detrás del menú */
-.menu-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0,0,0,0.5) !important;
-    z-index: 9998 !important;
-    animation: fadeIn 0.3s ease !important;
-}
-
-/* ============================================
-   BOTÓN FLOTANTE DONAR - SOLO EN MÓVIL
-   ============================================ */
-
-#floating-donation-btn {
-    display: none !important;
-}
-
-@media (max-width: 768px) {
-    #floating-donation-btn {
-        display: block !important;
-    }
-}
-
-@media (min-width: 769px) {
-    #floating-donation-btn {
-        display: none !important;
-    }
-}
-
-/* ============================================
-   BOTÓN HAMBURGUESA VISIBLE
-   ============================================ */
-
-#menu-movil i.fa-bars {
-    font-size: 1.25rem !important;
-    color: #374151 !important;
-}
-
-#menu-movil:hover i.fa-bars {
-    color: #3b82f6 !important;
-}
-
-/* ULTIMO RECURSO: Forzar ocultar en desktop */
-@media (min-width: 769px) {
+/* 3. FORZAR OCULTAR EN DESKTOP (768px o más) */
+@media (min-width: 768px) {
     #menu-movil {
         display: none !important;
         visibility: hidden !important;
@@ -171,8 +56,27 @@
         height: 0 !important;
         padding: 0 !important;
         margin: 0 !important;
-        border: 0 !important;
+        overflow: hidden !important;
         position: absolute !important;
         pointer-events: none !important;
+    }
+}
+
+/* ============================================
+   NAVEGACIÓN DESKTOP - VISIBILIDAD CORRECTA
+   ============================================ */
+
+/* Ocultar navegación desktop en móvil */
+@media (max-width: 767px) {
+    nav .hidden.md\\:flex,
+    nav [class*="hidden md:flex"] {
+        display: none !important;
+    }
+}
+
+/* Mostrar navegación desktop en desktop */
+@media (min-width: 768px) {
+    nav .hidden.md\\:flex {
+        display: flex !important;
     }
 }
