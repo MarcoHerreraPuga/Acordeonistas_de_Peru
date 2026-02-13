@@ -3050,3 +3050,78 @@ header a {
     visibility: visible !important;
     transform: translateY(0) !important;
 }
+
+/* Estilos para bordes biselados del botón DONAR */
+.boton-biselado {
+    position: relative;
+    border-radius: 0 !important; /* Elimina el border-radius original */
+    clip-path: polygon(
+        0% 10px,              /* Punto superior izquierdo con inclinación */
+        10px 0%,              /* Esquina superior izquierda biselada */
+        calc(100% - 10px) 0%, /* Esquina superior derecha biselada */
+        100% 10px,            /* Punto superior derecho con inclinación */
+        100% calc(100% - 10px), /* Punto inferior derecho con inclinación */
+        calc(100% - 10px) 100%, /* Esquina inferior derecha biselada */
+        10px 100%,            /* Esquina inferior izquierda biselada */
+        0% calc(100% - 10px)  /* Punto inferior izquierdo con inclinación */
+    );
+}
+
+/* Mantener el efecto hover con el mismo clip-path */
+.boton-biselado:hover {
+    clip-path: polygon(
+        0% 10px,
+        10px 0%,
+        calc(100% - 10px) 0%,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        0% calc(100% - 10px)
+    );
+}
+
+/* Ajustar la animación de pulso para que funcione con clip-path */
+.boton-biselado.pulse-btn {
+    animation: gentle-pulse-biselado 2.5s infinite;
+}
+
+@keyframes gentle-pulse-biselado {
+    0%, 100% {
+        filter: drop-shadow(0 4px 8px rgba(255, 0, 0, 0.4));
+        transform: scale(1.02);
+    }
+    50% {
+        filter: drop-shadow(0 8px 16px rgba(255, 0, 0, 0.6));
+        transform: scale(1.04);
+    }
+}
+
+/* Asegurar que el contenido interior se mantiene intacto */
+.boton-biselado .flex {
+    position: relative;
+    z-index: 2;
+}
+
+/* Efecto de brillo biselado opcional al hacer hover */
+.boton-biselado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+    z-index: 1;
+    clip-path: polygon(
+        0% 10px,
+        10px 0%,
+        calc(100% - 10px) 0%,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        0% calc(100% - 10px)
+    );
+}
